@@ -21,7 +21,7 @@ const App =() =>{
                 <button onClick={onClickCountUp}>加算</button>
                 <button onClick={onClickshowFlugCjange}>表示非表示</button>
                 <p>{num}</p>
-                {textShowFlug && <p>表示されています</p>}
+                {textShowFlug && <p>TRUEなので表示されています</p>}
                </>
         );
 };
