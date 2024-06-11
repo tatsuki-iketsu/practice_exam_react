@@ -1,6 +1,7 @@
 import React,{useState} from "react"
 import ColorfulMessage from "./components/ColorfulMessage"
 import PropsMessage from "./components/ColorfulMessage copy";
+import ExamDisplay from "./components/ExamSet";
 const App =() =>{
     const [num,setNum] = useState(0);
     const [textShowFlug,setTextShowFlag] = useState(true); 
@@ -21,7 +22,9 @@ const App =() =>{
                 <button onClick={onClickCountUp}>加算</button>
                 <button onClick={onClickshowFlugCjange}>表示非表示</button>
                 <p>{num}</p>
+                {console.log({ExamDisplay})}
                 {textShowFlug && <p>TRUEなので表示されています</p>}
+                
                </>
         );
 };
