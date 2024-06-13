@@ -1,5 +1,8 @@
 import React from "react";
 
+// const [selectedItem, setselectedItem] = useState(['A', 'B', 'C'])
+const array = ["a","b"]
+
 const ExamDisplay = () =>{
     const selectAnswer = [
         {
@@ -25,7 +28,28 @@ const ExamDisplay = () =>{
         selectAnswers : {selectAnswer}
 
     }
-    const onClickAnser = (selectAnswer)=> alert(`ボタンを押した${selectAnswer.item}`);
+    // const element = document.getElementById('mycheckbox');
+    
+    const onClickAnser = (selectAnswer)=> alert(`ボタンを押した${array}`);
+    const selectedCheck = ()=> {    
+        let a = document.querySelectorAll(
+            'input[name="ccc"]:checked'
+          );
+            console.log(a[0].value);    
+          alert(`ボタンを押した${a[0].value}`);
+            // console.log(event);    
+        // このあたりでチェックボックスを受けとる
+        // element.checked
+        // https://www.javadrive.jp/javascript/form/index3.html
+        // if(e){
+        //     alert(`true`);
+        // }else{
+        //     alert(`false`);
+        // }
+        // array.push(selectAnswer)
+
+        // array.push(e)
+    };
  
     return (
     <>
@@ -37,6 +61,19 @@ const ExamDisplay = () =>{
     <button onClick={()=>onClickAnser(selectAnswer[0])}>回答を確認する</button>
   </div>
 
+  <div>
+  <form name="aaa">
+      <input
+        type="checkbox"
+        name = 'ccc'
+        id="disable-button-checkbox"
+        value = "vavava"
+        // onChange={(e) => selectedCheck(e,"ABC")}
+      />
+      <label htmlFor="disable-button-checkbox">Disabled button</label>
+      </form>
+      <button onClick={()=>selectedCheck()}>確認</button>
+    </div>
 
     </>
 );
