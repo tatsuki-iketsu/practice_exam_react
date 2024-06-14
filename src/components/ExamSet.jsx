@@ -30,13 +30,13 @@ const ExamDisplay = () =>{
     }
     // const element = document.getElementById('mycheckbox');
     
-    const onClickAnser = (selectAnswer)=> alert(`ボタンを押した${array}`);
+    const onClickAnser = (selectAnswer)=> alert(`選択した回答：${array}`);
     const selectedCheck = ()=> {    
         let a = document.querySelectorAll(
             'input[name="ccc"]:checked'
           );
             console.log(a[0].value);    
-          alert(`ボタンを押した${a[0].value}`);
+          alert(`選択した回答：${a[0].value}`);
             // console.log(event);    
         // このあたりでチェックボックスを受けとる
         // element.checked
@@ -66,11 +66,11 @@ const ExamDisplay = () =>{
       <input
         type="checkbox"
         name = 'ccc'
-        id="disable-button-checkbox"
-        value = "vavava"
-        // onChange={(e) => selectedCheck(e,"ABC")}
+        id = {selectAnswer[0].item}
+        value ={selectAnswer[0].item}
       />
-      <label htmlFor="disable-button-checkbox">Disabled button</label>
+      <label htmlFor={selectAnswer[0].item}>{selectAnswer[0].content}</label>
+      
       </form>
       <button onClick={()=>selectedCheck()}>確認</button>
     </div>
