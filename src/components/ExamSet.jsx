@@ -17,7 +17,7 @@ const ExamDisplay = () =>{
         },
         {
             item :'C',
-            content : '選択肢2',
+            content : '選択肢3',
             correctAnswer:false
         }
     ]
@@ -31,11 +31,22 @@ const ExamDisplay = () =>{
     // const element = document.getElementById('mycheckbox');
     
     const onClickAnser = (selectAnswer)=> alert(`選択した回答：${array}`);
+    const selectedAnserGet = (a) => {
+        {selectAnswer.map((Answer) => (
+            <>
+            {a[0].value}
+            </>
+     
+            ))}    
+    };
     const selectedCheck = ()=> {    
         let a = document.querySelectorAll(
             'input[name="ccc"]:checked'
           );
-            console.log(a[0].value);    
+            console.log(a[0].value);
+            // const selectAnsers = a.map(ans => {
+            //     return ans.value + ",";
+            //   });    
           alert(`選択した回答：${a[0].value}`);
             // console.log(event);    
         // このあたりでチェックボックスを受けとる
@@ -63,14 +74,30 @@ const ExamDisplay = () =>{
 
   <div>
   <form name="aaa">
-      <input
+      {/* <input
         type="checkbox"
         name = 'ccc'
         id = {selectAnswer[0].item}
         value ={selectAnswer[0].item}
       />
-      <label htmlFor={selectAnswer[0].item}>{selectAnswer[0].content}</label>
+      <label htmlFor={selectAnswer[0].item}>{selectAnswer[0].content}</label> */}
+
+      {selectAnswer.map((Answer) => (
+        <>
+        <p>
+     <input
+        type="checkbox"
+        name = 'ccc'
+        id = {Answer.item}
+        value ={Answer.item}
+      />
+      <label htmlFor={Answer.item}>{Answer.item}:：{Answer.content}</label>
+      </p>
+        </>
+ 
+        ))}
       
+
       </form>
       <button onClick={()=>selectedCheck()}>確認</button>
     </div>
