@@ -27,7 +27,6 @@ const ExamDisplay = () =>{
         selectAnswers : {selectAnswer}
 
     }
-    // const element = document.getElementById('mycheckbox');
     
     const onClickAnser = (selectAnswer)=> alert(`aa選択した回答：テスト`);
     const selectedAnserGet = (a) => {
