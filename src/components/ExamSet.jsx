@@ -59,9 +59,17 @@ const ExamDisplay = () =>{
   }]
 
     }
+    // 回答取得
+    const correctAnswerSetCreate = (selectAnswer)=> {
+      // 確認用
+      alert(`aa選択した回答：テスト`);
+    }
     
     // 単一回答の表示
-    const onClickAnser = (selectAnswer)=> alert(`aa選択した回答：テスト`);
+    const onClickAnser = (setExam)=> {
+
+      return "aa";
+    };
 
     // 複数回答の表示
     const selectedAnserGet = (selectedChecks) => {
@@ -82,11 +90,13 @@ const ExamDisplay = () =>{
     };
 
     // 複数選択ボタン押下時アクション
-    const selectedCheck = (name)=> {    
+    const selectedCheck = (examData,name)=> {    
         let checks = document.querySelectorAll(
             `input[name=${name}]:checked`
           );
           alert(`${selectedAnserGet(checks)}`);
+          // 回答取得確認用
+          alert(`${correctAnswerSetCreate(checks)}`);
     };
  
     return (
@@ -100,13 +110,14 @@ const ExamDisplay = () =>{
   </div>
 
   <div>
-  <form name="aaa">
+  <form name= {examData.setExam[0].setItem}>
+    <p>問題：{examData.setExam[0].question}</p>
       {examData.setExam[0].selectAnswers.map((Answer) => (
         <>
         <p>
      <input
         type="checkbox"
-        name = 'ccc'
+        name = {examData.setExam[0].setItem}
         id = {Answer.item}
         value ={Answer.item}
       />
@@ -116,9 +127,8 @@ const ExamDisplay = () =>{
  
         ))}
       
-
       </form>
-      <button onClick={()=>selectedCheck('ccc')}>確認</button>
+      <button onClick={()=>selectedCheck(examData,examData.setExam[0].setItem)}>確認</button>
     </div>
 
     </>
