@@ -1,8 +1,40 @@
 import React from "react";
 const NO_SELECTED = "回答が選択されていません"
 const ExamDisplay = () =>{
-    // 問題回答セット
-    const selectAnswer = [
+
+    // 問題問い合わせセット
+    const examData = {
+      setExam:[{
+        setItem : '問題1',
+        question : '問題内容',
+        multipleAnswers : true,
+        selectAnswers : [
+          {
+              item :'A',
+              content : '選択肢1',
+              correctAnswer:true
+          },
+          {
+              item :'B',
+              content : '選択肢2',
+              correctAnswer:true
+          },
+          {
+              item :'C',
+              content : '選択肢3',
+              correctAnswer:false
+          },
+          {
+              item :'D',
+              content : '選択肢4',
+              correctAnswer:false
+          }
+      ]
+    },{
+      setItem : '問題1',
+      question : '問題内容',
+      multipleAnswers : true,
+      selectAnswers : [
         {
             item :'A',
             content : '選択肢1',
@@ -17,15 +49,14 @@ const ExamDisplay = () =>{
             item :'C',
             content : '選択肢3',
             correctAnswer:false
+        },
+        {
+            item :'D',
+            content : '選択肢4',
+            correctAnswer:false
         }
     ]
-
-    // 問題問い合わせセット
-    const setExam = {
-        setItem : '問題1',
-        question : '問題内容',
-        multipleAnswers : true,
-        selectAnswers : {selectAnswer}
+  }]
 
     }
     
@@ -46,7 +77,7 @@ const ExamDisplay = () =>{
         {selectedChecks.forEach((check) => (
           selectedAns.push(check.value)
               ))}    
-        return selectedAns;   
+        return `選択した回答：${selectedAns}`;   
  
     };
 
@@ -55,7 +86,7 @@ const ExamDisplay = () =>{
         let checks = document.querySelectorAll(
             `input[name=${name}]:checked`
           );
-          alert(`選択した回答：${selectedAnserGet(checks)}`);
+          alert(`${selectedAnserGet(checks)}`);
     };
  
     return (
@@ -64,14 +95,13 @@ const ExamDisplay = () =>{
 
     <div>
     <input type="radio" id="a" name="drone" value="huey" />
-    <label htmlFor={selectAnswer[0].item}><span>{selectAnswer[0].item}:{selectAnswer[0].content}</span></label>
-    <button onClick={()=>onClickAnser(selectAnswer[0])}>回答を確認する</button>
+    <label htmlFor={examData.setExam[0].selectAnswers[0].item}><span>{examData.setExam[0].selectAnswers[0].item}:{examData.setExam[0].selectAnswers[0].content}</span></label>
+    <button onClick={()=>onClickAnser(examData.setExam[0].selectAnswers[0])}>回答を確認する</button>
   </div>
 
   <div>
   <form name="aaa">
-
-      {selectAnswer.map((Answer) => (
+      {examData.setExam[0].selectAnswers.map((Answer) => (
         <>
         <p>
      <input
@@ -80,7 +110,7 @@ const ExamDisplay = () =>{
         id = {Answer.item}
         value ={Answer.item}
       />
-      <label htmlFor={Answer.item}>{Answer.item}:：{Answer.content}</label>
+      <label htmlFor={Answer.item}>{Answer.item}：{Answer.content}</label>
       </p>
         </>
  
