@@ -1,7 +1,6 @@
 import React from "react";
 
 // const [selectedItem, setselectedItem] = useState(['A', 'B', 'C'])
-const array = ["a","b"]
 
 const ExamDisplay = () =>{
     const selectAnswer = [
@@ -30,24 +29,29 @@ const ExamDisplay = () =>{
     }
     // const element = document.getElementById('mycheckbox');
     
-    const onClickAnser = (selectAnswer)=> alert(`選択した回答：${array}`);
+    const onClickAnser = (selectAnswer)=> alert(`aa選択した回答：テスト`);
     const selectedAnserGet = (a) => {
-        {selectAnswer.map((Answer) => (
-            <>
-            {a[0].value}
-            </>
-     
+      alert(`${a}`);
+      const abc = []
+
+      {a.forEach((answer) => (
+        abc.push(answer.value)
             ))}    
+            // alert(array);
+return abc; 
+ 
     };
     const selectedCheck = ()=> {    
-        let a = document.querySelectorAll(
+        let checks = document.querySelectorAll(
             'input[name="ccc"]:checked'
           );
-            console.log(a[0].value);
+          alert(`${checks}`);
+            console.log(selectedAnserGet(checks));
             // const selectAnsers = a.map(ans => {
             //     return ans.value + ",";
             //   });    
-          alert(`選択した回答：${a[0].value}`);
+            // selectedAnserGet(checks);
+          alert(`選択した回答：${selectedAnserGet(checks)}`);
             // console.log(event);    
         // このあたりでチェックボックスを受けとる
         // element.checked
