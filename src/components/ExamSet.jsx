@@ -1,64 +1,12 @@
 import React from "react";
+import Data from '../exam/exam.json'
 const NO_SELECTED = "回答が選択されていません"
+
 const ExamDisplay = () =>{
 
-    // 問題問い合わせセット
-    const examData = {
-      setExam:[{
-        setItem : '問題1',
-        question : '問題内容',
-        multipleAnswers : true,
-        selectAnswers : [
-          {
-              item :'A',
-              content : '選択肢1',
-              correctAnswer:true
-          },
-          {
-              item :'B',
-              content : '選択肢2',
-              correctAnswer:true
-          },
-          {
-              item :'C',
-              content : '選択肢3',
-              correctAnswer:false
-          },
-          {
-              item :'D',
-              content : '選択肢4',
-              correctAnswer:false
-          }
-      ]
-    },{
-      setItem : '問題1',
-      question : '問題内容',
-      multipleAnswers : true,
-      selectAnswers : [
-        {
-            item :'A',
-            content : '選択肢1',
-            correctAnswer:true
-        },
-        {
-            item :'B',
-            content : '選択肢2',
-            correctAnswer:true
-        },
-        {
-            item :'C',
-            content : '選択肢3',
-            correctAnswer:false
-        },
-        {
-            item :'D',
-            content : '選択肢4',
-            correctAnswer:false
-        }
-    ]
-  }]
+    // 問題と回答のセット
+    const examData = Data;
 
-    }
     // 回答取得
     const correctAnswerSetCreate = (selectAnswer)=> {
       // 確認用
@@ -66,7 +14,7 @@ const ExamDisplay = () =>{
     }
     
     // 単一回答の表示
-    const onClickAnser = (setExam)=> {
+    const onClickAnser = (setExams)=> {
 
       return "aa";
     };
@@ -98,26 +46,28 @@ const ExamDisplay = () =>{
           // 回答取得確認用
           alert(`${correctAnswerSetCreate(checks)}`);
     };
- 
+    alert(examData.setExams[0]);
+    console.log(examData);
+    console.log(examData.setExams[0].setitem);
     return (
     <>
     <p>ここに問題文を記述します。</p>
 
-    <div>
+    {/* <div>
     <input type="radio" id="a" name="drone" value="huey" />
-    <label htmlFor={examData.setExam[0].selectAnswers[0].item}><span>{examData.setExam[0].selectAnswers[0].item}:{examData.setExam[0].selectAnswers[0].content}</span></label>
-    <button onClick={()=>onClickAnser(examData.setExam[0].selectAnswers[0])}>回答を確認する</button>
-  </div>
+    <label htmlFor={examData.setExams[0].selectAnswers[0].item}><span>{examData.setExams[0].selectAnswers[0].item}:{examData.setExams[0].selectAnswers[0].content}</span></label>
+    <button onClick={()=>onClickAnser(examData.setExams[0].selectAnswers[0])}>回答を確認する</button>
+  </div> */}
 
   <div>
-  <form name= {examData.setExam[0].setItem}>
-    <p>問題：{examData.setExam[0].question}</p>
-      {examData.setExam[0].selectAnswers.map((Answer) => (
+  <form name= {examData.setExams[0].setItem}>
+    <p>問題：{examData.setExams[0].question}</p>
+      {examData.setExams[0].selectAnswers.map((Answer) => (
         <>
         <p>
      <input
         type="checkbox"
-        name = {examData.setExam[0].setItem}
+        name = {examData.setExams[0].setItem}
         id = {Answer.item}
         value ={Answer.item}
       />
@@ -128,7 +78,7 @@ const ExamDisplay = () =>{
         ))}
       
       </form>
-      <button onClick={()=>selectedCheck(examData,examData.setExam[0].setItem)}>確認</button>
+      <button onClick={()=>selectedCheck(examData,examData.setExams[0].setItem)}>確認</button>
     </div>
 
     </>
