@@ -8,9 +8,20 @@ const ExamDisplay = () =>{
     const examData = Data;
 
     // 回答取得
-    const correctAnswerSetCreate = (selectAnswer)=> {
+      // 回答を取得し配列に格納
+      const correctAnswerSetCreate = (setExam)=> {
+      // 回答を格納する配列
+      const answers = []
+
+      const ansArray = setExam.selectAnswers.map((selectAnswer) => { 
+        if(selectAnswer.correctAnswer){
+          answers.push(selectAnswer.item);
+        }
+      
+      } );
+
       // 確認用
-      alert(`aa選択した回答：テスト`);
+      alert(`回答：${answers}`);
     }
     
     // 単一回答の表示
@@ -32,21 +43,21 @@ const ExamDisplay = () =>{
         // 回答あり、複数数制限なし
         {selectedChecks.forEach((check) => (
           selectedAns.push(check.value)
-              ))}    
+              ))}
+
         return `選択した回答：${selectedAns}`;   
  
     };
 
     // 複数選択ボタン押下時アクション
-    const selectedCheck = (examData,name)=> {    
+    const selectedCheck = (setExam,name)=> {    
         let checks = document.querySelectorAll(
             `input[name=${name}]:checked`
           );
           alert(`${selectedAnserGet(checks)}`);
           // 回答取得確認用
-          alert(`${correctAnswerSetCreate(checks)}`);
+          alert(`${correctAnswerSetCreate(setExam)}`);
     };
-    alert(examData.setExams[0]);
     console.log(examData);
     console.log(examData.setExams[0].setitem);
     return (
@@ -78,7 +89,7 @@ const ExamDisplay = () =>{
         ))}
       
       </form>
-      <button onClick={()=>selectedCheck(examData,examData.setExams[0].setItem)}>確認</button>
+      <button onClick={()=>selectedCheck(examData.setExams[0],examData.setExams[0].setItem)}>確認</button>
     </div>
 
     </>
