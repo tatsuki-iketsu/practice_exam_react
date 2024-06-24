@@ -9,15 +9,17 @@ const ExamDisplay = () =>{
   const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState("ここに回答が表示されます");
 
 // シャッフル
-  const shuffleExam=(selectAnswers)=> {
+const abc = ["A","B","C","D","E","F","G"];
+const shuffleExam=(selectAnswers)=> {
     for (let i = selectAnswers.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [selectAnswers[i], selectAnswers[j]] = [selectAnswers[j], selectAnswers[i]];
     }
+    selectAnswers.map((selectAnswer,i)=>{
+      selectAnswer.item = abc[i];
+    })
     return selectAnswers;
   }
-
-
   // 問題と回答のセット
     const examData = Data;
     console.log('シャッフルゲーム');
@@ -101,38 +103,41 @@ const ExamDisplay = () =>{
     return (
     <>
     <p>ここに問題文を記述します。</p>
-
+    {/* <button onClick={()=>shuffleExam(examData.setExams[0].selectAnswers)}>リセット</button> */}
     {/* <div>
     <input type="radio" id="a" name="drone" value="huey" />
     <label htmlFor={examData.setExams[0].selectAnswers[0].item}><span>{examData.setExams[0].selectAnswers[0].item}:{examData.setExams[0].selectAnswers[0].content}</span></label>
     <button onClick={()=>onClickAnser(examData.setExams[0].selectAnswers[0])}>回答を確認する</button>
   </div> */}
 
+  {examData.setExams.map((setExam) => (
+    <>
   <div>
-  <form name= {examData.setExams[0].setItem}>
-    <p>問題：{examData.setExams[0].question}</p>
-      {examData.setExams[0].selectAnswers.map((Answer) => (
+  <form name= {setExam.setItem}>
+    <p>問題：{setExam.question}</p>
+      {setExam.selectAnswers.map((Answer) => (
         <>
-        <p>
-     <input
-        type="checkbox"
-        name = {examData.setExams[0].setItem}
-        id = {Answer.item}
-        value ={Answer.item}
-      />
-      <label htmlFor={Answer.item}>{Answer.item}：{Answer.content}</label>
-      </p>
+          <p>
+            <input
+              type="checkbox"
+              name = {setExam.setItem}
+              id = {Answer.item}
+              value ={Answer.item}
+            />
+            <label htmlFor={Answer.item}>{Answer.item}：{Answer.content}</label>
+          </p>
         </>
- 
-        ))}
+      ))}
+        
+        </form>
+        <button onClick={()=>selectedCheck(setExam,setExam.setItem)}>確認</button>
+      </div>
+      <div>{ansDisplay}</div>
+      <div>{trueOrFalseDisplay}</div>
+      </>
+    ))}
       
-      </form>
-      <button onClick={()=>selectedCheck(examData.setExams[0],examData.setExams[0].setItem)}>確認</button>
-    </div>
-    <div>{ansDisplay}</div>
-    <div>{trueOrFalseDisplay}</div>
-    
-    </>
+      </>
 );
 };
 export default ExamDisplay;
