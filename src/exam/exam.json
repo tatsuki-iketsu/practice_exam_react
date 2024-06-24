@@ -6,22 +6,22 @@
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "選択肢1",
+          "content" : "選択肢1：正解",
           "correctAnswer":true
       },
       {
           "item" :"B",
-          "content" : "選択肢2",
+          "content" : "選択肢2：正解",
           "correctAnswer":true
       },
       {
           "item" :"C",
-          "content" : "選択肢3",
+          "content" : "選択肢3：間違い",
           "correctAnswer":false
       },
       {
           "item" :"D",
-          "content" : "選択肢4",
+          "content" : "選択肢4：間違い",
           "correctAnswer":false
       }
   ]

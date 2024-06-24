@@ -8,9 +8,22 @@ const ExamDisplay = () =>{
   const [ansDisplay,setAnsDisplay] = useState("選択してボタンを押してください");
   const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState("ここに回答が表示されます");
 
+// シャッフル
+  const shuffleExam=(selectAnswers)=> {
+    for (let i = selectAnswers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [selectAnswers[i], selectAnswers[j]] = [selectAnswers[j], selectAnswers[i]];
+    }
+    return selectAnswers;
+  }
+
+
   // 問題と回答のセット
     const examData = Data;
-
+    console.log('シャッフルゲーム');
+    console.log(examData.setExams[0].selectAnswers);
+    shuffleExam(examData.setExams[0].selectAnswers);
+    // shuffleExam(examData.setExams.selectAnswers);
     // 回答取得
       // 回答を取得し配列に格納
       const correctAnswerSetCreate = (setExam)=> {
