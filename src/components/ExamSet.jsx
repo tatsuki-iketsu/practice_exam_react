@@ -17,11 +17,13 @@ const ExamDisplay = () =>{
         if(selectAnswer.correctAnswer){
           answers.push(selectAnswer.item);
         }
-      
       } );
 
+      
       // 確認用
       alert(`回答：${answers}`);
+      // 確認用
+    
     }
     
     // 単一回答の表示
