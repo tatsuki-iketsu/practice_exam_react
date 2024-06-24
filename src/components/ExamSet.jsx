@@ -1,10 +1,14 @@
 import React from "react";
-import Data from '../exam/exam.json'
+import Data from '../exam/exam.json';
+import { useState } from 'react';
+
 const NO_SELECTED = "回答が選択されていません"
 
 const ExamDisplay = () =>{
+  const [ansDisplay,setAnsDisplay] = useState("選択してボタンを押してください");
+  const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState("ここに回答が表示されます");
 
-    // 問題と回答のセット
+  // 問題と回答のセット
     const examData = Data;
 
     // 回答取得
@@ -33,9 +37,11 @@ const ExamDisplay = () =>{
     };
 
     // 複数回答の表示
-    const selectedAnserGet = (selectedChecks) => {
+    const selectedAnserGet = (selectedChecks,setExam) => {
       // 選択した回答を格納する配列
       const selectedAns = []
+      // 正しい回答を格納する配列
+      const answers = []
 
       // querySelectorAllから選択した回答の文字列連結し配列に格納
       if(selectedChecks.length == 0 ){
@@ -47,7 +53,24 @@ const ExamDisplay = () =>{
           selectedAns.push(check.value)
               ))}
 
-        return `選択した回答：${selectedAns}`;   
+              setExam.selectAnswers.map((selectAnswer) => { 
+                if(selectAnswer.correctAnswer){
+                  answers.push(selectAnswer.item);
+                }
+              } );
+        
+              setAnsDisplay(`正しい回答：${answers}/選択した回答：${selectedAns}`);
+              if(answers.toString() == selectedAns.toString()){
+                settrueOrFalseDisplay("正解！！");
+                // alert(`正しい回答：${answers}`);
+                // alert(`選択した回答：${selectedAns.toString()}`) ;
+                // alert(`正解！`);
+                }else{
+                  settrueOrFalseDisplay("残念…");
+                  // alert(`正しい回答：${answers}`);
+                  // alert(`選択した回答：${selectedAns.toString()}`) ;
+                  // alert(`誤り！`);
+              }
  
     };
 
@@ -56,9 +79,9 @@ const ExamDisplay = () =>{
         let checks = document.querySelectorAll(
             `input[name=${name}]:checked`
           );
-          alert(`${selectedAnserGet(checks)}`);
-          // 回答取得確認用
-          alert(`${correctAnswerSetCreate(setExam)}`);
+          selectedAnserGet(checks,setExam);
+          // // 回答取得確認用
+          // alert(`${correctAnswerSetCreate(setExam)}`);
     };
     console.log(examData);
     console.log(examData.setExams[0].setitem);
@@ -93,7 +116,9 @@ const ExamDisplay = () =>{
       </form>
       <button onClick={()=>selectedCheck(examData.setExams[0],examData.setExams[0].setItem)}>確認</button>
     </div>
-
+    <div>{ansDisplay}</div>
+    <div>{trueOrFalseDisplay}</div>
+    
     </>
 );
 };
