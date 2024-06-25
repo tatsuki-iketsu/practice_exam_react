@@ -9,10 +9,11 @@ const NO_SELECTED = "回答が選択されていません"
 const ExamDisplay = () =>{
   const [ansDisplay,setAnsDisplay] = useState(["選択してボタンを押してください1","選択してボタンを押してください2","3","4","5"]);
   const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState(["ここに回答が表示されます1","ここに回答が表示されます2","3","4","5"]);
+  // const [examData,setExamData] = useState(Data); TODO リセット用
 
   
-// シャッフル
-// シャッフル
+// 内側シャッフル　TODO：外側に入れる
+const abc = ["A","B","C","D","E","F","G"];
 const shuffleExam =(selectAnswers)=> {
     for (let ia = selectAnswers.length - 1; ia > 0; ia--) {
       const jb = Math.floor(Math.random() * (ia + 1));
@@ -21,23 +22,22 @@ const shuffleExam =(selectAnswers)=> {
     selectAnswers.map((selectAnswer,i)=>{
       selectAnswer.item = abc[i];
     })
-    return selectAnswers;
   }
 
-const abc = ["A","B","C","D","E","F","G"];
+// 外側シャッフル
 const shuffleExam1=(examData)=> {
     for (let i = examData.setExams.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [examData.setExams[i], examData.setExams[j]] = [examData.setExams[j], examData.setExams[i]];
+      shuffleExam(examData.setExams[i].selectAnswers);
     }
+    // console.log(examData1);
+    // setExamData(examData1);
+    
     return examData;
   }
   // 問題と回答のセット
-    const examData = Data;
-    console.log('シャッフルゲーム');
-    console.log(examData.setExams[0].selectAnswers);
-    // shuffleExam(examData.setExams[0].selectAnswers);
-    // shuffleExam(examData.setExams.selectAnswers);
+    const examData = Data;　// ここでusestateを入れるといいのかも
     // 回答取得
       // 回答を取得し配列に格納
       const correctAnswerSetCreate = (setExam)=> {
@@ -50,11 +50,6 @@ const shuffleExam1=(examData)=> {
         }
       } );
 
-      
-      // 確認用
-      alert(`回答：${answers}`);
-      // 確認用
-    
     }
     
     // 単一回答の表示
@@ -65,7 +60,6 @@ const shuffleExam1=(examData)=> {
 
     // 複数回答の表示
     const selectedAnserGet = (selectedChecks,setExam,index) => {
-      alert(`index：${index}`);
 
       // 選択した回答を格納する配列
       const selectedAns = []
@@ -91,15 +85,8 @@ const shuffleExam1=(examData)=> {
               setAnsDisplay(ansDisplay.map((ans, i) => (i === index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
               if(answers.toString() == selectedAns.toString()){
                 settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
-                // alert(`正しい回答：${answers}`);
-                // alert(`選択した回答：${selectedAns.toString()}`) ;
-                // alert(`正解！`);
                 }else{
                   settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
-                  alert(`index：${index}`);
-                  alert(`確認：${trueOrFalseDisplay}`);
-                  // alert(`選択した回答：${selectedAns.toString()}`) ;
-                  // alert(`誤り！`);
               }
  
     };
@@ -110,8 +97,6 @@ const shuffleExam1=(examData)=> {
             `input[name=${name}]:checked`
           );
           selectedAnserGet(checks,setExam,index);
-          // // 回答取得確認用
-          // alert(`${correctAnswerSetCreate(setExam)}`);
     };
     console.log(examData);
     console.log(examData.setExams[0].setitem);
@@ -124,13 +109,6 @@ const shuffleExam1=(examData)=> {
     {/* <input type="button" onclick={shuffleExam(examData.setExams[0].selectAnswers)} > */}
     {/* <input type="button" onClick={shuffleExam(examData.setExams[0].selectAnswers)} value="リセット" /> */}
     <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
-
-    {/* <input type="button" onClick={()=>shuffleExam(examData.setExams[0].selectAnswers)}>リセット</input> */}
-    {/* <div>
-    <input type="radio" id="a" name="drone" value="huey" />
-    <label htmlFor={examData.setExams[0].selectAnswers[0].item}><span>{examData.setExams[0].selectAnswers[0].item}:{examData.setExams[0].selectAnswers[0].content}</span></label>
-    <button onClick={()=>onClickAnser(examData.setExams[0].selectAnswers[0])}>回答を確認する</button>
-  </div> */}
 
   {examData.setExams.map((setExam,index) => (
     <>
