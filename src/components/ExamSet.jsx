@@ -1,12 +1,14 @@
 import React from "react";
 import Data from '../exam/exam.json';
 import { useState } from 'react';
+// import { useEffect } from 'react';
 
 const NO_SELECTED = "回答が選択されていません"
 
 const ExamDisplay = () =>{
   const [ansDisplay,setAnsDisplay] = useState("選択してボタンを押してください");
   const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState("ここに回答が表示されます");
+  // const [examData,setExamData] = useState(Data);
 
 // シャッフル
 const abc = ["A","B","C","D","E","F","G"];
@@ -24,7 +26,7 @@ const shuffleExam=(selectAnswers)=> {
     const examData = Data;
     console.log('シャッフルゲーム');
     console.log(examData.setExams[0].selectAnswers);
-    shuffleExam(examData.setExams[0].selectAnswers);
+    // shuffleExam(examData.setExams[0].selectAnswers);
     // shuffleExam(examData.setExams.selectAnswers);
     // 回答取得
       // 回答を取得し配列に格納
@@ -100,10 +102,17 @@ const shuffleExam=(selectAnswers)=> {
     };
     console.log(examData);
     console.log(examData.setExams[0].setitem);
+
+
+
     return (
     <>
     <p>ここに問題文を記述します。</p>
-    {/* <button onClick={()=>shuffleExam(examData.setExams[0].selectAnswers)}>リセット</button> */}
+    {/* <input type="button" onclick={shuffleExam(examData.setExams[0].selectAnswers)} > */}
+    {/* <input type="button" onClick={shuffleExam(examData.setExams[0].selectAnswers)} value="リセット" /> */}
+    <input type="button" onClick={() => shuffleExam(examData.setExams[0].selectAnswers)} value="リセット" />
+
+    {/* <input type="button" onClick={()=>shuffleExam(examData.setExams[0].selectAnswers)}>リセット</input> */}
     {/* <div>
     <input type="radio" id="a" name="drone" value="huey" />
     <label htmlFor={examData.setExams[0].selectAnswers[0].item}><span>{examData.setExams[0].selectAnswers[0].item}:{examData.setExams[0].selectAnswers[0].content}</span></label>
