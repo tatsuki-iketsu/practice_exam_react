@@ -101,7 +101,18 @@ const shuffleExam1=(examData)=> {
     console.log(examData);
     console.log(examData.setExams[0].setitem);
 
-
+    // 改行変換
+    const MultiLineBody = ( body ) => {
+      const texts = body.split('\n').map((item, index) => {
+        return (
+          <React.Fragment key={index}>
+            {item}
+            <br />
+          </React.Fragment>
+        );
+      });
+      return <div>{texts}</div>;
+    };
 
     return (
     <>
@@ -114,7 +125,7 @@ const shuffleExam1=(examData)=> {
     <>
   <div>
   <form name= {setExam.setItem}>
-    <p>問題：{setExam.question}</p>
+    <p>問題：{MultiLineBody(setExam.question)}</p>
       {setExam.selectAnswers.map((Answer) => (
         <>
           <p>

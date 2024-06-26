@@ -1,0 +1,56 @@
+{"setExams":[{
+    "examId":"00001",
+    "setItem" : "問題1",
+    "question" : "問題内容",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "選択肢1：正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "選択肢2：正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"C",
+          "content" : "選択肢3：間違い",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "選択肢4：間違い",
+          "correctAnswer":false
+      }
+  ]
+},{
+    "examId":"00002",
+    "setItem" : "問題2",
+    "question" : "問題内容",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "選択肢1正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "選択肢2正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"C",
+          "content" : "選択肢3正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "選択肢4間違い",
+          "correctAnswer":false
+      }
+  ]
+}]
+}

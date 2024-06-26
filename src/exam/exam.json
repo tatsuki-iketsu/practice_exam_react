@@ -1,32 +1,74 @@
 {"setExams":[{
     "examId":"00001",
     "setItem" : "問題1",
-    "question" : "問題内容",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n public　class　Main　{\n　　　　　public　static　void　main(String[]　args)　{\n　　　　　　　　　String　s1　=　\"Java\";\n　　　　　　　　　String　s2　=　new　String(\"Java\");\n　　　　　　　　　String　s3　=　\"Java\";\n　　　　　　　　　String　s4　=　new　String(\"Java\").intern();\n　　　　　　　　　String　s5　=　\"java\";\n　　　　　　　　　String　s6　=　\"\"\"\n　　　　　　　　　　　　　　　　　java\n　　　　　　　　　　　　　　　　　\"\"\";\n　　　　　　　　　System.out.println((s1　==　s2)　+　\":\"　+　(s1　==　s3)\n　　　　　　　　　　　　　　　　　　　+　\":\"　+　(s3　==　s4)　+　\":\"　+　(s3　==　s5)\n　　　　　　　　　　　　　　　　　　　+　\":\"　+　(s5　==　s6)　+\":\"　+　(s5.equals(s6)));\n　　　　　}\n　}",
     "multipleAnswers" : true,
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "選択肢1：正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"B",
-          "content" : "選択肢2：正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"C",
-          "content" : "選択肢3：間違い",
+          "content" : "true:true:true:false:false:falseが出力される",
           "correctAnswer":false
       },
       {
+          "item" :"B",
+          "content" : "true:true:true:false:false:trueが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "false:true:true:false:false:falseが出力される",
+          "correctAnswer":true
+      },
+      {
           "item" :"D",
-          "content" : "選択肢4：間違い",
+          "content" : "true:true:true:false:false:trueが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "false:true:false:false:false:trueが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"F",
+          "content" : "false:true:true:false:true:trueが出力される",
           "correctAnswer":false
       }
   ]
 },{
     "examId":"00002",
+    "setItem" : "問題2",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。public　class　Main　{\n　　　　public　static　void　main(String[]　args)　{\n　　　　　　　　String　s1　=　\"java\";\n　　　　　　　　String　s2　=　\"\"\"\n　　　　　　　　　　　　　　　　java\n　　　　　　　　　　　　　　　　\"\"\";\n　　　　　　　　System.out.println((s1　==　s2)　+\":\"　+　(s1.equals(s2)));\n　　　　}\n}",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "true:trueが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"B",
+          "content" : "true:falseが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "false:falseが出力される",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "false:trueが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "コンパイルエラーになる",
+          "correctAnswer":false
+      }
+  ]
+},{
+    "examId":"00003",
     "setItem" : "問題2",
     "question" : "問題内容",
     "multipleAnswers" : true,
