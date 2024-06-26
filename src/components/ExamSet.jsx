@@ -9,9 +9,8 @@ const NO_SELECTED = "回答が選択されていません"
 const ExamDisplay = () =>{
   const [ansDisplay,setAnsDisplay] = useState(["選択してボタンを押してください1","選択してボタンを押してください2","3","4","5"]);
   const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState(["ここに回答が表示されます1","ここに回答が表示されます2","3","4","5"]);
-  // const [examData,setExamData] = useState(Data); TODO リセット用
+  const [examData,setExamData] = useState(Data); //TODO リセット用
 
-  
 // 内側シャッフル　TODO：外側に入れる
 const abc = ["A","B","C","D","E","F","G"];
 const shuffleExam =(selectAnswers)=> {
@@ -33,11 +32,13 @@ const shuffleExam1=(examData)=> {
     }
     // console.log(examData1);
     // setExamData(examData1);
-    
-    return examData;
+    const shuffleExamData = { ...examData};
+    setExamData((examData) =>{return shuffleExamData});
+    // console.log(examData);
+    // return examData;
   }
   // 問題と回答のセット
-    const examData = Data;　// ここでusestateを入れるといいのかも
+    // const examData = Data;　// ここでusestateを入れるといいのかも
     // 回答取得
       // 回答を取得し配列に格納
       const correctAnswerSetCreate = (setExam)=> {
