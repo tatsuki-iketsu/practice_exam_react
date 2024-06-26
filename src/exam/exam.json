@@ -33,22 +33,22 @@
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "選択肢1",
+          "content" : "選択肢1正解",
           "correctAnswer":true
       },
       {
           "item" :"B",
-          "content" : "選択肢2",
+          "content" : "選択肢2正解",
           "correctAnswer":true
       },
       {
           "item" :"C",
-          "content" : "選択肢3",
-          "correctAnswer":false
+          "content" : "選択肢3正解",
+          "correctAnswer":true
       },
       {
           "item" :"D",
-          "content" : "選択肢4",
+          "content" : "選択肢4間違い",
           "correctAnswer":false
       }
   ]

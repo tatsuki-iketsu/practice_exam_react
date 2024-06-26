@@ -13,7 +13,7 @@ const App =() =>{
     const onClickshowFlugCjange = ()=> setTextShowFlag(!textShowFlug) ;
     return (
         <>
-                <h1 style={{color:'pink' }}>問題</h1>
+                {/* <h1 style={{color:'pink' }}>問題</h1>
                 <ColorfulMessage color='green' message='世界！'/>
                 <PropsMessage color='green'>PROPS渡し</PropsMessage>
                 <button onClick={onClickButten1}>回答1</button>
@@ -21,9 +21,9 @@ const App =() =>{
                 <button onClick={onClickButten3}>回答3</button>
                 <button onClick={onClickCountUp}>加算</button>
                 <button onClick={onClickshowFlugCjange}>表示非表示</button>
-                <p>{num}</p>
+                <p>{num}</p> */}
                 <ExamDisplay />
-                {textShowFlug && <p>TRUEなので表示されています</p>}
+                {/* {textShowFlug && <p>TRUEなので表示されています</p>} */}
                 
                </>
         );
