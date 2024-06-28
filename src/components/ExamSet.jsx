@@ -10,6 +10,11 @@ const ExamDisplay = () =>{
   const [ansDisplay,setAnsDisplay] = useState([]);
   const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState([]);
   const [examData,setExamData] = useState(Data); //TODO リセット用
+  const [allExam,setallExam] = useState(0); //合計数
+  const [allTrue,setallTrue] = useState(0); //正解数
+  const [allFalse,setallFalse] = useState(0); //不正解数
+
+  // 初回シャッフル
   useEffect(() => {
     shuffleExam1(examData);
   }, []);
@@ -53,6 +58,10 @@ const shuffleExam1=(examData)=> {
     };
     setAnsDisplay(ansDisplayA);
     settrueOrFalseDisplay(ansDisplayB);
+    const all = examData.setExams.length;
+    setallExam(all);
+    setallTrue(0);
+    setallFalse(0);
     alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
   }
   // 問題と回答のセット
@@ -104,9 +113,11 @@ const shuffleExam1=(examData)=> {
               setAnsDisplay(ansDisplay.map((ans, i) => (i === index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
               if(answers.toString() == selectedAns.toString()){
                 settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
+                setallTrue(allTrue+1);
                 }else{
                   settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
-              }
+                  setallFalse(allFalse+1);
+                }
  
     };
 
@@ -167,7 +178,10 @@ const shuffleExam1=(examData)=> {
       <div>{trueOrFalseDisplay[index]}</div>
       </>
     ))}
-      
+      <p>残問題数：{allExam-allTrue-allFalse}</p>
+      <p>正解数：{allTrue}</p>
+      <p>不正解数：{allFalse}</p>
+      <p>正解率：{allTrue/(allTrue+allFalse)*100}%</p>      
       </>
 );
 };
