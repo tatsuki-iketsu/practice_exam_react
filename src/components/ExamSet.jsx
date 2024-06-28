@@ -1,15 +1,19 @@
 import React from "react";
 import Data from '../exam/exam.json';
 import { useState } from 'react';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const NO_SELECTED = "回答が選択されていません"
 // const [examData,setExamData] = useState(Data);
 
 const ExamDisplay = () =>{
-  const [ansDisplay,setAnsDisplay] = useState(["選択してボタンを押してください1","選択してボタンを押してください2","3","4","5"]);
-  const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState(["ここに回答が表示されます1","ここに回答が表示されます2","3","4","5"]);
+  const [ansDisplay,setAnsDisplay] = useState([]);
+  const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState([]);
   const [examData,setExamData] = useState(Data); //TODO リセット用
+  useEffect(() => {
+    shuffleExam1(examData);
+  }, []);
+
 
 // 内側シャッフル　TODO：外側に入れる
 const abc = ["A","B","C","D","E","F","G"];
@@ -25,6 +29,7 @@ const shuffleExam =(selectAnswers)=> {
 
 // 外側シャッフル
 const shuffleExam1=(examData)=> {
+
     for (let i = examData.setExams.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [examData.setExams[i], examData.setExams[j]] = [examData.setExams[j], examData.setExams[i]];
@@ -36,6 +41,19 @@ const shuffleExam1=(examData)=> {
     setExamData((examData) =>{return shuffleExamData});
     // console.log(examData);
     // return examData;
+    let ansDisplayA = [];
+    let ansDisplayB = [];
+    for(let i = 0; i < examData.setExams.length;i++){
+      const setA = `問題${i}の回答がここに表示されます`;
+      const setB = '問題${i}が正解か不正解かが表示されます';
+      // ansDisplayA.add( '問題の回答がここに表示されます');
+      ansDisplayA = [...ansDisplayA,`(問題${i+1}の回答がここに表示されます)`]
+      ansDisplayB = [...ansDisplayB,`(問題${i+1}の正解/不正解がここに表示されます)`]
+
+    };
+    setAnsDisplay(ansDisplayA);
+    settrueOrFalseDisplay(ansDisplayB);
+    alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
   }
   // 問題と回答のセット
     // const examData = Data;　// ここでusestateを入れるといいのかも
@@ -112,7 +130,7 @@ const shuffleExam1=(examData)=> {
           </React.Fragment>
         );
       });
-      return <div>{texts}</div>;
+      return <span>{texts}</span>;
     };
 
     return (
@@ -126,6 +144,7 @@ const shuffleExam1=(examData)=> {
     <>
   <div>
   <form name= {setExam.setItem}>
+    <h2>問題</h2>
     <p>問題：{MultiLineBody(setExam.question)}</p>
       {setExam.selectAnswers.map((Answer) => (
         <>
@@ -136,13 +155,13 @@ const shuffleExam1=(examData)=> {
               id = {setExam.setItem + Answer.item}
               value ={Answer.item}
             />
-            <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{Answer.content}</label>
+            <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label>
           </p>
         </>
       ))}
         
         </form>
-        <button onClick={()=>selectedCheck(setExam,setExam.setItem,index)}>確認</button>
+        <button onClick={()=>selectedCheck(setExam,setExam.setItem,index)}>回答を確認</button>
       </div>
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>

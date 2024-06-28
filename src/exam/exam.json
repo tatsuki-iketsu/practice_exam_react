@@ -38,7 +38,7 @@
 },{
     "examId":"00002",
     "setItem" : "問題2",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。public　class　Main　{\n　　　　public　static　void　main(String[]　args)　{\n　　　　　　　　String　s1　=　\"java\";\n　　　　　　　　String　s2　=　\"\"\"\n　　　　　　　　　　　　　　　　java\n　　　　　　　　　　　　　　　　\"\"\";\n　　　　　　　　System.out.println((s1　==　s2)　+\":\"　+　(s1.equals(s2)));\n　　　　}\n}",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n public　class　Main　{\n　　　　public　static　void　main(String[]　args)　{\n　　　　　　　　String　s1　=　\"java\";\n　　　　　　　　String　s2　=　\"\"\"\n　　　　　　　　　　　　　　　　java\n　　　　　　　　　　　　　　　　\"\"\";\n　　　　　　　　System.out.println((s1　==　s2)　+\":\"　+　(s1.equals(s2)));\n　　　　}\n}",
     "multipleAnswers" : true,
     "selectAnswers" : [
       {
@@ -70,6 +70,234 @@
 },{
     "examId":"00003",
     "setItem" : "問題3",
+    "question" : "問題内容",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "選択肢1正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "選択肢2正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"C",
+          "content" : "選択肢3正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "選択肢4間違い",
+          "correctAnswer":false
+      }
+  ]
+},{
+    "examId":"00004",
+    "setItem" : "問題4",
+    "question" : "抽象クラスの説明で正しいものをすべて選んでください。",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "抽象メソッドを定義できる",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "具象メソッドを定義できる",
+          "correctAnswer":true
+      },
+      {
+          "item" :"C",
+          "content" : "インスタンス化できない",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "抽象メソッドはかならず定義しなければいけない",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "クラス名にinterfaceを記述しなければいけない",
+          "correctAnswer":false
+      },
+      {
+          "item" :"F",
+          "content" : "メンバ変数を定義できない",
+          "correctAnswer":false
+      }
+  ]
+},{
+    "examId":"00005",
+    "setItem" : "問題5",
+    "question" : "抽象クラスの説明で正しいものをすべて選んでください。",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "抽象メソッドを定義できる",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "具象メソッドは定義できない",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "インスタンス化できない",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "抽象メソッドはかならず定義しなければいけない",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "クラス名にabstractを記述しなければいけない",
+          "correctAnswer":true
+      },
+      {
+          "item" :"F",
+          "content" : "抽象メソッドをもつ抽象クラスを継承したら、抽象メソッドをオーバーライドしなければいけない",
+          "correctAnswer":true
+      }
+  ]
+},{
+    "examId":"00006",
+    "setItem" : "問題6",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01　 class　Parent　{ \n 02　　　　　private　static　void　methodA()　{ \n 03　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04　　　　　} \n 05　　　　　private 　void　methodB()　{ \n 06　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07　　　　　} \n 08　} \n 09　class　Child　extends　Parent　{ \n 10　　　　　public　static　void　methodA()　{ \n 11　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12　　　　　} \n 13　　　　　public　void　methodB()　{ \n 14　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15　　　　　} \n 16　} \n 17　public　class　Main　{ \n 18　　　　　public　static　void　main(String[]　args)　{ \n 19　　　　　　　　　Parent　obj　=　new　Child(); \n 20　　　　　　　　　Child.methodA(); \n 21　　　　　　　　　obj.methodB(); \n 22　　　　　} \n 23　}",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "20行目でコンパイルエラーが発生する",
+          "correctAnswer":false
+      },
+      {
+          "item" :"B",
+          "content" : "21行目でコンパイルエラーが発生する",
+          "correctAnswer":true
+      },
+      {
+          "item" :"C",
+          "content" : "次が出力される \n static Child methodA() \n Child#methodB()",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "次が出力される \n static Child methodA() \n Parent#methodB()",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "次が出力される \n static Parent methodA() \n Child#methodB()",
+          "correctAnswer":false
+      }
+  ],
+  "tips" :"コンパイル時点ではobjがParentのため、privateのmethodB()を確認できません"
+},{
+    "examId":"00007",
+    "setItem" : "問題7",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01　 class　Parent　{ \n 02　　　　　public　static　void　methodA()　{ \n 03　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04　　　　　} \n 05　　　　　private 　void　methodB()　{ \n 06　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07　　　　　} \n 08　} \n 09　class　Child　extends　Parent　{ \n 10　　　　　public　static　void　methodA()　{ \n 11　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12　　　　　} \n 13　　　　　public　void　methodB()　{ \n 14　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15　　　　　} \n 16　} \n 17　public　class　Main　{ \n 18　　　　　public　static　void　main(String[]　args)　{ \n 19　　　　　　　　　Parent　obj　=　new　Child(); \n 20　　　　　　　　　Child.methodA(); \n 21　　　　　　　　　obj.methodB(); \n 22　　　　　} \n 23　}",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "20行目でコンパイルエラーが発生する",
+          "correctAnswer":false
+      },
+      {
+          "item" :"B",
+          "content" : "21行目でコンパイルエラーが発生する",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "次が出力される \n static Child methodA() \n Child#methodB()",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "次が出力される \n static Child methodA() \n Parent#methodB()",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "次が出力される \n static Parent methodA() \n Child#methodB()",
+          "correctAnswer":false
+      }
+  ],
+  "tips" :"objがParent型だが、インスタンスはChildなのでChildのmethodB()を呼び出します"
+},{
+    "examId":"00008",
+    "setItem" : "問題8",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01　 class　Parent　{ \n 02　　　　　private　static　void　methodA()　{ \n 03　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04　　　　　} \n 05　　　　　private 　void　methodB()　{ \n 06　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07　　　　　} \n 08　} \n 09　class　Child　extends　Parent　{ \n 10　　　　　public　static　void　methodA()　{ \n 11　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12　　　　　} \n 13　　　　　public　void　methodB()　{ \n 14　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15　　　　　} \n 16　} \n 17　public　class　Main　{ \n 18　　　　　public　static　void　main(String[]　args)　{ \n 19　　　　　　　　　Parent　obj　=　new　Child(); \n 20　　　　　　　　　Child.methodA(); \n 21　　　　　　　　　obj.methodB(); \n 22　　　　　} \n 23　}",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "20行目でコンパイルエラーが発生する",
+          "correctAnswer":false
+      },
+      {
+          "item" :"B",
+          "content" : "21行目でコンパイルエラーが発生する",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "次が出力される \n static Child methodA() \n Child#methodB()",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "次が出力される \n static Child methodA() \n Parent#methodB()",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "次が出力される \n static Parent methodA() \n Child#methodB()",
+          "correctAnswer":false
+      }
+  ],
+  "tips" :"objがChild型のため、ChildのmethodB()を呼び出します"
+},{
+    "examId":"0000x",
+    "setItem" : "問題x",
+    "question" : "問題内容",
+    "multipleAnswers" : true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "選択肢1正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "選択肢2正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"C",
+          "content" : "選択肢3正解",
+          "correctAnswer":true
+      },
+      {
+          "item" :"D",
+          "content" : "選択肢4間違い",
+          "correctAnswer":false
+      }
+  ],
+  "tips" :"コンパイル時点ではobjがParentのため、privateのmethodB()を確認できません"
+},{
+    "examId":"0000x",
+    "setItem" : "問題x",
     "question" : "問題内容",
     "multipleAnswers" : true,
     "selectAnswers" : [
