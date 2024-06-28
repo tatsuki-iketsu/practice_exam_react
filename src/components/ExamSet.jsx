@@ -7,12 +7,13 @@ const NO_SELECTED = "回答が選択されていません"
 // const [examData,setExamData] = useState(Data);
 
 const ExamDisplay = () =>{
-  const [ansDisplay,setAnsDisplay] = useState([]);
-  const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState([]);
-  const [examData,setExamData] = useState(Data); //TODO リセット用
-  const [allExam,setallExam] = useState(0); //合計数
-  const [allTrue,setallTrue] = useState(0); //正解数
-  const [allFalse,setallFalse] = useState(0); //不正解数
+  const [examData,setExamData] = useState(Data);                     // 問題を格納
+  const [ansDisplay,setAnsDisplay] = useState([]);                   // 正解と選択肢を格納
+  const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState([]);   // 正解か不正解かを格納
+  const [tipDisplay,setTipDisplay] = useState([]);                   // 解説を格納
+  const [allExam,setallExam] = useState(0);                          // 合計数
+  const [allTrue,setallTrue] = useState(0);                          // 正解数
+  const [allFalse,setallFalse] = useState(0);                        // 不正解数
 
   // 初回シャッフル
   useEffect(() => {
@@ -40,24 +41,19 @@ const shuffleExam1=(examData)=> {
       [examData.setExams[i], examData.setExams[j]] = [examData.setExams[j], examData.setExams[i]];
       shuffleExam(examData.setExams[i].selectAnswers);
     }
-    // console.log(examData1);
-    // setExamData(examData1);
     const shuffleExamData = { ...examData};
     setExamData((examData) =>{return shuffleExamData});
-    // console.log(examData);
-    // return examData;
-    let ansDisplayA = [];
-    let ansDisplayB = [];
+
+    // 回答、正解不正解、解説の格納
+    let c_ansDisplay = [];
+    let c_trueOrFalseDisplay = [];
     for(let i = 0; i < examData.setExams.length;i++){
-      const setA = `問題${i}の回答がここに表示されます`;
-      const setB = '問題${i}が正解か不正解かが表示されます';
-      // ansDisplayA.add( '問題の回答がここに表示されます');
-      ansDisplayA = [...ansDisplayA,`(問題${i+1}の回答がここに表示されます)`]
-      ansDisplayB = [...ansDisplayB,`(問題${i+1}の正解/不正解がここに表示されます)`]
+      c_ansDisplay = [...c_ansDisplay,`(問題${i+1}の回答がここに表示されます)`]
+      c_trueOrFalseDisplay = [...c_trueOrFalseDisplay,`(問題${i+1}の正解/不正解がここに表示されます)`]
 
     };
-    setAnsDisplay(ansDisplayA);
-    settrueOrFalseDisplay(ansDisplayB);
+    setAnsDisplay(c_ansDisplay);
+    settrueOrFalseDisplay(c_trueOrFalseDisplay);
     const all = examData.setExams.length;
     setallExam(all);
     setallTrue(0);
