@@ -47,13 +47,19 @@ const shuffleExam1=(examData)=> {
     // 回答、正解不正解、解説の格納
     let c_ansDisplay = [];
     let c_trueOrFalseDisplay = [];
+    let c_tipDisplay = [];
     for(let i = 0; i < examData.setExams.length;i++){
       c_ansDisplay = [...c_ansDisplay,`(問題${i+1}の回答がここに表示されます)`]
       c_trueOrFalseDisplay = [...c_trueOrFalseDisplay,`(問題${i+1}の正解/不正解がここに表示されます)`]
-
+      c_tipDisplay = [...c_tipDisplay,`(問題${i+1}の解説がここに表示されます)`] 
+      // c_tipDisplay = [...c_tipDisplay,examData.setExams[i].tip] 
     };
     setAnsDisplay(c_ansDisplay);
     settrueOrFalseDisplay(c_trueOrFalseDisplay);
+    setTipDisplay(c_tipDisplay);
+    // const [tipDisplay,setTipDisplay] = useState([]);                   // 解説を格納
+
+    // 正解率の初期化
     const all = examData.setExams.length;
     setallExam(all);
     setallTrue(0);
@@ -106,14 +112,17 @@ const shuffleExam1=(examData)=> {
                 }
               } );
         
+              // displayにセット
               setAnsDisplay(ansDisplay.map((ans, i) => (i === index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
               if(answers.toString() == selectedAns.toString()){
-                settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
-                setallTrue(allTrue+1);
+                  settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
+                  setallTrue(allTrue+1);
                 }else{
                   settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
                   setallFalse(allFalse+1);
                 }
+                setTipDisplay(tipDisplay.map((tip, i) => (i == index ? MultiLineBody(setExam.tip) : tip)));
+           
  
     };
 
@@ -172,6 +181,7 @@ const shuffleExam1=(examData)=> {
       </div>
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>
+      <div>{tipDisplay[index]}</div>
       </>
     ))}
       <p>残問題数：{allExam-allTrue-allFalse}</p>

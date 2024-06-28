@@ -278,35 +278,7 @@
     "setItem" : "問題x",
     "question" : "問題内容",
     "multipleAnswers" : true,
-    "tip" :"コンパイル時点ではobjがParentのため、privateのmethodB()を確認できません",
-    "selectAnswers" : [
-      {
-          "item" :"A",
-          "content" : "選択肢1正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"B",
-          "content" : "選択肢2正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"C",
-          "content" : "選択肢3正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"D",
-          "content" : "選択肢4間違い",
-          "correctAnswer":false
-      }
-  ]
-},{
-    "examId":"0000x",
-    "setItem" : "問題x",
-    "question" : "問題内容",
-    "multipleAnswers" : true,
-    "tip":"作成中",
+    "tip":"作成中 \n aaaa",
     "selectAnswers" : [
       {
           "item" :"A",
