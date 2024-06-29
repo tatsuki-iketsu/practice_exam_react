@@ -8,6 +8,7 @@ const NO_SELECTED = "回答が選択されていません"
 
 const ExamDisplay = () =>{
   const [examData,setExamData] = useState(Data);                     // 問題を格納
+  const [examDisabled,setExamDisabled] = useState([]);               // 問題の回答ボタン表示非表示を格納
   const [ansDisplay,setAnsDisplay] = useState([]);                   // 正解と選択肢を格納
   const [trueOrFalseDisplay,settrueOrFalseDisplay] = useState([]);   // 正解か不正解かを格納
   const [tipDisplay,setTipDisplay] = useState([]);                   // 解説を格納
@@ -54,15 +55,18 @@ const shuffleExam1=(examData,name)=> {
     setExamData((examData) =>{return shuffleExamData});
 
     // 回答、正解不正解、解説の格納
+    let c_examDisabled = [];
+    let c_tipDisplay = [];
     let c_ansDisplay = [];
     let c_trueOrFalseDisplay = [];
-    let c_tipDisplay = [];
     for(let i = 0; i < examData.setExams.length;i++){
+      c_examDisabled = [,...c_examDisabled,false];
       c_ansDisplay = [...c_ansDisplay,`(問題${i+1}の回答がここに表示されます)`]
       c_trueOrFalseDisplay = [...c_trueOrFalseDisplay,`(問題${i+1}の正解/不正解がここに表示されます)`]
       c_tipDisplay = [...c_tipDisplay,`(問題${i+1}の解説がここに表示されます)`] 
       // c_tipDisplay = [...c_tipDisplay,examData.setExams[i].tip] 
     };
+    setExamDisabled(c_examDisabled);
     setAnsDisplay(c_ansDisplay);
     settrueOrFalseDisplay(c_trueOrFalseDisplay);
     setTipDisplay(c_tipDisplay);
@@ -131,7 +135,7 @@ const shuffleExam1=(examData,name)=> {
               } );
         
               // displayにセット
-              setAnsDisplay(ansDisplay.map((ans, i) => (i === index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
+              setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
               if(answers.toString() == selectedAns.toString()){
                   settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
                   setallTrue(allTrue+1);
@@ -139,6 +143,8 @@ const shuffleExam1=(examData,name)=> {
                   settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
                   setallFalse(allFalse+1);
                 }
+                // ボタン非活性化と解説セット
+                setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
                 setTipDisplay(tipDisplay.map((tip, i) => (i == index ? MultiLineBody(setExam.tip) : tip)));
            
  
@@ -193,7 +199,7 @@ const shuffleExam1=(examData,name)=> {
       ))}
         
         </form>
-        <button onClick={()=>selectedCheck(setExam,setExam.setItem,index)}>回答を確認</button>
+        <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答を確認</button>
       </div>
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>

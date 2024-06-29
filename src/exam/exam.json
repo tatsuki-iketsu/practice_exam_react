@@ -520,7 +520,7 @@
 },{
     "examId":"00015",
     "setItem" : "問題15",
-    "question" : "次からコンパイルが成功する記述を3つ選んでください \n  \n 01|　public class Sample { \n 02|　 \n 03|　　public static void main(String[] args) { \n 04|　　　int[][] A = {{10,100,1000,},{'X','Y','X'}}; \n 05|　　　boolean[][] B = new boolean[1][2]; \n 06|　　　char[][] C = new char[3][3] {{'1','2','3'},{'X','Y','Z'}}; \n 07|　　　Double[][] D = {{0.02,0.2e-2},{Math.floor(3.14),Math.floor(3.14)}}; \n 08|　　　char E[][] =new char[1][1]; \n 09|　　　E[0][0] = (char)100; \n 10|　　　Object[][] F = {{},{\"Java\",17}}; \n 11|　　} \n 12|　 \n 13|　} \n ",
+    "question" : "次からコンパイルが成功する記述を4つ選んでください \n  \n 01|　public class Sample { \n 02|　 \n 03|　　public static void main(String[] args) { \n 04|　　　int[][] A = {{10,100,1000,},{'X','Y','X'}}; \n 05|　　　boolean[][] B = new boolean[1][2]; \n 06|　　　char[][] C = new char[3][3] {{'1','2','3'},{'X','Y','Z'}}; \n 07|　　　Double[][] D = {{0.02,0.2e-2},{Math.floor(3.14),Math.floor(3.14)}}; \n 08|　　　char E[][] =new char[1][1]; \n 09|　　　E[0][0] = (char)100; \n 10|　　　Object[][] F = {{},{\"Java\",17}}; \n 11|　　} \n 12|　 \n 13|　} \n ",
     "multipleAnswers" : true,
     "tip":"int[][] A：char型リテラルがint型に暗黙の型変換で代入される\nboolean B：boolean型配列にboolean配列の代入はできる\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.floorはdouble型が戻り値なので代入できる\nchar E[][]：配列の指定は識別子の前後どちらでもよい、int型が(char)でchar型に変換される※(char)はなくてもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
     "ansLock" :true,
@@ -538,12 +538,12 @@
       {
           "item" :"C",
           "content" : "char[][] C（06行目）",
-          "correctAnswer":false
+          "correctAnswer":true
       },
       {
           "item" :"D",
           "content" : "Double[][] D（07行目）",
-          "correctAnswer":false
+          "correctAnswer":true
       },
       {
           "item" :"E",
