@@ -23,23 +23,32 @@ const ExamDisplay = () =>{
 
 // 内側シャッフル　TODO：外側に入れる
 const abc = ["A","B","C","D","E","F","G"];
-const shuffleExam =(selectAnswers)=> {
+const shuffleExamAns =(selectAnswers,ansLock)=> {
+  // lockがfalseならシャッフル
+  if(!ansLock){
     for (let ia = selectAnswers.length - 1; ia > 0; ia--) {
       const jb = Math.floor(Math.random() * (ia + 1));
       [selectAnswers[ia], selectAnswers[jb]] = [selectAnswers[jb], selectAnswers[ia]];
     }
-    selectAnswers.map((selectAnswer,i)=>{
-      selectAnswer.item = abc[i];
-    })
   }
+  
+  // 選択肢のアルファベットは必ず実施
+  selectAnswers.map((selectAnswer,i)=>{
+    selectAnswer.item = abc[i];
+  })
+}
 
 // 外側シャッフル
-const shuffleExam1=(examData)=> {
+const shuffleExam1=(examData,name)=> {
 
+          // // チェックをすべて外す
+          const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+          checkboxes.forEach(checkbox => checkbox.checked = false);
+          
     for (let i = examData.setExams.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [examData.setExams[i], examData.setExams[j]] = [examData.setExams[j], examData.setExams[i]];
-      shuffleExam(examData.setExams[i].selectAnswers);
+        shuffleExamAns(examData.setExams[i].selectAnswers,examData.setExams[i].ansLock);
     }
     const shuffleExamData = { ...examData};
     setExamData((examData) =>{return shuffleExamData});
@@ -65,6 +74,15 @@ const shuffleExam1=(examData)=> {
     setallTrue(0);
     setallFalse(0);
     alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
+
+
+        // const allRemoveCheck = (setExam,input)=> {    
+      //     let checks = document.querySelectorAll(
+      //         `input[name=${setExamData.name}]:checked`
+      //       );
+      //       selectedAnserGet(checks,setExam);
+      // // };
+  
   }
   // 問題と回答のセット
     // const examData = Data;　// ここでusestateを入れるといいのかも
@@ -152,8 +170,6 @@ const shuffleExam1=(examData)=> {
     return (
     <>
     <p>ここに問題文を記述します。</p>
-    {/* <input type="button" onclick={shuffleExam(examData.setExams[0].selectAnswers)} > */}
-    {/* <input type="button" onClick={shuffleExam(examData.setExams[0].selectAnswers)} value="リセット" /> */}
     <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
 
   {examData.setExams.map((setExam,index) => (

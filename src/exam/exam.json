@@ -4,6 +4,7 @@
     "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n public　class　Main　{\n　　　　　public　static　void　main(String[]　args)　{\n　　　　　　　　　String　s1　=　\"Java\";\n　　　　　　　　　String　s2　=　new　String(\"Java\");\n　　　　　　　　　String　s3　=　\"Java\";\n　　　　　　　　　String　s4　=　new　String(\"Java\").intern();\n　　　　　　　　　String　s5　=　\"java\";\n　　　　　　　　　String　s6　=　\"\"\"\n　　　　　　　　　　　　　　　　　java\n　　　　　　　　　　　　　　　　　\"\"\";\n　　　　　　　　　System.out.println((s1　==　s2)　+　\":\"　+　(s1　==　s3)\n　　　　　　　　　　　　　　　　　　　+　\":\"　+　(s3　==　s4)　+　\":\"　+　(s3　==　s5)\n　　　　　　　　　　　　　　　　　　　+　\":\"　+　(s5　==　s6)　+\":\"　+　(s5.equals(s6)));\n　　　　　}\n　}",
     "multipleAnswers" : true,
     "tip" :"作成中",
+    "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -42,6 +43,7 @@
     "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n public　class　Main　{\n　　　　public　static　void　main(String[]　args)　{\n　　　　　　　　String　s1　=　\"java\";\n　　　　　　　　String　s2　=　\"\"\"\n　　　　　　　　　　　　　　　　java\n　　　　　　　　　　　　　　　　\"\"\";\n　　　　　　　　System.out.println((s1　==　s2)　+\":\"　+　(s1.equals(s2)));\n　　　　}\n}",
     "multipleAnswers" : true,
     "tip" :"作成中",
+    "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -72,37 +74,10 @@
 },{
     "examId":"00003",
     "setItem" : "問題3",
-    "question" : "問題内容",
-    "multipleAnswers" : true,
-    "tip" :"作成中",
-    "selectAnswers" : [
-      {
-          "item" :"A",
-          "content" : "選択肢1正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"B",
-          "content" : "選択肢2正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"C",
-          "content" : "選択肢3正解",
-          "correctAnswer":true
-      },
-      {
-          "item" :"D",
-          "content" : "選択肢4間違い",
-          "correctAnswer":false
-      }
-  ]
-},{
-    "examId":"00004",
-    "setItem" : "問題4",
     "question" : "抽象クラスの説明で正しいものをすべて選んでください。",
     "multipleAnswers" : true,
     "tip" :"作成中",
+    "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -136,11 +111,12 @@
       }
   ]
 },{
-    "examId":"00005",
-    "setItem" : "問題5",
+    "examId":"00004",
+    "setItem" : "問題4",
     "question" : "抽象クラスの説明で正しいものをすべて選んでください。",
     "multipleAnswers" : true,
     "tip" :"作成中",
+    "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -174,11 +150,12 @@
       }
   ]
 },{
-    "examId":"00006",
-    "setItem" : "問題6",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01　 class　Parent　{ \n 02　　　　　private　static　void　methodA()　{ \n 03　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04　　　　　} \n 05　　　　　private 　void　methodB()　{ \n 06　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07　　　　　} \n 08　} \n 09　class　Child　extends　Parent　{ \n 10　　　　　public　static　void　methodA()　{ \n 11　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12　　　　　} \n 13　　　　　public　void　methodB()　{ \n 14　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15　　　　　} \n 16　} \n 17　public　class　Main　{ \n 18　　　　　public　static　void　main(String[]　args)　{ \n 19　　　　　　　　　Parent　obj　=　new　Child(); \n 20　　　　　　　　　Child.methodA(); \n 21　　　　　　　　　obj.methodB(); \n 22　　　　　} \n 23　}",
+    "examId":"00005",
+    "setItem" : "問題5",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01|　 class　Parent　{ \n 02|　　　　　private　static　void　methodA()　{ \n 03|　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04|　　　　　} \n 05|　　　　　private 　void　methodB()　{ \n 06|　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07|　　　　　} \n 08|　} \n 09|　class　Child　extends　Parent　{ \n 10|　　　　　public　static　void　methodA()　{ \n 11|　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12|　　　　　} \n 13|　　　　　public　void　methodB()　{ \n 14|　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15|　　　　　} \n 16|　} \n 17|　public　class　Main　{ \n 18|　　　　　public　static　void　main(String[]　args)　{ \n 19|　　　　　　　　　Parent　obj　=　new　Child(); \n 20|　　　　　　　　　Child.methodA(); \n 21|　　　　　　　　　obj.methodB(); \n 22|　　　　　} \n 23|　}",
     "multipleAnswers" : true,
     "tip" :"コンパイル時点ではobjがParent型のため、privateのmethodB()を確認できません",
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -201,17 +178,18 @@
           "correctAnswer":false
       },
       {
-          "item" :"D",
+          "item" :"E",
           "content" : "次が出力される \n static Parent methodA() \n Child#methodB()",
           "correctAnswer":false
       }
   ]
 },{
-    "examId":"00007",
-    "setItem" : "問題7",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01　 class　Parent　{ \n 02　　　　　private　static　void　methodA()　{ \n 03　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04　　　　　} \n 05　　　　　public 　void　methodB()　{ \n 06　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07　　　　　} \n 08　} \n 09　class　Child　extends　Parent　{ \n 10　　　　　public　static　void　methodA()　{ \n 11　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12　　　　　} \n 13　　　　　public　void　methodB()　{ \n 14　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15　　　　　} \n 16　} \n 17　public　class　Main　{ \n 18　　　　　public　static　void　main(String[]　args)　{ \n 19　　　　　　　　　Parent　obj　=　new　Child(); \n 20　　　　　　　　　Child.methodA(); \n 21　　　　　　　　　obj.methodB(); \n 22　　　　　} \n 23　}",
+    "examId":"00006",
+    "setItem" : "問題6",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01|　 class　Parent　{ \n 02|　　　　　private　static　void　methodA()　{ \n 03|　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04|　　　　　} \n 05|　　　　　public 　void　methodB()　{ \n 06|　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07|　　　　　} \n 08|　} \n 09|　class　Child　extends　Parent　{ \n 10|　　　　　public　static　void　methodA()　{ \n 11|　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12|　　　　　} \n 13|　　　　　public　void　methodB()　{ \n 14|　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15|　　　　　} \n 16|　} \n 17|　public　class　Main　{ \n 18|　　　　　public　static　void　main(String[]　args)　{ \n 19|　　　　　　　　　Parent　obj　=　new　Child(); \n 20|　　　　　　　　　Child.methodA(); \n 21|　　　　　　　　　obj.methodB(); \n 22|　　　　　} \n 23|　}",
     "multipleAnswers" : true,
     "tip" :"作成中",
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -234,18 +212,19 @@
           "correctAnswer":false
       },
       {
-          "item" :"D",
+          "item" :"E",
           "content" : "次が出力される \n static Parent methodA() \n Child#methodB()",
           "correctAnswer":false
       }
   ],
   "tips" :"objがParent型だが、インスタンスはChildなのでChildのmethodB()を呼び出します"
 },{
-    "examId":"00008",
-    "setItem" : "問題8",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01　 class　Parent　{ \n 02　　　　　private　static　void　methodA()　{ \n 03　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04　　　　　} \n 05　　　　　private 　void　methodB()　{ \n 06　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07　　　　　} \n 08　} \n 09　class　Child　extends　Parent　{ \n 10　　　　　public　static　void　methodA()　{ \n 11　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12　　　　　} \n 13　　　　　public　void　methodB()　{ \n 14　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15　　　　　} \n 16　} \n 17　public　class　Main　{ \n 18　　　　　public　static　void　main(String[]　args)　{ \n 19　　　　　　　　　Child　obj　=　new　Child(); \n 20　　　　　　　　　Child.methodA(); \n 21　　　　　　　　　obj.methodB(); \n 22　　　　　} \n 23　}",
+    "examId":"00007",
+    "setItem" : "問題7",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01|　 class　Parent　{ \n 02|　　　　　private　static　void　methodA()　{ \n 03|　　　　　　　　　System.out.println(\"static　Parent　methodA()\"); \n 04|　　　　　} \n 05|　　　　　private 　void　methodB()　{ \n 06|　　　　　　　　　System.out.println(\"Parent#methodB()\"); \n 07|　　　　　} \n 08|　} \n 09|　class　Child　extends　Parent　{ \n 10|　　　　　public　static　void　methodA()　{ \n 11|　　　　　　　　　System.out.println(\"static　Child　methodA()\"); \n 12|　　　　　} \n 13|　　　　　public　void　methodB()　{ \n 14|　　　　　　　　　System.out.println(\"Child#methodB()\"); \n 15|　　　　　} \n 16|　} \n 17|　public　class　Main　{ \n 18|　　　　　public　static　void　main(String[]　args)　{ \n 19|　　　　　　　　　Child　obj　=　new　Child(); \n 20|　　　　　　　　　Child.methodA(); \n 21|　　　　　　　　　obj.methodB(); \n 22|　　　　　} \n 23|　}",
     "multipleAnswers" : true,
     "tip" :"作成中",
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -268,38 +247,314 @@
           "correctAnswer":false
       },
       {
-          "item" :"D",
+          "item" :"E",
           "content" : "次が出力される \n static Parent methodA() \n Child#methodB()",
           "correctAnswer":false
       }
   ]
 },{
-    "examId":"0000x",
-    "setItem" : "問題x",
-    "question" : "問題内容",
+    "examId":"00008",
+    "setItem" : "問題8",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n1|　public　class　Sample　{ \n2|　　　　　public　static　void　main(String...　args)　{ \n3|　　　　　　　　　System.out.println(0x00　|　0x00); \n4|　　　　　} \n5|　} \n",
     "multipleAnswers" : true,
-    "tip":"作成中 \n aaaa",
+    "tip":"2行目は可変長の文字列引数なのでコンパイルすると配列文字引数となるのでコンパイルできる \n 3行目は16進数をビット論理演算しており、両方とも0なので0となる \n ※ビット論理演算の参考URL：https://www.javadrive.jp/start/ope/index8.html",
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "選択肢1正解",
-          "correctAnswer":true
+          "content" : "trueが表示される",
+          "correctAnswer":false
       },
       {
           "item" :"B",
-          "content" : "選択肢2正解",
-          "correctAnswer":true
+          "content" : "falseが表示される",
+          "correctAnswer":false
       },
       {
           "item" :"C",
-          "content" : "選択肢3正解",
+          "content" : "0が表示される",
           "correctAnswer":true
       },
       {
           "item" :"D",
-          "content" : "選択肢4間違い",
+          "content" : "1が表示される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "コンパイルエラーになる",
           "correctAnswer":false
       }
+
+  ]
+},{
+    "examId":"00009",
+    "setItem" : "問題09",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n1|　public　class　Sample　{ \n2|　　　　　public　static　void　main(String...　args)　{ \n3|　　　　　　　　　System.out.println(0x00　|　0x1); \n4|　　　　　} \n5|　} \n",
+    "multipleAnswers" : true,
+    "tip":"2行目は可変長の文字列引数なのでコンパイルすると配列文字引数となるのでコンパイルできる \n3行目は16進数をビット論理演算しており、左辺は0、右辺は16進数の1なので論理和は1となる \n※ビット論理演算の参考URL：https://www.javadrive.jp/start/ope/index8.html \n※16進数の参考URL：https://www.rtpro.yamaha.co.jp/RT/docs/misc/number-table.html",
+    "ansLock" :true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "trueが表示される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"B",
+          "content" : "falseが表示される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "0が表示される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "1が表示される",
+          "correctAnswer":true
+      },
+      {
+          "item" :"E",
+          "content" : "コンパイルエラーになる",
+          "correctAnswer":false
+      }
+
+  ]
+},{
+    "examId":"00010",
+    "setItem" : "問題10",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|　public　class　Menu　{ \n 02|　　　　　private　String　name; \n 03|　　　　　void　Menu()　{ \n 04|　　　　　　　　　name　=　\"Something\"; \n 05|　　　　　} \n 06|　　　　　public　Menu(String　name)　{ \n 07|　　　　　　　　　name　=　name; \n 08|　　　　　} \n 09|　　　　　public　String　toString()　{ \n 10|　　　　　　　　　return　\"　Menu:\"　+　name; \n 11|　　　　　} \n 12|　　　　　public　static　void　main(String...args)　{ \n 13|　　　　　　　　　System.out.print(new　Menu()); \n 14|　　　　　　　　　System.out.println(new　Menu(\"Coffee\")); \n 15|　　　　　} \n 16|　}",
+    "multipleAnswers" : true,
+    "tip":"3～5行目はvoidがついているのでコンストラクタではなくメソッドである \n 6～8行目は引数なしのコンストラクタである \n 13行目でnew Menu()のオブジェクトを生成しているが、引数なしのコンストラクタは存在しないのでコンパイルエラーになる \n ",
+    "ansLock" :true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "　Menu:null　Menu:nullが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"B",
+          "content" : "　Menu:Something　Menu:Coffeeが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "　Menu:Something　Menu:Somethingが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "　Menu:Coffee　Menu:Coffeeが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "Menu@24d46ca6が出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"F",
+          "content" : "コンパイルエラーになる",
+          "correctAnswer":true
+      }
+  ]
+},{
+    "examId":"00011",
+    "setItem" : "問題11",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|　public　class　Menu　{ \n 02|　　　　　private　String　name; \n 03|　　　　　void　Menu()　{ \n 04|　　　　　　　　　name　=　\"Something\"; \n 05|　　　　　} \n 06|　　　　　public　Menu(String　name)　{ \n 07|　　　　　　　　　name　=　name; \n 08|　　　　　} \n 09|　　　　　public　String　toString()　{ \n 10|　　　　　　　　　return　\"　Menu:\"　+　name; \n 11|　　　　　} \n 12|　　　　　public　static　void　main(String...args)　{ \n 13|　　　　　　　　　System.out.print(new　Menu(\"Coffee\")); \n 14|　　　　　　　　　System.out.println(new　Menu(\"Coffee\")); \n 15|　　　　　} \n 16|　}",
+    "multipleAnswers" : true,
+    "tip":"6～8行目はStringを引数としたコンストラクタである \n ただしthis.nameではなくnameなので引数nameを代入しているのは2行目メンバ変数nameではなく引数nameである \n またStringのリターンもしていないため、13行目、14行目で呼ばれるのは9行目から10行目のToStringメソッドである \n 9行目から10行目のToStringメソッドでリターンしているのは2行目メンバ変数である \n 2行目メンバ変数は初期値nullのままなので、13行目、14行目の出力はnullとなる",
+    "ansLock" :true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "　Menu:null　Menu:nullが出力される",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "　Menu:Something　Menu:Coffeeが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "　Menu:Something　Menu:Somethingが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "　Menu:Coffee　Menu:Coffeeが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "Menu@24d46ca6が出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"F",
+          "content" : "コンパイルエラーになる",
+          "correctAnswer":false
+      }
+  ]
+},{
+    "examId":"00012",
+    "setItem" : "問題12",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|　public　class　Menu　{ \n 02|　　　　　private　String　name; \n 03|　　　　　void　Menu()　{ \n 04|　　　　　　　　　name　=　\"Something\"; \n 05|　　　　　} \n 06|　　　　　public　Menu(String　name)　{ \n 07|　　　　　　　　　this.name　=　name; \n 08|　　　　　} \n 09|　　　　　public　String　toString()　{ \n 10|　　　　　　　　　return　\"　Menu:\"　+　name; \n 11|　　　　　} \n 12|　　　　　public　static　void　main(String...args)　{ \n 13|　　　　　　　　　System.out.print(new　Menu(\"Coffee\")); \n 14|　　　　　　　　　System.out.println(new　Menu(\"Coffee\")); \n 15|　　　　　} \n 16|　}",
+    "multipleAnswers" : true,
+    "tip":"6～8行目はStringを引数としたコンストラクタである \n 引数nameをthis.nameでメンバ変数nameに代入している \n 13行目、14行目で呼ばれるのは9行目から10行目のToStringメソッドである \n 9行目から10行目のメソッドはToStringがオーバーライドされており、リターンしているのは2行目メンバ変数である \n 13行目、14行目の出力はメンバ変数なのでCoffeeとなる",
+    "ansLock" :true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "　Menu:null　Menu:nullが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"B",
+          "content" : "　Menu:Something　Menu:Coffeeが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "　Menu:Something　Menu:Somethingが出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "　Menu:Coffee　Menu:Coffeeが出力される",
+          "correctAnswer":true
+      },
+      {
+          "item" :"E",
+          "content" : "Menu@24d46ca6が出力される",
+          "correctAnswer":false
+      },
+      {
+          "item" :"F",
+          "content" : "コンパイルエラーになる",
+          "correctAnswer":false
+      }
+  ]
+},{
+    "examId":"00013",
+    "setItem" : "問題13",
+    "question" : "次からコンパイルが成功する記述を3つ選んでください \n  \n 01|　public class Sample { \n 02|　 \n 03|　　public static void main(String[] args) { \n 04|　　　int[][] A = {{10,100,1000,},{'X','Y','X'}}; \n 05|　　　boolean B = new Boolean[1][2]; \n 06|　　　char[][] C = new char[3][3] {{'1','2','3'},{'X','Y','Z'}}; \n 07|　　　Double[][] D = {{0.02,0.2e-2},{Math.floor(3.14),Math.round(3.14)}}; \n 08|　　　char E[][] =new char[1][1]; \n 09|　　　E[0][0] = (char)100; \n 10|　　　Object[][] F = {{},{\"Java\",17}}; \n 11|　　} \n 12|　 \n 13|　} \n ",
+    "multipleAnswers" : true,
+    "tip":"int[][] A：char型リテラルがint型に暗黙の型変換で代入される\nboolean B：boolean型（配列なし）にBoolean（配列）の代入は不可\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.roundはlong型に丸めた値が戻りなので、Double型への代入は変換できないため不可\nchar E[][]：配列の指定は識別子の前後どちらでもよい、int型が(char)でchar型に変換される※(char)はなくてもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
+    "ansLock" :true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "int[][] A（04行目）",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "boolean B（05行目）",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "char[][] C（06行目）",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "Double[][] D（07行目）",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "char E[][]（08,09行目）",
+          "correctAnswer":true
+      },
+      {
+          "item" :"F",
+          "content" : "Object[][] F（10行目）",
+          "correctAnswer":true
+      }      
+  ]
+},{
+    "examId":"00014",
+    "setItem" : "問題14",
+    "question" : "次からコンパイルが成功する記述を3つ選んでください\n\n01|　public class Sample {\n02|　\n03|　　public static void main(String[] args) {\n04|　　　int[][] A = {{10,100,1000,},{'10','100','1000'}};\n05|　　　boolean[][] B = new Boolean[1][2];\n06|　　　char[][] C = new char[3][3] {{'1','2','3'},{'X','Y','Z'}};\n07|　　　Double[][] D = {{0.02,0.2e-2},{Math.floor(3.14),Math.floor(3.14)}};\n08|　　　char [][]E =new char[1][1];\n09|　　　E[0][0] = (char)100;\n10|　　　Object[][] F = {{},{\"Java\",17}};\n11|　　}\n12|　\n13|　}",
+    "multipleAnswers" : true,
+    "tip":"int[][] A：char型に文字列が記述されているた代入め不可\nboolean B：boolean型の配列にBoolean型の配列代入は変換されないため不可\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.floorはdouble型が戻り値なので代入できる\nchar E[][]：配列の指定は識別子の前後どちらでもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
+    "ansLock" :true,
+    "selectAnswers" : [
+        {
+            "item" :"A",
+            "content" : "int[][] A（04行目）",
+            "correctAnswer":false
+        },
+        {
+            "item" :"B",
+            "content" : "boolean B（05行目）",
+            "correctAnswer":false
+        },
+        {
+            "item" :"C",
+            "content" : "char[][] C（06行目）",
+            "correctAnswer":false
+        },
+        {
+            "item" :"D",
+            "content" : "Double[][] D（07行目）",
+            "correctAnswer":true
+        },
+        {
+            "item" :"E",
+            "content" : "char E[][]（08,09行目）",
+            "correctAnswer":true
+        },
+        {
+            "item" :"F",
+            "content" : "Object[][] F（10行目）",
+            "correctAnswer":true
+        }      
+    ]
+},{
+    "examId":"00015",
+    "setItem" : "問題15",
+    "question" : "次からコンパイルが成功する記述を3つ選んでください \n  \n 01|　public class Sample { \n 02|　 \n 03|　　public static void main(String[] args) { \n 04|　　　int[][] A = {{10,100,1000,},{'X','Y','X'}}; \n 05|　　　boolean[][] B = new boolean[1][2]; \n 06|　　　char[][] C = new char[3][3] {{'1','2','3'},{'X','Y','Z'}}; \n 07|　　　Double[][] D = {{0.02,0.2e-2},{Math.floor(3.14),Math.floor(3.14)}}; \n 08|　　　char E[][] =new char[1][1]; \n 09|　　　E[0][0] = (char)100; \n 10|　　　Object[][] F = {{},{\"Java\",17}}; \n 11|　　} \n 12|　 \n 13|　} \n ",
+    "multipleAnswers" : true,
+    "tip":"int[][] A：char型リテラルがint型に暗黙の型変換で代入される\nboolean B：boolean型配列にboolean配列の代入はできる\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.floorはdouble型が戻り値なので代入できる\nchar E[][]：配列の指定は識別子の前後どちらでもよい、int型が(char)でchar型に変換される※(char)はなくてもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
+    "ansLock" :true,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "int[][] A（04行目）",
+          "correctAnswer":true
+      },
+      {
+          "item" :"B",
+          "content" : "boolean B（05行目）",
+          "correctAnswer":false
+      },
+      {
+          "item" :"C",
+          "content" : "char[][] C（06行目）",
+          "correctAnswer":false
+      },
+      {
+          "item" :"D",
+          "content" : "Double[][] D（07行目）",
+          "correctAnswer":false
+      },
+      {
+          "item" :"E",
+          "content" : "char E[][]（08,09行目）",
+          "correctAnswer":true
+      },
+      {
+          "item" :"F",
+          "content" : "Object[][] F（10行目）",
+          "correctAnswer":true
+      }      
   ]
 }]
 }
