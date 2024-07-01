@@ -151,6 +151,16 @@ const shuffleExam1=(examData,name)=> {
     console.log(examData);
     console.log(examData.setExams[0].setitem);
 
+   // 選択肢ごとの解説表示　TODO:色
+  const selectTipsDisplay = (AnswerSelecttips,examDisabledIndex) =>{
+    if(examDisabledIndex){
+      return <span>{AnswerSelecttips}</span>
+    } else {
+      return null
+    }
+
+  }
+
     // 改行変換
     const MultiLineBody = ( body ) => {
       const texts = body.split('\n').map((item, index) => {
@@ -184,6 +194,7 @@ const shuffleExam1=(examData,name)=> {
               value ={Answer.item}
             />
             <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label>
+            {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
           </div>
         </>
       ))}

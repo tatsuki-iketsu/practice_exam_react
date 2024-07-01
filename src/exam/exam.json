@@ -996,7 +996,7 @@
           "item" :"G",
           "content" : "method()の呼び出し方法が適切でないためコンパイルエラーが発生する",
           "correctAnswer":true,
-          "selecttips":"thisはインスタンスメンバを呼び出す際のキーワードで、staticメソッドを呼ぶキーワードではない"
+          "selecttips":"this.はインスタンスメンバを呼び出す際のキーワードで、staticメソッドを呼ぶキーワードではない"
       }
    ]
 },{
@@ -1047,7 +1047,7 @@
           "item" :"G",
           "content" : "method()の呼び出し方法が適切でないためコンパイルエラーが発生する",
           "correctAnswer":true,
-          "selecttips":"thisはインスタンスメンバを呼び出す際のキーワードで、staticメソッドを呼ぶキーワードではない"
+          "selecttips":""
       }
   ]
 }]
