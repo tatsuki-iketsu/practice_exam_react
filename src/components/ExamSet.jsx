@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 const NO_SELECTED = "回答が選択されていません"
-// const [examData,setExamData] = useState(Data);
 
 const ExamDisplay = () =>{
   const [examData,setExamData] = useState(Data);                     // 問題を格納
@@ -23,7 +22,7 @@ const ExamDisplay = () =>{
 
 
 // 内側シャッフル　TODO：外側に入れる
-const abc = ["A","B","C","D","E","F","G"];
+const abc = ["A","B","C","D","E","F","G","H","I"];
 const shuffleExamAns =(selectAnswers,ansLock)=> {
   // lockがfalseならシャッフル
   if(!ansLock){
@@ -78,14 +77,6 @@ const shuffleExam1=(examData,name)=> {
     setallTrue(0);
     setallFalse(0);
     alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
-
-
-        // const allRemoveCheck = (setExam,input)=> {    
-      //     let checks = document.querySelectorAll(
-      //         `input[name=${setExamData.name}]:checked`
-      //       );
-      //       selectedAnserGet(checks,setExam);
-      // // };
   
   }
   // 問題と回答のセット
@@ -167,26 +158,25 @@ const shuffleExam1=(examData,name)=> {
           <React.Fragment key={index}>
             {item}
             <br />
-          </React.Fragment>
+          </React.Fragment>        
         );
       });
-      return <span>{texts}</span>;
+      console.log({texts});
+
+      return <nobr>{texts}</nobr>;
     };
 
     return (
     <>
-    <p>ここに問題文を記述します。</p>
-    <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
-
   {examData.setExams.map((setExam,index) => (
     <>
   <div>
   <form name= {setExam.setItem}>
     <h2>問題</h2>
-    <p>問題：{MultiLineBody(setExam.question)}</p>
+    <p white-space="nowrap">問題：{MultiLineBody(setExam.question)}</p>
       {setExam.selectAnswers.map((Answer) => (
         <>
-          <p>
+          <div>
             <input
               type="checkbox"
               name = {setExam.setItem}
@@ -194,7 +184,7 @@ const shuffleExam1=(examData,name)=> {
               value ={Answer.item}
             />
             <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label>
-          </p>
+          </div>
         </>
       ))}
         
@@ -210,6 +200,7 @@ const shuffleExam1=(examData,name)=> {
       <p>正解数：{allTrue}</p>
       <p>不正解数：{allFalse}</p>
       <p>正解率：{allTrue/(allTrue+allFalse)*100}%</p>      
+      <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
       </>
 );
 };
