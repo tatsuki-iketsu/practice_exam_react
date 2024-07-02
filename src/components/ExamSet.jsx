@@ -173,29 +173,31 @@ const shuffleExam1=(examData,name)=> {
       });
       console.log({texts});
 
-      return <nobr>{texts}</nobr>;
+      return <>{texts}</>;
     };
 
     return (
     <>
+    <h1 id="h1">Java SE silver17 練習問題</h1>
+    <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
   {examData.setExams.map((setExam,index) => (
     <>
   <div>
   <form name= {setExam.setItem}>
-    <h2>問題</h2>
-    <p white-space="nowrap">問題：{MultiLineBody(setExam.question)}</p>
+    <h2>練習問題{index+1}</h2>
+    <p white-space="nowrap">問題内容：{MultiLineBody(setExam.question)}</p>
       {setExam.selectAnswers.map((Answer) => (
         <>
           <div>
-            <input
+           <input
               type="checkbox"
               name = {setExam.setItem}
               id = {setExam.setItem + Answer.item}
               value ={Answer.item}
             />
-            <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label>
+            <label htmlFor={setExam.setItem + Answer.item}><nobr>{Answer.item}：{MultiLineBody(Answer.content)}</nobr></label>
             {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
-          </div>
+            </div>
         </>
       ))}
         
@@ -205,9 +207,10 @@ const shuffleExam1=(examData,name)=> {
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>
       <div>{tipDisplay[index]}</div>
+      <div><a href="#h1">一番上に戻る</a> / <a href="#bottom">一番下に行く</a></div>
       </>
     ))}
-      <p>残問題数：{allExam-allTrue-allFalse}</p>
+      <p id="bottom">残問題数：{allExam-allTrue-allFalse}</p>
       <p>正解数：{allTrue}</p>
       <p>不正解数：{allFalse}</p>
       <p>正解率：{allTrue/(allTrue+allFalse)*100}%</p>      
