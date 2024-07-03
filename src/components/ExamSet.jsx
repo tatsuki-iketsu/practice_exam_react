@@ -188,14 +188,14 @@ const shuffleExam1=(examData,name)=> {
     <p white-space="nowrap">問題内容：{MultiLineBody(setExam.question)}</p>
       {setExam.selectAnswers.map((Answer) => (
         <>
-          <div>
+          <div><nobr>
            <input
               type="checkbox"
               name = {setExam.setItem}
               id = {setExam.setItem + Answer.item}
               value ={Answer.item}
             />
-            <label htmlFor={setExam.setItem + Answer.item}><nobr>{Answer.item}：{MultiLineBody(Answer.content)}</nobr></label>
+            <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label></nobr>
             {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
             </div>
         </>
