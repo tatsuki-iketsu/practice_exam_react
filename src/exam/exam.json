@@ -1135,7 +1135,7 @@
         },
         {
             "item" :"E",
-            "content" : "T\u00A0top\u00A010:\u00A0T\u00A0top\u00A050:\u00A0が出力される",
+            "content" : "T\u00A0top\u00A010:\u00A0T\u00A0top\u00A090:\u00A0が出力される",
             "correctAnswer":false,
             "selecttips":""
         },
@@ -1153,8 +1153,8 @@
         }
     ]
 },{
-    "examId":"00025",
-    "setItem" : "問題25",
+    "examId":"00027",
+    "setItem" : "問題27",
     "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0Top[]\u00A0array\u00A0=\u00A0{\u00A0new\u00A0Top(),\u00A0new\u00A0Bottom()};\n\u00A0\u00A0\u00A0\u00A0for\u00A0(Top\u00A0t:\u00A0array)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.showInfo();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.print();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(t.value\u00A0+\u00A0\":\u00A0\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0}\n}\nclass\u00A0Top\u00A0{\n\u00A0\u00A0int\u00A0value\u00A0=\u00A010;\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0top\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"T\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\nclass\u00A0Bottom\u00A0extends\u00A0Top\u00A0{\n\u00A0\u00A0Bottom(){\u00A0super.value\u00A0=\u00A090;\u00A0};\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0bottom\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"B\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\n",
     "multipleAnswers" : true,
     "tip":"メンバ変数へのアクセスは型のメンバ変数だが、Bottomはコンストラクタで上書きされている",
@@ -1287,7 +1287,7 @@
     "setItem" : "問題28",
     "question" : "100.0:0と出力するために(\u00A0INSERT\u00A0CODE\u00A0)に記入できるコードを2つ選んでください。\npublic\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0System.out.println(\u00A0[\u00A0\u00A0(\u00A0INSERT\u00A0CODE\u00A0)\u00A0\u00A0]\u00A0);\n\u00A0\u00A0}\n}\nclass\u00A0MyClass\u00A0{\n\u00A0\u00A0static\u00A0double\u00A0a;\n\u00A0\u00A0private\u00A0int\u00A0b;\n\u00A0\u00A0static\u00A0{\u00A0a\u00A0=\u00A0100.0;\u00A0}\n\u00A0\u00A0private\u00A0static\u00A0double\u00A0getA()\u00A0{\u00A0return\u00A0a;\u00A0}\n\u00A0\u00A0int\u00A0getB()\u00A0{\u00A0return\u00A0b;\u00A0}\n\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{\u00A0return\u00A0\"MyClass:\"\u00A0+\u00A0a\u00A0+\u00A0\",\"\u00A0+\u00A0b;\u00A0}\n}\n",
     "multipleAnswers" : true,
-    "tip":"作成中 \n aaaa",
+    "tip":"作成中",
     "ansLock" :false,
     "selectAnswers" : [
       {
@@ -1564,7 +1564,7 @@
     "question" : "次プログラムでコンパイルエラーが発生する場所を3つ選んでください。\n\n01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0var\u00A0a\u00A0=\u00A0\"Main\";\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(A)\n03|\u00A0\u00A0\u00A0var\u00A0b\u00A0=\u00A0null;\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(B)\n04|\u00A0\u00A0\u00A0void\u00A0test(int\u00A0a)\u00A0{\n05|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0x1\u00A0=\u00A01,\u00A0x2\u00A0=\u00A02;\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(C)\n06|\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0var\u00A0x3\u00A0=\u00A03.14f;\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(D)\n07|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0arr\u00A0=\u00A0new\u00A0int[]{1,\u00A02,\u00A03};\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(E)\n08|\u00A0\u00A0\u00A0\u00A0\u00A0for\u00A0(var\u00A0i\u00A0:\u00A0arr)\u00A0System.out.print(i);\u00A0\u00A0//\u00A0(F)\n09|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0list\u00A0=\u00A0new\u00A0ArrayList<>();\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(G)\n10|\u00A0\n11|\u00A0\u00A0\u00A0}\n12|\u00A0}\n",
     "multipleAnswers" : true,
     "tip":"型推論(var)は以下の場合コンパイルエラーが発生します。\nメンバ変数へ使用した場合\nnullを代入した場合\nカンマ区切りで複数の変数宣言をした場合\nまた、finalの付与、配列の宣言、拡張for文での使用は問題ありません。",
-    "ansLock" :false,
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1605,6 +1605,96 @@
       {
           "item" :"G",
           "content" : "G",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
+},{
+    "examId":"0000x",
+    "setItem" : "問題x",
+    "question" : "09行目に記述してコンパイルエラーが発生するものを2つ選んでください。n01|\u00A0import\u00A0java.io.IOException;n02|\u00A0class\u00A0MyIOException\u00A0extends\u00A0IOException\u00A0{}n03|\u00A0class\u00A0MyException\u00A0extends\u00A0Exception\u00A0{}n04|\u00A0class\u00A0Base\u00A0{n05|\u00A0\u00A0\u00A0public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0IOException\u00A0{}n06|\u00A0}n07|\u00A0class\u00A0Sub\u00A0extends\u00A0Base\u00A0{n08|\u00A0\u00A0\u00A0@Overriden09|\u00A0\u00A0\u00A0//\u00A0(INSERT\u00A0CODE)n10|\u00A0}n",
+    "multipleAnswers" : true,
+    "tip":"throws指定されたメソッドのオーバーライドで可能な記述は以下のとおりです。\nthrowsの省略\nスーパークラスと同じ例外\nスーパークラスの例外のサブクラス例外",
+    "ansLock" :false,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0RuntimeException00A0{}",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"B",
+          "content" : "public00A0void00A0calc(double00A0d)00A0{}",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"C",
+          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0Exception00A0{}",
+          "correctAnswer":true,
+          "selecttips":""
+      },
+      {
+          "item" :"D",
+          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0FileNotFoundException00A0{}",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"E",
+          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0MyIOException00A0{}",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"F",
+          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0MyException00A0{}",
+          "correctAnswer":true,
+          "selecttips":""
+      }
+    ]
+},{
+    "examId":"0000x",
+    "setItem" : "問題x",
+    "question" : "下記のプログラムをコンパイル、実行するとどうなるか正しいものを1つ選択してください。\n01|class\u00A0OneClass\u00A0{\u00A0double\u00A0value\u00A0=\u00A025.0;\u00A0}\n02|class\u00A0Main\u00A0{\n03|\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n04|\u00A0\u00A0\u00A0\u00A0OneClass\u00A0one\u00A0=\u00A0new\u00A0OneClass();\n05|\u00A0\u00A0\u00A0\u00A0OneClass\u00A0another\u00A0=\u00A0one;\n06|\u00A0\u00A0\u00A0\u00A0float\u00A0x\u00A0=\u00A025.0F;\n07|\u00A0\u00A0\u00A0\u00A0float\u00A0y\u00A0=\u00A0x;\n08|\u00A0\u00A0\u00A0\u00A0one.value\u00A0-=\u00A010;\n09|\u00A0\u00A0\u00A0\u00A0x\u00A0*=\u00A02;\n10|\u00A0\u00A0\u00A0\u00A0System.out.println(x\u00A0+\u00A0\":\"\u00A0+\u00A0y\u00A0+\u00A0\":\"\n11|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0+\u00A0one.value\u00A0+\u00A0\":\"\u00A0+\u00A0another.value);\n12|\u00A0\u00A0}\n}\n",
+    "multipleAnswers" : true,
+    "tip":"x=yは基本データ型なので、値がコピーされるためxとyは異なる値になりますが、\nanother\u00A0=\u00A0oneは参照情報のコピーのため、\none.valueの計算はnother.valueにも反映されます。",
+    "ansLock" :false,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "25.0:50.0:15.0:25.0が出力される",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"B",
+          "content" : "50.0:25.0:25.0:15.0が出力される",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"C",
+          "content" : "50.0:50.0:15.0:25.0が出力される",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"D",
+          "content" : "50.0:25.0:-10.0:-10.0が出力される",
+          "correctAnswer":false,
+          "selecttips":""
+      },
+      {
+          "item" :"E",
+          "content" : "50.0:25.0:15.0:15.0が出力される",
+          "correctAnswer":true,
+          "selecttips":""
+      },
+      {
+          "item" :"F",
+          "content" : "50.0:50.0:15.0:15.0が出力される",
           "correctAnswer":false,
           "selecttips":""
       }

@@ -48,8 +48,14 @@ const shuffleExam1=(examData,name)=> {
     for (let i = examData.setExams.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [examData.setExams[i], examData.setExams[j]] = [examData.setExams[j], examData.setExams[i]];
+      examData.setExams.map((exam,indexId) =>{
+        exam.setItem  = ( "問題" + ('000' + (indexId+1) ).slice( -3 ));
+      })
+        
         shuffleExamAns(examData.setExams[i].selectAnswers,examData.setExams[i].ansLock);
     }
+
+
     const shuffleExamData = { ...examData};
     setExamData((examData) =>{return shuffleExamData});
 
