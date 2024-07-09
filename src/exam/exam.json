@@ -642,10 +642,10 @@
 },{
     "examId":"00016",
     "setItem" : "問題16",
-    "question" : "次からコンパイルが成功する記述を3つ選んでください \n 01|\u00A0public\u00A0class\u00A0Snippet\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0record\u00A0Record()\u00A0{} \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0record\u00A0Product(double\u00A0price)\u00A0{} \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0record\u00A0Product2(double\u00A0price)\u00A0{}\u00A0extends\u00A0Record{} \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0record\u00A0Product3(int...\u00A0x)\u00A0{} \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n  07|\u00A0}",
+    "question" : "次からコンパイルが成功する記述を3つ選んでください \n 01|\u00A0public\u00A0class\u00A0Snippet\u00A0{ \n 03|\u00A0\u00A0// (INSERT CODE)\n  04|\u00A0 \u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n  05|\u00A0}",
     "multipleAnswers" : true,
     "tip":"2行目：クラス名にRecordは使用できる \n 4行目：recordクラスはrecord クラス名(引数)なので問題ない \n 5行目：recordクラスはRecordクラスを継承するが、明示的にextendsで継承する記述はできない \n 6行目：recordクラスはfinalが付与されるが、明示的に記述しても問題ない",
-    "ansLock" :true,
+    "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -675,10 +675,10 @@
 },{
     "examId":"00017",
     "setItem" : "問題17",
-    "question" : "次からコンパイルが成功する記述を3つ選んでください \n 01|\u00A0public\u00A0class\u00A0Main\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0Record\u00A0record\u00A0()\u00A0{} \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0record\u00A0Record(Object\u00A0record)\u00A0{} \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0record\u00A0product2(double\u00A0price)\u00A0implements\u00A0InterFaceClass{}; \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0record\u00A0Product3(int[]\u00A0x)\u00A0{} \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0interface\u00A0InterFaceClass{} \n 08|\u00A0} \n ",
+    "question" : "次からコンパイルが成功する記述を3つ選んでください \n 01|\u00A0public\u00A0class\u00A0Snippet\u00A0{ \n 03|\u00A0\u00A0// (INSERT CODE)\n  04|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n  05|\u00A0}",
     "multipleAnswers" : true,
     "tip":"2行目：レコードクラスを先頭大文字のRecordでは指定できない \n 3行目：クラス名にRecordは使用できる \n 4行目：明示的にextendsで継承はできないが、インターフェースの実装は可能（7行目を実装） \n 6行目：recordクラスはfinalが付与されるが、明示的に記述しても問題ない \n ",
-    "ansLock" :true,
+    "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -694,7 +694,7 @@
       },
       {
           "item" :"C",
-          "content" : "4行目：record product2(double price) implements InterFaceClass{};",
+          "content" : "4行目：record product2(double price) implements InterFaceClass{}; \n public interface InterFaceClass{}",
           "correctAnswer":true,
           "selecttips":""
       },
@@ -1461,8 +1461,8 @@
     "setItem" : "問題32",
     "question" : "次プログラムをコンパイル、\n「java Main 1 1」で実行するとどのような結果になりますか。\n01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0double\u00A0d\u00A0=\u00A0Double.parseDouble(args[0]);\n04|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0Integer.parseInt(args[1]);\n05|\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method(d,\u00A0i);\n06|\u00A0\u00A0\u00A0}\n07|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(double\u00A0x,\u00A0double\u00A0y)\u00A0{\n08|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n09|\u00A0\u00A0}\n10|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double\u00A0x,\u00A0float\u00A0y)\u00A0{\n11|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n12|\u00A0\u00A0\u00A0}\n13|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(int...\u00A0x)\u00A0{\n14|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n15|\u00A0\u00A0\u00A0}\n16|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double...\u00A0d)\u00A0{\n17|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n18|\u00A0\u00A0\u00A0}\n19|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(long\u00A0x,\u00A0int\u00A0y)\u00A0{\n20|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n21|\u00A0\u00A0\u00A0}\n22|\u00A0}\n",
     "multipleAnswers" : true,
-    "tip":"呼び出しメソッドの引数が一致しない場合、/n以下の優先順位で引数が一致するメソッドが呼び出されます。/n1.基本データ型の暗黙の型変換/n2.オートボクシング/アンボクシング/n3.可変長引数",
-    "ansLock" :false,
+    "tip":"呼び出しメソッドの引数が一致しない場合、\n以下の優先順位で引数が一致するメソッドが呼び出されます。\n1.基本データ型の暗黙の型変換/n2.オートボクシング/アンボクシング\n3.可変長引数",
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1496,12 +1496,6 @@
       },
       {
           "item" :"F",
-          "content" : "Fが出力される",
-          "correctAnswer":false,
-          "selecttips":""
-      },
-      {
-          "item" :"G",
           "content" : "コンパイルがエラーが発生する",
           "correctAnswer":false,
           "selecttips":""
@@ -1510,10 +1504,10 @@
 },{
     "examId":"00033",
     "setItem" : "問題33",
-    "question" : "01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int1\u00A0=\u00A0Integer.parseInt(args[0]);\n04|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int2\u00A0=\u00A0Integer.parseInt(args[1]);\n05|\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method(int1,\u00A0int2);\n06|\u00A0\u00A0\u00A0}\n07|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(double\u00A0x,\u00A0double\u00A0y)\u00A0{\n08|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n09|\u00A0\u00A0}\n10|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double\u00A0x,\u00A0float\u00A0y)\u00A0{\n11|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n12|\u00A0\u00A0\u00A0}\n13|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(int...\u00A0x)\u00A0{\n14|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n15|\u00A0\u00A0\u00A0}\n16|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double...\u00A0d)\u00A0{\n17|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n18|\u00A0\u00A0\u00A0}\n19|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(long\u00A0x,\u00A0int\u00A0y)\u00A0{\n20|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n21|\u00A0\u00A0\u00A0}\n22|\u00A0}\n",
+    "question" : "次プログラムをコンパイル、\n「java Main 1 1」で実行するとどのような結果になりますか。\n01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int1\u00A0=\u00A0Integer.parseInt(args[0]);\n04|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int2\u00A0=\u00A0Integer.parseInt(args[1]);\n05|\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method(int1,\u00A0int2);\n06|\u00A0\u00A0\u00A0}\n07|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(double\u00A0x,\u00A0double\u00A0y)\u00A0{\n08|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n09|\u00A0\u00A0}\n10|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double\u00A0x,\u00A0float\u00A0y)\u00A0{\n11|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n12|\u00A0\u00A0\u00A0}\n13|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(int...\u00A0x)\u00A0{\n14|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n15|\u00A0\u00A0\u00A0}\n16|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double...\u00A0d)\u00A0{\n17|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n18|\u00A0\u00A0\u00A0}\n19|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(long\u00A0x,\u00A0int\u00A0y)\u00A0{\n20|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n21|\u00A0\u00A0\u00A0}\n22|\u00A0}\n",
     "multipleAnswers" : true,
-    "tip":"呼び出しメソッドの引数が一致しない場合、/n以下の優先順位で引数が一致するメソッドが呼び出されます。/n1.基本データ型の暗黙の型変換/n2.オートボクシング/アンボクシング/n3.可変長引数",
-    "ansLock" :false,
+    "tip":"呼び出しメソッドの引数が一致しない場合、\n以下の優先順位で引数が一致するメソッドが呼び出されます。\n1.基本データ型の暗黙の型変換\n2.オートボクシング/アンボクシング\n3.可変長引数",
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1547,14 +1541,8 @@
       },
       {
           "item" :"F",
-          "content" : "Fが出力される",
-          "correctAnswer":true,
-          "selecttips":""
-      },
-      {
-          "item" :"G",
           "content" : "コンパイルがエラーが発生する",
-          "correctAnswer":false,
+          "correctAnswer":true,
           "selecttips":""
       }
   ]
@@ -1612,44 +1600,44 @@
 },{
     "examId":"0000x",
     "setItem" : "問題x",
-    "question" : "09行目に記述してコンパイルエラーが発生するものを2つ選んでください。n01|\u00A0import\u00A0java.io.IOException;n02|\u00A0class\u00A0MyIOException\u00A0extends\u00A0IOException\u00A0{}n03|\u00A0class\u00A0MyException\u00A0extends\u00A0Exception\u00A0{}n04|\u00A0class\u00A0Base\u00A0{n05|\u00A0\u00A0\u00A0public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0IOException\u00A0{}n06|\u00A0}n07|\u00A0class\u00A0Sub\u00A0extends\u00A0Base\u00A0{n08|\u00A0\u00A0\u00A0@Overriden09|\u00A0\u00A0\u00A0//\u00A0(INSERT\u00A0CODE)n10|\u00A0}n",
+    "question" : "09行目に記述してコンパイルエラーが発生するものを2つ選んでください。\n01|\u00A0import\u00A0java.io.IOException;\n02|\u00A0class\u00A0MyIOException\u00A0extends\u00A0IOException\u00A0{}\n03|\u00A0class\u00A0MyException\u00A0extends\u00A0Exception\u00A0{}\n04|\u00A0class\u00A0Base\u00A0{\n05|\u00A0\u00A0\u00A0public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0IOException\u00A0{}\n06|\u00A0}\n07|\u00A0class\u00A0Sub\u00A0extends\u00A0Base\u00A0{\n08|\u00A0\u00A0\u00A0@Override\n09|\u00A0\u00A0\u00A0//\u00A0(INSERT\u00A0CODE)\n10|\u00A0}",
     "multipleAnswers" : true,
     "tip":"throws指定されたメソッドのオーバーライドで可能な記述は以下のとおりです。\nthrowsの省略\nスーパークラスと同じ例外\nスーパークラスの例外のサブクラス例外",
     "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0RuntimeException00A0{}",
+          "content" : "public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0RuntimeException\u00A0{}",
           "correctAnswer":false,
           "selecttips":""
       },
       {
           "item" :"B",
-          "content" : "public00A0void00A0calc(double00A0d)00A0{}",
+          "content" : "public\u00A0void\u00A0calc(double\u00A0d)\u00A0{}",
           "correctAnswer":false,
           "selecttips":""
       },
       {
           "item" :"C",
-          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0Exception00A0{}",
+          "content" : "public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0Exception\u00A0{}",
           "correctAnswer":true,
           "selecttips":""
       },
       {
           "item" :"D",
-          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0FileNotFoundException00A0{}",
+          "content" : "public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0FileNotFoundException\u00A0{}",
           "correctAnswer":false,
           "selecttips":""
       },
       {
           "item" :"E",
-          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0MyIOException00A0{}",
+          "content" : "public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0MyIOException\u00A0{}",
           "correctAnswer":false,
           "selecttips":""
       },
       {
           "item" :"F",
-          "content" : "public00A0void00A0calc(double00A0d)00A0throws00A0MyException00A0{}",
+          "content" : "public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0MyException\u00A0{}",
           "correctAnswer":true,
           "selecttips":""
       }
@@ -1659,7 +1647,7 @@
     "setItem" : "問題x",
     "question" : "下記のプログラムをコンパイル、実行するとどうなるか正しいものを1つ選択してください。\n01|class\u00A0OneClass\u00A0{\u00A0double\u00A0value\u00A0=\u00A025.0;\u00A0}\n02|class\u00A0Main\u00A0{\n03|\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n04|\u00A0\u00A0\u00A0\u00A0OneClass\u00A0one\u00A0=\u00A0new\u00A0OneClass();\n05|\u00A0\u00A0\u00A0\u00A0OneClass\u00A0another\u00A0=\u00A0one;\n06|\u00A0\u00A0\u00A0\u00A0float\u00A0x\u00A0=\u00A025.0F;\n07|\u00A0\u00A0\u00A0\u00A0float\u00A0y\u00A0=\u00A0x;\n08|\u00A0\u00A0\u00A0\u00A0one.value\u00A0-=\u00A010;\n09|\u00A0\u00A0\u00A0\u00A0x\u00A0*=\u00A02;\n10|\u00A0\u00A0\u00A0\u00A0System.out.println(x\u00A0+\u00A0\":\"\u00A0+\u00A0y\u00A0+\u00A0\":\"\n11|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0+\u00A0one.value\u00A0+\u00A0\":\"\u00A0+\u00A0another.value);\n12|\u00A0\u00A0}\n}\n",
     "multipleAnswers" : true,
-    "tip":"x=yは基本データ型なので、値がコピーされるためxとyは異なる値になりますが、\nanother\u00A0=\u00A0oneは参照情報のコピーのため、\none.valueの計算はnother.valueにも反映されます。",
+    "tip":"x=yは基本データ型なので、値がコピーされるためxとyは異なる値になりますが、\nanother\u00A0=\u00A0oneは参照情報のコピーのため、\none.valueの値はanother.valueと同じです",
     "ansLock" :false,
     "selectAnswers" : [
       {
@@ -1697,6 +1685,51 @@
           "content" : "50.0:50.0:15.0:15.0が出力される",
           "correctAnswer":false,
           "selecttips":""
+      }
+  ]
+},{
+    "examId":"0000x",
+    "setItem" : "問題x",
+    "question" : "次の2つのプログラムがあります。\nコンパイル、実行で「Test」と出力されるコマンドを\n2つ選んでください。\n※ex4ディレクトリで実行し、CLASSPATH環境変数の設定なし\n\npackage\u00A0com.x;\nimport\u00A0com.y.Test;\npublic\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0Test.print();\n\u00A0\u00A0}\n}\n\npackage\u00A0com.y;\npublic\u00A0class\u00A0Test\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0System.out.println(\"Test\");\n\u00A0\u00A0}\n}\n",
+    "multipleAnswers" : true,
+    "tip":"作成中 \n aaaa",
+    "ansLock" :false,
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : ">javac\u00A0-d\u00A0.\u00A0Main.java\u00A0Test.java\n>java\u00A0-classpath\u00A0.\u00A0com.x.Main",
+          "correctAnswer":true,
+          "selecttips":"カレントディレクトリ配下でパッケージ宣言と同じディレクトリに\nクラスファイルが生成されます。\nソースファイルは複数指定することが可能です。"
+      },
+      {
+          "item" :"B",
+          "content" : ">javac\u00A0-d\u00A0*.java\n>java\u00A0-cp\u00A0com.x.Main",
+          "correctAnswer":false,
+          "selecttips":"-dに対してディレクトリの指定がなく、-cpに対する指定も不完全です。"
+      },
+      {
+          "item" :"C",
+          "content" : ">javac\u00A0*.java\n>java\u00A0com.x.Main",
+          "correctAnswer":false,
+          "selecttips":"カレントディレクトリにクラスファイルが生成されるため、\nコンパイルには成功しますが実行に失敗します。"
+      },
+      {
+          "item" :"D",
+          "content" : ">javac\u00A0-d\u00A0classes\u00A0*.java\n>java\u00A0-cp\u00A0classes\u00A0com.x.Main",
+          "correctAnswer":true,
+          "selecttips":"classesディレクトリ配下でパッケージ宣言と同じディレクトリに\nクラスファイルが生成されます。\nまたディレクトリ配下のソースファイルをまとめてコンパイルしています。"
+      },
+      {
+          "item" :"E",
+          "content" : ">javac\u00A0-d\u00A0classes\u00A0*.java\n>java\u00A0-cp\u00A0classes\u00A0Main",
+          "correctAnswer":false,
+          "selecttips":"実行時のクラスの指定がパッケージ名付きではないため、実行に失敗します。"
+      },
+      {
+          "item" :"F",
+          "content" : ">javac\u00A0classes\u00A0Main.java\u00A0Test.java\n>java\u00A0-p\u00A0classes\u00A0Main",
+          "correctAnswer":false,
+          "selecttips":"選択肢Fはコンパイルオプションが指定されずにclassesと指定されているため、javacコマンドの使用方法が間違っています。\nまた、-pは、モジュールを検索するパスを指定するオプションです。"
       }
   ]
 }]
