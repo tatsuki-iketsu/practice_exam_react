@@ -1602,7 +1602,7 @@
     "setItem" : "問題x",
     "question" : "09行目に記述してコンパイルエラーが発生するものを2つ選んでください。\n01|\u00A0import\u00A0java.io.IOException;\n02|\u00A0class\u00A0MyIOException\u00A0extends\u00A0IOException\u00A0{}\n03|\u00A0class\u00A0MyException\u00A0extends\u00A0Exception\u00A0{}\n04|\u00A0class\u00A0Base\u00A0{\n05|\u00A0\u00A0\u00A0public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0IOException\u00A0{}\n06|\u00A0}\n07|\u00A0class\u00A0Sub\u00A0extends\u00A0Base\u00A0{\n08|\u00A0\u00A0\u00A0@Override\n09|\u00A0\u00A0\u00A0//\u00A0(INSERT\u00A0CODE)\n10|\u00A0}",
     "multipleAnswers" : true,
-    "tip":"throws指定されたメソッドのオーバーライドで可能な記述は以下のとおりです。\nthrowsの省略\nスーパークラスと同じ例外\nスーパークラスの例外のサブクラス例外",
+    "tip":"throws指定されたメソッドのオーバーライドで可能な記述は以下のとおりです。\nthrowsの省略\nスーパークラスと同じ例外\nスーパークラスの例外のサブクラス例外\nなお、例外自体のスーパークラスにあたる例外は指定不可です。",
     "ansLock" :false,
     "selectAnswers" : [
       {
