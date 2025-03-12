@@ -15,10 +15,10 @@ const ExamDisplay = () =>{
   const [allTrue,setallTrue] = useState(0);                          // 正解数
   const [allFalse,setallFalse] = useState(0);                        // 不正解数
 
-  // 初回シャッフル
-  useEffect(() => {
-    shuffleExam1(examData);
-  }, []);
+  // // 初回シャッフル
+  // useEffect(() => {
+  //   shuffleExam1(examData);
+  // }, []);
 
 
 // 内側シャッフル　TODO：外側に入れる
@@ -86,7 +86,6 @@ const shuffleExam1=(examData,name)=> {
   
   }
   // 問題と回答のセット
-    // const examData = Data;　// ここでusestateを入れるといいのかも
     // 回答取得
       // 回答を取得し配列に格納
       const correctAnswerSetCreate = (setExam)=> {
