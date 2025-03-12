@@ -15,10 +15,10 @@ const ExamDisplay = () =>{
   const [allTrue,setallTrue] = useState(0);                          // 正解数
   const [allFalse,setallFalse] = useState(0);                        // 不正解数
 
-  // 初回シャッフル
-  useEffect(() => {
-    shuffleExam1(examData);
-  }, []);
+  // // 初回シャッフル　削除
+  // useEffect(() => {
+  //   shuffleExam1(examData);
+  // }, []);
 
 
 // 内側シャッフル　TODO：外側に入れる
@@ -209,6 +209,7 @@ const shuffleExam1=(examData,name)=> {
         
         </form>
         <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答を確認</button>
+        <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答をモーダルで確認</button>
       </div>
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>
