@@ -75,7 +75,7 @@ const shuffleExam1=(examData,name)=> {
     setAnsDisplay(c_ansDisplay);
     settrueOrFalseDisplay(c_trueOrFalseDisplay);
     setTipDisplay(c_tipDisplay);
-    // const [tipDisplay,setTipDisplay] = useState([]);                   // 解説を格納
+    // const [tipDisplay,setTipDisplay] = useState([]);  // 解説を格納
 
     // 正解率の初期化
     const all = examData.setExams.length;

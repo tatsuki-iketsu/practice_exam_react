@@ -1,6 +1,4 @@
 import React,{useState} from "react"
-import ColorfulMessage from "./components/ColorfulMessage"
-import PropsMessage from "./components/ColorfulMessage copy";
 import ExamDisplay from "./components/ExamSet";
 const App =() =>{
     const [num,setNum] = useState(0);
