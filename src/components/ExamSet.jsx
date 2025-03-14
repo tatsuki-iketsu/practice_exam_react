@@ -2,6 +2,7 @@ import React from "react";
 import Data from '../exam/exam.json';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Modal from 'react-modal';
 
 const NO_SELECTED = "回答が選択されていません"
 
@@ -14,6 +15,47 @@ const ExamDisplay = () =>{
   const [allExam,setallExam] = useState(0);                          // 合計数
   const [allTrue,setallTrue] = useState(0);                          // 正解数
   const [allFalse,setallFalse] = useState(0);                        // 不正解数
+
+  //////////////////
+  // Modal用
+  //////////////////
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  const customStyles = {
+    content: {
+      outerWidth:'50%',
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      // overlay:{backgroudCOlor:'gray'},
+    },
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.3)', // 半透明の黒
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  };
+  //////////////////
+  //////////////////
+
 
   // 初回シャッフル　削除
   useEffect(() => {
@@ -117,6 +159,7 @@ const shuffleExam1=(examData,name)=> {
       // querySelectorAllから選択した回答の文字列連結し配列に格納
       if(selectedChecks.length == 0 ){
         // 回答なし
+        alert('回答が選択されていません');
         return NO_SELECTED;   
       }
         // 回答あり、複数数制限なし
@@ -166,6 +209,7 @@ const shuffleExam1=(examData,name)=> {
 
   }
 
+
     // 改行変換
     const MultiLineBody = ( body ) => {
       const texts = body.split('\n').map((item, index) => {
@@ -208,7 +252,30 @@ const shuffleExam1=(examData,name)=> {
         
         </form>
         <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答を確認</button>
-        <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答をモーダルで確認</button>
+{/* modalボタン */}
+        <div>
+          <button onClick={openModal}>Open Modal</button>
+          <Modal
+            isOpen={modalIsOpen}
+            onAfterOpen={afterOpenModal}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+            <button onClick={closeModal}>close</button>
+            <div>I am a modal</div>
+            <form>
+              <input />
+              <button>tab navigation</button>
+              <button>stays</button>
+              <button>inside</button>
+              <button>the modal</button>
+            </form>
+          </Modal>
+        </div>
+{/* modalボタン */}
+
       </div>
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>
