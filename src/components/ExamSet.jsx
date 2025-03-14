@@ -208,6 +208,7 @@ const shuffleExam1=(examData,name)=> {
         
         </form>
         <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答を確認</button>
+        <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答をモーダルで確認</button>
       </div>
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>

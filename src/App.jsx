@@ -1,5 +1,6 @@
 import React,{useState} from "react"
 import ExamDisplay from "./components/ExamSet";
+import Modal from "./components/Modal"; //Modal
 const App =() =>{
     const [num,setNum] = useState(0);
     const [textShowFlug,setTextShowFlag] = useState(true); 
