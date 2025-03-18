@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Modal from 'react-modal';
 
 const NO_SELECTED = "回答が選択されていません"
+let SelectTipsNumber = 9999 // Modalに表示される回答の問題No 初期値は存在しない数値
 
 const ExamDisplay = () =>{
   const [examData,setExamData] = useState(Data);                     // 問題を格納
@@ -19,22 +20,25 @@ const ExamDisplay = () =>{
   //////////////////
   // Modal用
   //////////////////
-  let subtitle;
+  let modalTitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
+  // Modalを開く
   function openModal() {
     setIsOpen(true);
   }
 
+  // Modaiのタイトル
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    modalTitle.style.color = '#f00';
   }
 
   function closeModal() {
     setIsOpen(false);
   }
 
+  // モーダルのCSS
   const customStyles = {
     content: {
       outerWidth:'50%',
@@ -44,10 +48,9 @@ const ExamDisplay = () =>{
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      // overlay:{backgroudCOlor:'gray'},
     },
     overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.3)', // 半透明の黒
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // 半透明の黒
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -83,20 +86,19 @@ const shuffleExamAns =(selectAnswers,ansLock)=> {
 // 外側シャッフル
 const shuffleExam1=(examData,name)=> {
 
-          // // チェックをすべて外す
-          const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-          checkboxes.forEach(checkbox => checkbox.checked = false);
+  // // チェックをすべて外す
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => checkbox.checked = false);
           
-    for (let i = examData.setExams.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [examData.setExams[i], examData.setExams[j]] = [examData.setExams[j], examData.setExams[i]];
-      examData.setExams.map((exam,indexId) =>{
-        exam.setItem  = ( "問題" + ('000' + (indexId+1) ).slice( -3 ));
-      })
-        
-        shuffleExamAns(examData.setExams[i].selectAnswers,examData.setExams[i].ansLock);
-    }
-
+  for (let i = examData.setExams.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [examData.setExams[i], examData.setExams[j]] = [examData.setExams[j], examData.setExams[i]];
+    examData.setExams.map((exam,indexId) =>{
+      exam.setItem  = ( "問題" + ('000' + (indexId+1) ).slice( -3 ));
+    })
+      
+      shuffleExamAns(examData.setExams[i].selectAnswers,examData.setExams[i].ansLock);
+  }
 
     const shuffleExamData = { ...examData};
     setExamData((examData) =>{return shuffleExamData});
@@ -106,6 +108,7 @@ const shuffleExam1=(examData,name)=> {
     let c_tipDisplay = [];
     let c_ansDisplay = [];
     let c_trueOrFalseDisplay = [];
+
     for(let i = 0; i < examData.setExams.length;i++){
       c_examDisabled = [,...c_examDisabled,false];
       c_ansDisplay = [...c_ansDisplay,`(問題${i+1}の回答がここに表示されます)`]
@@ -113,6 +116,7 @@ const shuffleExam1=(examData,name)=> {
       c_tipDisplay = [...c_tipDisplay,`(問題${i+1}の解説がここに表示されます)`] 
       // c_tipDisplay = [...c_tipDisplay,examData.setExams[i].tip] 
     };
+
     setExamDisabled(c_examDisabled);
     setAnsDisplay(c_ansDisplay);
     settrueOrFalseDisplay(c_trueOrFalseDisplay);
@@ -126,7 +130,7 @@ const shuffleExam1=(examData,name)=> {
     setallFalse(0);
     alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
   
-  }
+}
   // 問題と回答のセット
     // 回答取得
       // 回答を取得し配列に格納
@@ -148,13 +152,14 @@ const shuffleExam1=(examData,name)=> {
       return "aa";
     };
 
-    // 複数回答の表示
+    ////// 複数回答の表示関数 //////
     const selectedAnserGet = (selectedChecks,setExam,index) => {
-
+      // 回答表示場所に問題Noをセット
+      SelectTipsNumber = index;
       // 選択した回答を格納する配列
-      const selectedAns = []
+      const selectedAns = [];
       // 正しい回答を格納する配列
-      const answers = []
+      const answers = [];
 
       // querySelectorAllから選択した回答の文字列連結し配列に格納
       if(selectedChecks.length == 0 ){
@@ -162,31 +167,32 @@ const shuffleExam1=(examData,name)=> {
         alert('回答が選択されていません');
         return NO_SELECTED;   
       }
-        // 回答あり、複数数制限なし
-        {selectedChecks.forEach((check) => (
+      // 回答あり、複数数制限なし
+      {selectedChecks.forEach((check) => (
           selectedAns.push(check.value)
-              ))}
+        ))
+      }
 
-              setExam.selectAnswers.map((selectAnswer) => { 
-                if(selectAnswer.correctAnswer){
-                  answers.push(selectAnswer.item);
-                }
-              } );
-        
-              // displayにセット
-              setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
-              if(answers.toString() == selectedAns.toString()){
-                  settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
-                  setallTrue(allTrue+1);
-                }else{
-                  settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
-                  setallFalse(allFalse+1);
-                }
-                // ボタン非活性化と解説セット
-                setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
-                setTipDisplay(tipDisplay.map((tip, i) => (i == index ? MultiLineBody(setExam.tip) : tip)));
-           
- 
+      setExam.selectAnswers.map((selectAnswer) => { 
+        if(selectAnswer.correctAnswer){
+          answers.push(selectAnswer.item);
+        }
+      } );
+      
+      // displayにセット
+      setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
+      if(answers.toString() == selectedAns.toString()){
+          settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
+          setallTrue(allTrue+1);
+        }else{
+          settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
+          setallFalse(allFalse+1);
+        }
+      // ボタン非活性化と解説セット
+      setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
+      setTipDisplay(tipDisplay.map((tip, i) => (i == index ? MultiLineBody(setExam.tip) : tip)));
+      // Modalオープン
+      openModal()
     };
 
     // 複数選択ボタン押下時アクション
@@ -252,35 +258,13 @@ const shuffleExam1=(examData,name)=> {
         
         </form>
         <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答を確認</button>
-{/* modalボタン */}
-        <div>
-          <button onClick={openModal}>Open Modal</button>
-          <Modal
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-          >
-            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-            <button onClick={closeModal}>close</button>
-            <div>I am a modal</div>
-            <form>
-              <input />
-              <button>tab navigation</button>
-              <button>stays</button>
-              <button>inside</button>
-              <button>the modal</button>
-            </form>
-          </Modal>
-        </div>
-{/* modalボタン */}
-
       </div>
+      <div><a href="#h1">一番上に戻る</a> / <a href="#bottom">一番下に行く</a></div>
+      {/* 削除する
       <div>{ansDisplay[index]}</div>
       <div>{trueOrFalseDisplay[index]}</div>
       <div>{tipDisplay[index]}</div>
-      <div><a href="#h1">一番上に戻る</a> / <a href="#bottom">一番下に行く</a></div>
+       */}
       </>
     ))}
       <p id="bottom">残問題数：{allExam-allTrue-allFalse}</p>
@@ -288,7 +272,25 @@ const shuffleExam1=(examData,name)=> {
       <p>不正解数：{allFalse}</p>
       <p>正解率：{allTrue/(allTrue+allFalse)*100}%</p>      
       <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
-      </>
+
+          {/* Modal内容 */}
+          <Modal
+            isOpen={modalIsOpen}
+            onAfterOpen={afterOpenModal}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
+          >
+            <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}><div>問題{SelectTipsNumber}の結果 ：{trueOrFalseDisplay[SelectTipsNumber]}</div></h2>
+            <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
+            <div>{tipDisplay[SelectTipsNumber]}</div>
+            <button onClick={closeModal}>閉じる</button>
+
+          </Modal>
+          {/* Modal内容 */}
+
+          </>
+      
 );
 };
 export default ExamDisplay;
