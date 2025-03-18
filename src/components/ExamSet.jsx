@@ -285,7 +285,6 @@ const shuffleExam1=(examData,name)=> {
             <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
             <div>{tipDisplay[SelectTipsNumber]}</div>
             <button onClick={closeModal}>閉じる</button>
-
           </Modal>
           {/* Modal内容 */}
 
