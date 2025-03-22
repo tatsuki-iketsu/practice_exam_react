@@ -1,10 +1,10 @@
 import React,{useState} from "react"
-import ColorfulMessage from "./components/ColorfulMessage"
-import PropsMessage from "./components/ColorfulMessage copy";
 import ExamDisplay from "./components/ExamSet";
+
 const App =() =>{
     const [num,setNum] = useState(0);
     const [textShowFlug,setTextShowFlag] = useState(true); 
+    const [showModal, setShowModal] = useState(false); // ResultsModal
 
     const onClickButten1 = ()=> alert('正解です');
     const onClickButten2 = ()=> alert('残念！不正解です');
@@ -30,3 +30,4 @@ const App =() =>{
 };
 
 export default App;
+
