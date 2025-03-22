@@ -38,27 +38,40 @@ const ExamDisplay = () =>{
     setIsOpen(false);
   }
 
-  // モーダルのCSS
-  const customStyles = {
+  // ModalのCSS
+  const modalStyle = {
+  '@media (max-width: 600px)': {
     content: {
-      outerWidth:'50%',
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
+      width: '95%', // 画面幅が600px未満の場合、幅を95%にする
+      maxWidth: 'none', // 最大幅を解除
     },
+  },
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)', // 半透明の黒
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-    },
+    },    
   };
+
+    // Modal内TipのCSS
+    const tipStyle = {
+      backgroundColor: "gray",
+      overflow: "scroll"
+        };
+    
   //////////////////
   //////////////////
 
+  //////////////////
+  // 問題表示用
+  //////////////////
+  // 問題部分のCSS
+  const examStyle = {
+    overflow: "scroll"
+  };
+  //////////////////
+  //////////////////
 
   // 初回シャッフル　削除
   useEffect(() => {
@@ -231,13 +244,14 @@ const shuffleExam1=(examData,name)=> {
       return <>{texts}</>;
     };
 
+    // 問題を表示する部分
     return (
     <>
     <h1 id="h1">Java SE silver17 練習問題</h1>
     <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
   {examData.setExams.map((setExam,index) => (
     <>
-  <div>
+  <div style={examStyle}>
   <form name= {setExam.setItem}>
     <h2>練習問題{index+1}</h2>
     <p white-space="nowrap">問題内容：{MultiLineBody(setExam.question)}</p>
@@ -278,12 +292,12 @@ const shuffleExam1=(examData,name)=> {
             isOpen={modalIsOpen}
             onAfterOpen={afterOpenModal}
             onRequestClose={closeModal}
-            style={customStyles}
+            style={modalStyle}
             contentLabel="Example Modal"
           >
             <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}><div>問題{SelectTipsNumber}の結果 ：{trueOrFalseDisplay[SelectTipsNumber]}</div></h2>
             <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
-            <div>{tipDisplay[SelectTipsNumber]}</div>
+            <div class={tipStyle}><nobr>{tipDisplay[SelectTipsNumber]}</nobr></div>
             <button onClick={closeModal}>閉じる</button>
           </Modal>
           {/* Modal内容 */}
