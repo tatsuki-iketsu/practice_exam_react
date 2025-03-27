@@ -3,6 +3,7 @@ import Data from '../exam/exam.json';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Modal from 'react-modal';
+import { toBeEnabled } from "@testing-library/jest-dom/matchers";
 
 const NO_SELECTED = "回答が選択されていません"
 let SelectTipsNumber = 9999 // Modalに表示される回答の問題No 初期値は存在しない数値
@@ -202,7 +203,8 @@ const shuffleExam1=(examData,name)=> {
           setallFalse(allFalse+1);
         }
       // ボタン非活性化と解説セット
-      setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
+      // TODO:Modalを閉じたらボタンが復帰するようにする
+      //setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
       setTipDisplay(tipDisplay.map((tip, i) => (i == index ? MultiLineBody(setExam.tip) : tip)));
       // Modalオープン
       openModal()
