@@ -1,6 +1,8 @@
 import React,{useState} from "react"
 import ExamDisplay from "./components/ExamSet";
 
+
+
 const App =() =>{
     const [num,setNum] = useState(0);
     const [textShowFlug,setTextShowFlag] = useState(true); 
@@ -13,6 +15,7 @@ const App =() =>{
     const onClickshowFlugCjange = ()=> setTextShowFlag(!textShowFlug) ;
     return (
         <>
+    
                 {/* <h1 style={{color:'pink' }}>問題</h1>
                 <ColorfulMessage color='green' message='世界！'/>
                 <PropsMessage color='green'>PROPS渡し</PropsMessage>
