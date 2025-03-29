@@ -1,0 +1,64 @@
+.explanationBody
+{color:black;
+}
+
+.pageTitle{
+
+}
+
+/* ページ全体のジャンル */
+.sectionTitle{
+color:blueviolet;
+
+}
+
+
+/* ページ内の項目 */
+.paragraphTitle{
+    color: brown;
+    border-bottom: 1px solid #000; 
+    margin-left: 10px;
+}
+.paragrapContents{
+    padding-left: 2em;
+    color:black;
+}
+/* さらに細かい項目 */
+.itemTitle{
+    margin-left: 10px;
+    color:black;
+    border-bottom: 1px 	dashed #000; 
+}
+
+.itemContents{
+    margin-left: 10px;
+    margin-top: 2px;
+
+}
+pre{
+    padding: 0px; /* 文字周りの余白 */
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+/* コードブロック */
+code {
+    display: inline-block;
+    padding: 5px; /* 文字周りの余白 */
+    color: #444; /* 文字色 */
+    background-color: #e7edf3; /* 背景色 */
+    border-radius: 3px; /* 角丸 */
+    border: solid 2px #d6dde4; /* 枠線 */
+  }
+
+  code span {
+    counter-increment: line-number;
+    display: list-item;
+    padding-left: 1rem;
+    margin-left: 1rem;
+  }
+  
+  code span::marker {
+    content: counter(line-number);
+    color: #aaa;
+  }

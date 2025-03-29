@@ -4,7 +4,7 @@ const Explanation2 = () =>{
 
   return (
   <>
-  解説ページ
+  解説ページ2
         </>
     
   );

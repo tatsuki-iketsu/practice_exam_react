@@ -5,8 +5,8 @@ import App from "./App";
 // router系のimport
 import { BrowserRouter, Route, Routes, Link ,element,Navigate} from 'react-router-dom';
 
-import ExamTest from "./components/ExamTest";
-import ExamTest2 from "./components/ExamTest2";
+import ExamTest from "./components/explanationPage/ExamTest";
+import ExamTest2 from "./components/explanationPage/ExamTest2";
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
