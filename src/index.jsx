@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-// import { BrowserRouter } from "react-router-dom";
+
+// サイト全体のcss
+import "./components/css/index.css";
+
 // router系のimport
 import { BrowserRouter, Route, Routes, Link ,element,Navigate} from 'react-router-dom';
 
-import ExamTest from "./components/explanationPage/ExamTest";
+import compileAnrRun from "./components/explanationPage/CompileAnrRun";
 import ExamTest2 from "./components/explanationPage/ExamTest2";
 
 const container = document.getElementById('root');
@@ -13,11 +16,11 @@ const root = ReactDOM.createRoot(container);
 // root.render(<App />)
 // 解説用URLを格納する二次元Objcet
 const explanationData = [
-    { pageID: 1, url: "/page1" ,component:ExamTest},
-    { pageID: 2, url: "/page2" ,component:ExamTest2},
-    { pageID: 3, url: "/page3" ,component:ExamTest},
-    { pageID: 4, url: "/page4" ,component:ExamTest},
-    { pageID: 5, url: "/page5" ,component:ExamTest}
+    { pageID: 1, url: "/compileandrun" ,component:compileAnrRun},
+    { pageID: 2, url: "/page2" ,component:ExamTest2}
+    // { pageID: 3, url: "/page3" ,component:ExamTest},
+    // { pageID: 4, url: "/page4" ,component:ExamTest},
+    // { pageID: 5, url: "/page5" ,component:ExamTest}
   ];
 root.render(
 <BrowserRouter>

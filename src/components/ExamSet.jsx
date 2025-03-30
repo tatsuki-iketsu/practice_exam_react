@@ -7,6 +7,7 @@ import { toBeEnabled } from "@testing-library/jest-dom/matchers";
 
 const NO_SELECTED = "回答が選択されていません"
 let SelectTipsNumber = 9999 // Modalに表示される回答の問題No 初期値は存在しない数値
+let SelectExamId = 0 // Modalに表示される回答の問題No 初期値は存在しない数値
 
 const ExamDisplay = () =>{
   const [examData,setExamData] = useState(Data);                     // 問題を格納
@@ -167,9 +168,11 @@ const shuffleExam1=(examData,name)=> {
     };
 
     ////// 複数回答の表示関数 //////
-    const selectedAnserGet = (selectedChecks,setExam,index) => {
+    const selectedAnserGet = (selectedChecks,setExam,index,examId) => {
       // 回答表示場所に問題Noをセット
       SelectTipsNumber = index;
+      // 回答表示場所に問題IDをセット(開発用)
+      SelectExamId = examId;
       // 選択した回答を格納する配列
       const selectedAns = [];
       // 正しい回答を格納する配列
@@ -211,11 +214,11 @@ const shuffleExam1=(examData,name)=> {
     };
 
     // 複数選択ボタン押下時アクション
-    const selectedCheck = (setExam,name,index)=> {    
+    const selectedCheck = (setExam,name,index,examId)=> {    
         let checks = document.querySelectorAll(
             `input[name=${name}]:checked`
           );
-          selectedAnserGet(checks,setExam,index);
+          selectedAnserGet(checks,setExam,index,examId);
     };
     console.log(examData);
     console.log(examData.setExams[0].setitem);
@@ -273,7 +276,7 @@ const shuffleExam1=(examData,name)=> {
       ))}
         
         </form>
-        <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index)} >回答を確認</button>
+        <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index,setExam.examId)}  class="selectedCheck">回答を確認</button>
       </div>
       <div><a href="#h1">一番上に戻る</a> / <a href="#bottom">一番下に行く</a></div>
       {/* 削除する
@@ -301,6 +304,7 @@ const shuffleExam1=(examData,name)=> {
             <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
             <div class={tipStyle}><nobr>{tipDisplay[SelectTipsNumber]}</nobr></div>
             <button onClick={closeModal}>閉じる</button>
+            <div>問題ID.{SelectExamId}</div>
           </Modal>
           {/* Modal内容 */}
 

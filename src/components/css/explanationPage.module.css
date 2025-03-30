@@ -35,30 +35,4 @@ color:blueviolet;
     margin-top: 2px;
 
 }
-pre{
-    padding: 0px; /* 文字周りの余白 */
-    margin: 0px;
-    margin-bottom: 5px;
-}
 
-/* コードブロック */
-code {
-    display: inline-block;
-    padding: 5px; /* 文字周りの余白 */
-    color: #444; /* 文字色 */
-    background-color: #e7edf3; /* 背景色 */
-    border-radius: 3px; /* 角丸 */
-    border: solid 2px #d6dde4; /* 枠線 */
-  }
-
-  code span {
-    counter-increment: line-number;
-    display: list-item;
-    padding-left: 1rem;
-    margin-left: 1rem;
-  }
-  
-  code span::marker {
-    content: counter(line-number);
-    color: #aaa;
-  }

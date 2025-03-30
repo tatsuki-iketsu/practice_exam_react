@@ -1598,7 +1598,7 @@
       }
   ]
 },{
-    "examId":"0000x",
+    "examId":"00035",
     "setItem" : "問題x",
     "question" : "09行目に記述してコンパイルエラーが発生するものを2つ選んでください。\n01|\u00A0import\u00A0java.io.IOException;\n02|\u00A0class\u00A0MyIOException\u00A0extends\u00A0IOException\u00A0{}\n03|\u00A0class\u00A0MyException\u00A0extends\u00A0Exception\u00A0{}\n04|\u00A0class\u00A0Base\u00A0{\n05|\u00A0\u00A0\u00A0public\u00A0void\u00A0calc(double\u00A0d)\u00A0throws\u00A0IOException\u00A0{}\n06|\u00A0}\n07|\u00A0class\u00A0Sub\u00A0extends\u00A0Base\u00A0{\n08|\u00A0\u00A0\u00A0@Override\n09|\u00A0\u00A0\u00A0//\u00A0(INSERT\u00A0CODE)\n10|\u00A0}",
     "multipleAnswers" : true,
@@ -1643,7 +1643,7 @@
       }
     ]
 },{
-    "examId":"0000x",
+    "examId":"00036",
     "setItem" : "問題x",
     "question" : "下記のプログラムをコンパイル、実行するとどうなるか正しいものを1つ選択してください。\n01|class\u00A0OneClass\u00A0{\u00A0double\u00A0value\u00A0=\u00A025.0;\u00A0}\n02|class\u00A0Main\u00A0{\n03|\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n04|\u00A0\u00A0\u00A0\u00A0OneClass\u00A0one\u00A0=\u00A0new\u00A0OneClass();\n05|\u00A0\u00A0\u00A0\u00A0OneClass\u00A0another\u00A0=\u00A0one;\n06|\u00A0\u00A0\u00A0\u00A0float\u00A0x\u00A0=\u00A025.0F;\n07|\u00A0\u00A0\u00A0\u00A0float\u00A0y\u00A0=\u00A0x;\n08|\u00A0\u00A0\u00A0\u00A0one.value\u00A0-=\u00A010;\n09|\u00A0\u00A0\u00A0\u00A0x\u00A0*=\u00A02;\n10|\u00A0\u00A0\u00A0\u00A0System.out.println(x\u00A0+\u00A0\":\"\u00A0+\u00A0y\u00A0+\u00A0\":\"\n11|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0+\u00A0one.value\u00A0+\u00A0\":\"\u00A0+\u00A0another.value);\n12|\u00A0\u00A0}\n}\n",
     "multipleAnswers" : true,
@@ -1688,12 +1688,13 @@
       }
   ]
 },{
-    "examId":"0000x",
+    "examId":"00037",
     "setItem" : "問題x",
     "question" : "次の2つのプログラムがあります。\nコンパイル、実行で「Test」と出力されるコマンドを\n2つ選んでください。\n※ex4ディレクトリで実行し、CLASSPATH環境変数の設定なし\n\npackage\u00A0com.x;\nimport\u00A0com.y.Test;\npublic\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0Test.print();\n\u00A0\u00A0}\n}\n\npackage\u00A0com.y;\npublic\u00A0class\u00A0Test\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0System.out.println(\"Test\");\n\u00A0\u00A0}\n}\n",
     "multipleAnswers" : true,
     "tip":"作成中 \n aaaa",
     "ansLock" :false,
+    "TipURI" :"compileandrun",
     "selectAnswers" : [
       {
           "item" :"A",
