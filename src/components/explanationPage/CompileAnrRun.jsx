@@ -119,7 +119,8 @@ const compileAnrRun = () =>{
                     </code>
                   </pre>
                   ↓<br />
-                  省略できる-dオプションを指定していないので、実行したディレクトリをクラスファイルを保存先とする<br />
+                  省略できる-dオプションを指定していないので、実行したディレクトリをクラスファイルの保存先とする<br />
+                  packageを指定していても、反映されない<br />
                   <code>
                       <span class="pointBarBlue">Print.java</span>
                   </code>
