@@ -38,7 +38,7 @@ const compileAnrRun = () =>{
                     <pre>
                       <code>
                         <span class="numberLow">package com.trigger</span>
-                        <span class="numberLow">import com.action.Print</span>
+                        <span class="numberLow">import com.action.Display</span>
                         <span class="numberLow"></span>
                         <span class="numberLow">public class Main {'{'}</span>
                         <span class="numberLow">    public static void main(String[] args) {'{'}</span>
@@ -50,21 +50,21 @@ const compileAnrRun = () =>{
                   </div>
             </div>
             <div class="marginLeft10">
-                <div class="filename">ファイル2:Print.java</div>
+                <div class="filename">ファイル2:Display.java</div>
                 <div class="block">
                     パス                  
                     <pre>
                       <code>
-                        <span class="numberLow">samplefolder\Print.java</span>
+                        <span class="numberLow">samplefolder\Display.java</span>
                       </code>
                     </pre>              
-                Print.javaの中身
+                    Display.javaの中身
                 <pre>
                   <code>
                     <span class="numberLow">package com.action</span>
                     <span class="numberLow"></span>
                     <span class="numberLow">public class Test {'{'}</span>
-                    <span class="numberLow">    public static void print() {'{'}</span>
+                    <span class="numberLow">    public static void Display() {'{'}</span>
                     <span class="numberLow">        System.out.println("Display")</span>
                     <span class="numberLow">    {'}'}</span>
                     <span class="numberLow">{'}'}</span>
@@ -96,7 +96,7 @@ const compileAnrRun = () =>{
                 現在のディレクトリにふたつのファイルをコンパイルしたクラスファイルを保存する<br />
                 <pre>
                     <code>
-                      <span>javac <span class="pointBarRed">-d bin</span> <span class="pointBarBlue">Main.java Print.java</span></span>
+                      <span>javac <span class="pointBarRed">-d bin</span> <span class="pointBarBlue">Main.java Display.java</span></span>
                     </code>
                   </pre>
                   ↓<br />
@@ -106,23 +106,23 @@ const compileAnrRun = () =>{
                   →binフォルダをコンパイルしたクラスファイルの保存先とする<br />
                   　※binフォルダがなければ作成する<br />
                   <code>
-                      <span class="pointBarBlue">Main.java Print.java</span>
+                      <span class="pointBarBlue">Main.java Display.java</span>
                   </code>
                   →コンパイルするファイルをスペースで区切ったファイル名で指定
               </div>
               <div class="filename">コマンド例3</div>
               <div class="block">
-                現在のディレクトリにPrint.javaをコンパイルしたクラスファイルのみを保存する<br />
+                現在のディレクトリにDisplay.javaをコンパイルしたクラスファイルのみを保存する<br />
                 <pre>
                     <code>
-                      <span>javac <span class="pointBarBlue">Print.java</span></span>
+                      <span>javac <span class="pointBarBlue">Display.java</span></span>
                     </code>
                   </pre>
                   ↓<br />
                   省略できる-dオプションを指定していないので、実行したディレクトリをクラスファイルの保存先とする<br />
                   packageを指定していても、反映されない<br />
                   <code>
-                      <span class="pointBarBlue">Print.java</span>
+                      <span class="pointBarBlue">Display.java</span>
                   </code>
                   →コンパイルするファイルをファイル名でひとつだけ指定
               </div>
