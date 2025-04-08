@@ -417,7 +417,7 @@
 },{
     "examId":"00011",
     "setItem" : "問題11",
-    "question" : "BB次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|\u00A0public\u00A0class\u00A0Menu\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0Menu()\u00A0{ \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0name; \n 08|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 09|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu(\"Coffee\")); \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0}",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|\u00A0public\u00A0class\u00A0Menu\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0Menu()\u00A0{ \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0name; \n 08|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 09|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu(\"Coffee\")); \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0}",
     "multipleAnswers" : true,
     "tip":"6～8行目はStringを引数としたコンストラクタである \n ただしthis.nameではなくnameなので引数nameを代入しているのは2行目メンバ変数nameではなく引数nameである \n またStringのリターンもしていないため、13行目、14行目で呼ばれるのは9行目から10行目のToStringメソッドである \n 9行目から10行目のToStringメソッドでリターンしているのは2行目メンバ変数である",
     "ansLock" :true,
@@ -1536,13 +1536,13 @@
       {
           "item" :"E",
           "content" : "Eが出力される",
-          "correctAnswer":false,
+          "correctAnswer":true,
           "selecttips":""
       },
       {
           "item" :"F",
           "content" : "コンパイルがエラーが発生する",
-          "correctAnswer":true,
+          "correctAnswer":false,
           "selecttips":""
       }
   ]

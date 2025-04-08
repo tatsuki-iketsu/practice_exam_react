@@ -1,5 +1,6 @@
 import React,{useState} from "react"
 import ExamDisplay from "./components/ExamSet";
+import Fotter from "./Fotter";
 
 
 
@@ -9,6 +10,7 @@ const App =() =>{
     return (
         <>    
             <ExamDisplay />                
+            <Fotter />
         </>
         );
 };
