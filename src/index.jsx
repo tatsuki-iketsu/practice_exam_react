@@ -25,7 +25,7 @@ const explanationData = [
 root.render(
 <BrowserRouter>
     <Routes>
-    <Route exact path='/' element={<App />} />
+    <Route exact path='practiceexam/Java17silverTest/' element={<App />} />
     {explanationData.map((page) => (
     <Route
         key={page.pageID}  
