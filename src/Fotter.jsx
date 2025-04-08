@@ -1,5 +1,4 @@
 import React,{useState} from "react"
-import ExamDisplay from "./components/ExamSet";
 import urlList from "./UrlList"; // URLリストのimport
 
 // 解説用URLを格納する二次元Objcet

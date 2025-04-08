@@ -2,7 +2,6 @@ import compileAnrRun from "./components/explanationPage/CompileAnrRun";
 import collection from "./components/explanationPage/Collection";
 import overrideOfMethod from "./components/explanationPage/OverrideOfMethod";
 
-  
   const ExplanationData =() =>{
     const explanationData = [
         { pageID: 1, url: "/compileandrun" ,component:compileAnrRun,pageName:"コンパイル、実行"},
