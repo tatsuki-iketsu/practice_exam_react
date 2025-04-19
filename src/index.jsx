@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(container);
 const explanationData = urlList();
 
 root.render(
-<BrowserRouter basename="/practiceexam/Java17silverTest/">
+<BrowserRouter basename="/practiceexam/Java17silverDev/">
     <Routes>
     <Route exact path='/' element={<App />} />
     {explanationData.map((page) => (

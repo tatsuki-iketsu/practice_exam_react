@@ -76,9 +76,9 @@ const ExamDisplay = () =>{
   //////////////////
   //////////////////
 
-  // 初回シャッフル　削除
+  // 初回シャッフル、シャッフルしたことは表示しない
   useEffect(() => {
-    shuffleExam1(examData);
+    shuffleExam1(examData,true);
   }, []);
 
 
@@ -100,7 +100,7 @@ const shuffleExamAns =(selectAnswers,ansLock)=> {
 }
 
 // 外側シャッフル
-const shuffleExam1=(examData,name)=> {
+const shuffleExam1=(examData,InitialDisplay)=> {
 
   // // チェックをすべて外す
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -144,7 +144,11 @@ const shuffleExam1=(examData,name)=> {
     setallExam(all);
     setallTrue(0);
     setallFalse(0);
-    alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
+
+    // 初回以外はシャッフルしたことを表示
+    if(!(InitialDisplay)){
+      alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
+    }
   
 }
   // 問題と回答のセット
@@ -270,7 +274,7 @@ const shuffleExam1=(examData,name)=> {
     return (
     <>
     <h1 id="h1">Java SE silver17 練習問題</h1>
-    <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
+    <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
   {examData.setExams.map((setExam,index) => (
     <>
   <div style={examStyle}>
@@ -307,7 +311,7 @@ const shuffleExam1=(examData,name)=> {
       <p>正解数：{allTrue}</p>
       <p>不正解数：{allFalse}</p>
       <p>正解率：{allTrue/(allTrue+allFalse)*100}%</p>      
-      <input type="button" onClick={() => shuffleExam1(examData)} value="リセット" />
+      <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
 
           {/* Modal内容 */}
           <Modal
