@@ -9,7 +9,7 @@ const Fotter =() =>{
         <div className="fotter">
             <div>▼JavaSilver17試験対策問題　解説ページ</div>
             {explanationData.map((Data) => {
-                const urlPass = `.${ Data.url }`
+                const urlPass = `..${ Data.url }`
             return (
                 <>
                 <a href ={urlPass}>{ Data.pageName }</a> / 

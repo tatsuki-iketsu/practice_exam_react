@@ -4,3 +4,7 @@
 /build/static
 /build/asset-manifest.json
 /build/index.html
+/.env
+/.env.development
+/.env.production
+
