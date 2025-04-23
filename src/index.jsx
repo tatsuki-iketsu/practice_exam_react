@@ -15,18 +15,21 @@ const root = ReactDOM.createRoot(container);
 const explanationData = urlList();
 
 root.render(
-<BrowserRouter basename={process.env.REACT_APP_BASENAME}>
-    <Routes>
+    <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
+<Routes>
     <Route exact path='/' element={<App />} />
     {explanationData.map((page) => (
     <Route
         key={page.pageID}  
-        path={`/${page.url}`}
+        path={`${page.url}`}
         element={<page.component />}
+        
     />
     ))}
     </Routes>
     <Link to='/'>Back To Top</Link>
+    <br/>
+    ◆<Link to='/'>{explanationData[0].url}</Link>
 </BrowserRouter>
 )
 

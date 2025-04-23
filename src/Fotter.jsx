@@ -6,10 +6,10 @@ const explanationData = urlList();
 const Fotter =() =>{
     return (
         <>   
-        <div className="fotter">
+        <div className="fotter">`{explanationData[0].url}``{process.env.REACT_APP_BASENAME}`
             <div>▼JavaSilver17試験対策問題　解説ページ</div>
             {explanationData.map((Data) => {
-                const urlPass = `${ Data.url }`
+                const urlPass = `${process.env.REACT_APP_BASELINK}${ Data.url }`
             return (
                 <>
                 <a href ={urlPass}>{ Data.pageName }</a> / 
