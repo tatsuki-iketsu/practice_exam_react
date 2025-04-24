@@ -16,37 +16,15 @@ const explanationData = urlList();
 
 root.render(
     <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
-<Routes>
-    <Route exact path='/' element={<App />} />
-    {explanationData.map((page) => (
-    <Route
-        key={page.pageID}  
-        path={`/${page.url}`}
-        element={<page.component />}
-        
-    />
-    ))}
+    <Routes>
+        <Route path='/' element={<App />} />
+        {explanationData.map((page,index) => (
+        <Route
+            key={index} 
+            path={page.url}
+            element={page.component}
+        />
+        ))}
     </Routes>
-    <Link to='/'>Back To Top</Link>
-    <br/>
-    <div className="fotter">`{explanationData[0].url}``{process.env.REACT_APP_BASENAME}`
-            <div>▼JavaSilver17試験対策問題　解説ページ</div>
-            {explanationData.map((Data) => {
-                const urlPass = `/${ Data.url }`
-            return (
-                <>
-                <p>◆<Link to={urlPass}>{ Data.pageName }</Link></p>
-                </>
-                )
-            })}
-        </div>
-
-    ◆<Link to='/'>{explanationData[0].url}</Link>
-    ◆<Link to='/'>name:{process.env.REACT_APP_BASENAME}</Link>
-    ◆<Link to='/'>link:{process.env.REACT_APP_BASELINK}</Link>
 </BrowserRouter>
 )
-
-
-
-

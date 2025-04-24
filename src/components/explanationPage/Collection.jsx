@@ -3,7 +3,7 @@ import React from "react";
 import explanationPagestyles from '../css/explanationPage.module.css'
 // import practiceExamReactStyles from '../css/practiceExamReact.module.css'
 
-const collection = () =>{
+const Collection = () =>{
 
   return (
     <>
@@ -52,5 +52,5 @@ const collection = () =>{
     
   );
 };
-export default collection
+export default Collection
 ;
