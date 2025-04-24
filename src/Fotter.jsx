@@ -20,24 +20,6 @@ const Fotter =() =>{
                 )
             })}
         </div>
-        <Link to='/CompileAnrRun'>BCompileAnrRunテスト</Link>
-    <br/>
-    <div className="fotter">`{explanationData[0].url}``{process.env.REACT_APP_BASENAME}`
-            <div>▼JavaSilver17試験対策問題　解説ページ</div>
-            {explanationData.map((Data) => {
-                const urlPass = `https://prokuma.net/practiceexam/Java17silverDev/${ Data.url }`
-            return (
-                <>
-                <p>◆<Link to={urlPass}>{ Data.pageName }</Link></p>
-                </>
-                )
-            })}
-        </div>
-
-    ◆<Link to='/'>{explanationData[0].url}</Link>
-    ◆<Link to='/'>name:{process.env.REACT_APP_BASENAME}</Link>
-    ◆<Link to='/'>link:{process.env.REACT_APP_BASELINK}</Link>
-
         </>
         );
 };
