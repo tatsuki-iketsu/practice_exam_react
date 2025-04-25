@@ -7,8 +7,9 @@ import { toBeEnabled } from "@testing-library/jest-dom/matchers";
 
 const NO_SELECTED = "回答が選択されていません"
 let SelectTipsNumber = 9999 // Modalに表示される回答の問題No 初期値は存在しない数値
-let SelectExamId = 0 // Modalに表示される回答の問題No 初期値は存在しない数値
-let TipURI = <></> //　解説ページのリンクURI
+let SelectExamId = 0        // Modalに表示される回答の問題No 初期値は存在しない数値
+let TipURI = <></>          //　解説ページのリンクURI
+let c_ansCheck = [];              // 一度正誤を確認したか格納
 
 const ExamDisplay = () =>{
   const [examData,setExamData] = useState(Data);                     // 問題を格納
@@ -38,6 +39,11 @@ const ExamDisplay = () =>{
   }
 
   function closeModal() {
+      // Modalを閉じている部分をfalseにする
+      setExamDisabled(examDisabled.map((disabled) => (disabled = false)));
+      // TODO ↑をセットする
+      // setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
+      
     setIsOpen(false);
   }
 
@@ -125,11 +131,14 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     let c_ansDisplay = [];
     let c_trueOrFalseDisplay = [];
 
+
     for(let i = 0; i < examData.setExams.length;i++){
       c_examDisabled = [,...c_examDisabled,false];
       c_ansDisplay = [...c_ansDisplay,`(問題${i+1}の回答がここに表示されます)`]
       c_trueOrFalseDisplay = [...c_trueOrFalseDisplay,`(問題${i+1}の正解/不正解がここに表示されます)`]
       c_tipDisplay = [...c_tipDisplay,`(問題${i+1}の解説がここに表示されます)`] 
+      c_ansCheck = [...c_ansCheck,false];
+
       // c_tipDisplay = [...c_tipDisplay,examData.setExams[i].tip] 
     };
 
@@ -166,11 +175,11 @@ const shuffleExam1=(examData,InitialDisplay)=> {
 
     }
     
-    // 単一回答の表示
-    const onClickAnser = (setExams)=> {
+    // // 単一回答の表示 TODO削除予定
+    // const onClickAnser = (setExams)=> {
 
-      return "aa";
-    };
+    //   return "aa";
+    // };
 
     ////// 複数回答の表示関数 //////
     const selectedAnserGet = (selectedChecks,setExam,index,examId,tipURI) => {
@@ -189,15 +198,14 @@ const shuffleExam1=(examData,InitialDisplay)=> {
           <div><a href={tipURI} target="_blank">学習ページを見る</a></div>
         )
       }
-    // TipURI = "./" + tipURI;
-
-                    
-
+      // TipURI = "./" + tipURI; TODO:削除予定
 
       // 選択した回答を格納する配列
       const selectedAns = [];
       // 正しい回答を格納する配列
       const answers = [];
+      // 選択してクリックしたかどうか
+      const firstClick = false;
 
       // querySelectorAllから選択した回答の文字列連結し配列に格納
       if(selectedChecks.length == 0 ){
@@ -221,14 +229,23 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
       if(answers.toString() == selectedAns.toString()){
           settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
-          setallTrue(allTrue+1);
+          // 最初のクリックだ正解数をカウント
+          if(!(c_ansCheck[index])){
+            setallTrue(allTrue+1);
+          }
         }else{
           settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
-          setallFalse(allFalse+1);
+          // 最初のクリックだ誤数をカウント
+          if(!(c_ansCheck[index])){
+            setallFalse(allFalse+1);
+          }
         }
       // ボタン非活性化と解説セット
-      // TODO:Modalを閉じたらボタンが復帰するようにする
-      //setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
+      // Modalを閉じるまでボタンを無効化
+      setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
+      // 正誤確認済みをセット 
+      c_ansCheck[index] = true;
+      console.log(c_ansCheck);
       setTipDisplay(tipDisplay.map((tip, i) => (i == index ? MultiLineBody(setExam.tip) : tip)));
       // Modalオープン
       openModal()
@@ -251,7 +268,6 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     } else {
       return null
     }
-
   }
 
 
