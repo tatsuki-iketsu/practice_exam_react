@@ -289,7 +289,6 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     // 問題を表示する部分
     return (
     <>
-    <h1 id="h1">Java SE silver17 練習問題</h1>
     <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
   {examData.setExams.map((setExam,index) => (
     <>

@@ -1,6 +1,7 @@
 import React,{useState} from "react"
-import ExamDisplay from "./components/ExamSet";
+import ExamDisplay from "./components/ExamDisplay";
 import Fotter from "./Fotter";
+import Header from "./Header";
 
 
 
@@ -9,7 +10,8 @@ const App =() =>{
     const [textShowFlug,setTextShowFlag] = useState(true); 
     return (
         <>    
-            <ExamDisplay />                
+            <header><Header /></header>
+            <main><ExamDisplay /></main>
             <Fotter />
         </>
         );
