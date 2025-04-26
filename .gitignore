@@ -7,4 +7,4 @@
 /.env
 /.env.development
 /.env.production
-
+/.vscode
