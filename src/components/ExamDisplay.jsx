@@ -11,7 +11,7 @@ let SelectExamId = 0        // Modalに表示される回答の問題No 初期�
 let TipURI = <></>          //　解説ページのリンクURI
 let c_ansCheck = [];              // 一度正誤を確認したか格納
 
-const ExamDisplay = () =>{
+const ExamDisplay = (props) =>{
   const [examData,setExamData] = useState(Data);                     // 問題を格納
   const [examDisabled,setExamDisabled] = useState([]);               // 問題の回答ボタン表示非表示を格納
   const [ansDisplay,setAnsDisplay] = useState([]);                   // 正解と選択肢を格納
@@ -55,19 +55,19 @@ const ExamDisplay = () =>{
       maxWidth: 'none', // 最大幅を解除
     },
   },
-    overlay: {
+  overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)', // 半透明の黒
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-    },    
+    }
   };
 
     // Modal内TipのCSS
     const tipStyle = {
-      backgroundColor: "gray",
+      backgroundColor:'blue',
       overflow: "scroll"
-        };
+    };
     
   //////////////////
   //////////////////
@@ -226,18 +226,21 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       } );
       
       // displayにセット
-      setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}/選択した回答：${selectedAns}` : ans)));
+      setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}
+        /選択した回答：${selectedAns}` : ans)));
       if(answers.toString() == selectedAns.toString()){
           settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
           // 最初のクリックだ正解数をカウント
           if(!(c_ansCheck[index])){
             setallTrue(allTrue+1);
+            props.countUpdate(allExam,allTrue+1,allFalse);
           }
         }else{
           settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
           // 最初のクリックだ誤数をカウント
           if(!(c_ansCheck[index])){
             setallFalse(allFalse+1);
+            props.countUpdate(allExam,allTrue,allFalse+1);
           }
         }
       // ボタン非活性化と解説セット
@@ -336,13 +339,14 @@ const shuffleExam1=(examData,InitialDisplay)=> {
             style={modalStyle}
             contentLabel="Example Modal"
           >
-            <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}><div>問題{SelectTipsNumber}の結果 ：{trueOrFalseDisplay[SelectTipsNumber]}</div></h2>
-            <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
-            <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
-            <div class={tipStyle}><nobr>{tipDisplay[SelectTipsNumber]}</nobr></div>
-            {TipURI}
-            <button onClick={closeModal}>閉じる</button>
-            <div>問題ID.{SelectExamId}</div>
+            <div className="marginTop100">
+              <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}><div>問題{SelectTipsNumber}の結果 ：{trueOrFalseDisplay[SelectTipsNumber]}</div></h2>
+              <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
+              <div class={tipStyle}><nobr>{tipDisplay[SelectTipsNumber]}</nobr></div>
+              {TipURI}
+              <button onClick={closeModal}>閉じる</button>
+              <div>問題ID.{SelectExamId}</div>
+            </div>
           </Modal>
           {/* Modal内容 */}
 

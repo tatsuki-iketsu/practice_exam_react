@@ -12,15 +12,6 @@ const App =() =>{
 
     console.log(`App描画/問題数:${totalCount}-/正解数::${trueCount}-/不正解数::${falseCount}`);
 
-    // // テスト関数
-    // const countUpdate =(number) =>{
-    //     console.log(`正答率リセット:${totalCount}`);
-    //     setTotalCount(inTotal);
-    //     setRestCount(inRest);
-    //     setTrueCount(inTrue);
-    //     setFalseCount(inFalse);
-    // }
-
     // 正答率更新
     const countUpdate =(inTotal,inTrue,inFalse) =>{
         console.log(`正答率リセット:${totalCount}`);
@@ -28,7 +19,7 @@ const App =() =>{
         setTrueCount(inTrue);
         setFalseCount(inFalse);
     }
-    // 正答率更新
+    // 正答率リセット
     const countReset =(inTotal) =>{
         countUpdate(inTotal,0,0)
     }
@@ -40,7 +31,7 @@ const App =() =>{
             <input type="button" onClick={() => countUpdate(totalCount,trueCount + 1,falseCount)} value="正解追加" />
             <input type="button" onClick={() => countUpdate(totalCount,trueCount,falseCount + 1)} value="誤り追加" />
             <input type="button" onClick={() => countReset(totalCount)} value="リセット" />
-            <main><ExamDisplay /></main>
+            <main><ExamDisplay countUpdate={countUpdate} countReset={countReset} /></main>
             <Fotter />
         </>
         );

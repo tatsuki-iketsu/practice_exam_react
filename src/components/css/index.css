@@ -7,14 +7,26 @@ Header{
   /* ヘッダーを固定 */
   position: sticky;
   top: 6px;
-  z-index: 999;
+  z-index: 10;
 
   background: red; /* テスト用背景色 */
-  padding: 5px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
 }
 
 
+Modal{
+  background: blue; /* テスト用背景色 */
+  z-index: 20;
+}
+#h1{
+  font-size:20px;
+  margin: 5px,5px,10px,10px;
+  background: blue /* テスト用背景色 */
+}
+#count{
+  margin-top: 0px;
+}
 
 /*
 *****************
@@ -24,6 +36,9 @@ Header{
 /*左側マージン*/
 .marginLeft10{
     margin-left: 10px;
+}
+.marginTop100{
+  margin-top: 100px;
 }
 
 /*サンプルエリア*/
