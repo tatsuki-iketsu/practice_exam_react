@@ -60,6 +60,7 @@ const ExamDisplay = (props) =>{
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      zIndex: 30
     }
   };
 
@@ -190,12 +191,12 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       // リンク用にURIをセット
       if(tipURI == undefined) {
         TipURI = (
-          <div>学習ページは準備中です…</div>
+          <div className="paddingTop15">学習ページは準備中です…</div>
         )
       }else{
         tipURI = `./${tipURI}`
         TipURI = (
-          <div><a href={tipURI} target="_blank">学習ページを見る</a></div>
+          <div className="paddingTop15"><a href={tipURI} target="_blank">学習ページを見る</a></div>
         )
       }
       // TipURI = "./" + tipURI; TODO:削除予定
@@ -225,22 +226,21 @@ const shuffleExam1=(examData,InitialDisplay)=> {
         }
       } );
       
-      // displayにセット
-      setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}
-        /選択した回答：${selectedAns}` : ans)));
+      // Modal内に表示するdisplayにセット
+      setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}<br>回答選択肢：${selectedAns}` : ans)));
       if(answers.toString() == selectedAns.toString()){
           settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
-          // 最初のクリックだ正解数をカウント
           if(!(c_ansCheck[index])){
             setallTrue(allTrue+1);
-            props.countUpdate(allExam,allTrue+1,allFalse);
+          // 最初のクリック時は正解数をカウント
+          props.countUpdate(allExam,allTrue+1,allFalse);
           }
         }else{
           settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
-          // 最初のクリックだ誤数をカウント
           if(!(c_ansCheck[index])){
             setallFalse(allFalse+1);
-            props.countUpdate(allExam,allTrue,allFalse+1);
+          // 最初のクリック時は誤数をカウント
+          props.countUpdate(allExam,allTrue,allFalse+1);
           }
         }
       // ボタン非活性化と解説セット
@@ -301,7 +301,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     <p white-space="nowrap">問題内容：{MultiLineBody(setExam.question)}</p>
       {setExam.selectAnswers.map((Answer) => (
         <>
-          <div><nobr>
+          <div className="marginTopBottom"><nobr>
            <input
               type="checkbox"
               name = {setExam.setItem}
@@ -325,10 +325,6 @@ const shuffleExam1=(examData,InitialDisplay)=> {
        */}
       </>
     ))}
-      <p id="bottom">残問題数：{allExam-allTrue-allFalse}</p>
-      <p>正解数：{allTrue}</p>
-      <p>不正解数：{allFalse}</p>
-      <p>正解率：{allTrue/(allTrue+allFalse)*100}%</p>      
       <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
 
           {/* Modal内容 */}
@@ -339,13 +335,15 @@ const shuffleExam1=(examData,InitialDisplay)=> {
             style={modalStyle}
             contentLabel="Example Modal"
           >
-            <div className="marginTop100">
+            <div>
               <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}><div>問題{SelectTipsNumber}の結果 ：{trueOrFalseDisplay[SelectTipsNumber]}</div></h2>
-              <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}>{ansDisplay[SelectTipsNumber]}</h2>            
+              <div ref={(_modalTitle) => (modalTitle = _modalTitle)}>
+                  <div dangerouslySetInnerHTML={{ __html: ansDisplay[SelectTipsNumber] }}></div>
+              </div>            
               <div class={tipStyle}><nobr>{tipDisplay[SelectTipsNumber]}</nobr></div>
               {TipURI}
-              <button onClick={closeModal}>閉じる</button>
-              <div>問題ID.{SelectExamId}</div>
+              <button onClick={closeModal} className="marginTop15">閉じる</button>
+              <div className="paddingTop15">問題ID.{SelectExamId}</div>
             </div>
           </Modal>
           {/* Modal内容 */}

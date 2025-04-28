@@ -9,38 +9,65 @@ Header{
   top: 6px;
   z-index: 10;
 
-  background: red; /* テスト用背景色 */
-  padding: 0px 0px 0px 0px;
+  background: rgba(77, 77, 247, 0.2);
+  padding: 8px;
   margin: 0px 0px 0px 0px;
 }
-
 
 Modal{
   background: blue; /* テスト用背景色 */
   z-index: 20;
 }
+
 #h1{
-  font-size:20px;
-  margin: 5px,5px,10px,10px;
-  background: blue /* テスト用背景色 */
+  font-size:large;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.6);
 }
 #count{
-  margin-top: 0px;
+  background: rgba(22, 22, 255, 0.8);
+  color: #bdedf0;
+  padding: 5px;
+  margin: 5px;
 }
 
+/* スマホの時だけ改行させるクラス */
+.br-sp {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .br-sp {
+        display: block;
+    }
+}
 /*
 *****************
 個別レイアウト変更
 *****************
 */
+/*上側マージン*/
+.marginTop15{
+  margin-top: 15px;
+}
 /*左側マージン*/
 .marginLeft10{
     margin-left: 10px;
 }
-.marginTop100{
-  margin-top: 100px;
+/*上下マージン*/
+.marginTopBottom{
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
+/*右側パディング*/
+.paddingRight15{
+  padding-right: 15px;
+}
+/*上側パディング*/
+.paddingTop15{
+  padding-top: 15px;
+}
 /*サンプルエリア*/
 .sampleFile{
   padding:10px;

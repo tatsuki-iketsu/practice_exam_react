@@ -37,11 +37,14 @@ const Header =(props) =>{
     }, [props]);
 
     return (
-        <>  
-        <h1 id="h1">Java SE silver17 練習問題</h1>
-        <div id="count">残問題数：{restCount}/{totalCount}　正解数：{trueCount}　不正解数：{falseCount}　正解率：{answerRate}<input type="button" onClick={() => countReset(totalCount)} value="正答率リセット" /></div>
-        <div> </div>
-        </>
+        <div className="header">  
+            <h1 id="h1">Java SE silver17 練習問題</h1>
+            <div id="count">
+                <span className="paddingRight15">残問題数：{restCount}/{totalCount}</span><span className="paddingRight15">正解率：{answerRate}</span><br className="br-sp" />
+                <span className="paddingRight15">正解数：{trueCount}</span><span className="paddingRight15">不正解数：{falseCount}</span>
+                <div><input type="button" onClick={() => countReset(totalCount)} value="正答率リセット" /></div>
+            </div>
+        </div>
         );
 };
 
