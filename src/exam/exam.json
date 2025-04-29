@@ -179,8 +179,8 @@
 },{
     "examId":"00005",
     "setItem" : "問題5",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01|\u00A0 class\u00A0Parent\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Parent\u00A0methodA()\"); \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0private \u00A0void\u00A0methodB()\u00A0{ \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Parent#methodB()\"); \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 08|\u00A0} \n 09|\u00A0class\u00A0Child\u00A0extends\u00A0Parent\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Child\u00A0methodA()\"); \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0methodB()\u00A0{ \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Child#methodB()\"); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0} \n 17|\u00A0public\u00A0class\u00A0Main\u00A0{ \n 18|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n 19|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Parent\u00A0obj\u00A0=\u00A0new\u00A0Child(); \n 20|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child.methodA(); \n 21|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0obj.methodB(); \n 22|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 23|\u00A0}",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "class\u00A0Parent\u00A0{ \n \u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Parent\u00A0methodA()\"); \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0private \u00A0void\u00A0methodB()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Parent#methodB()\"); \n \u00A0\u00A0\u00A0\u00A0} \n } \n class\u00A0Child\u00A0extends\u00A0Parent\u00A0{ \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Child\u00A0methodA()\"); \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0methodB()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Child#methodB()\"); \n \u00A0\u00A0\u00A0\u00A0} \n } \n public\u00A0class\u00A0Main\u00A0{ \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Parent\u00A0obj\u00A0=\u00A0new\u00A0Child(); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child.methodA(); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0obj.methodB(); \n \u00A0\u00A0\u00A0\u00A0} \n }",
     "multipleAnswers" : true,
     "tip" :"コンパイル時点ではobjがParent型のため、privateのmethodB()を確認できません",
     "ansLock" :true,
@@ -219,8 +219,8 @@
 },{
     "examId":"00006",
     "setItem" : "問題6",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01|\u00A0 class\u00A0Parent\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Parent\u00A0methodA()\"); \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0public \u00A0void\u00A0methodB()\u00A0{ \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Parent#methodB()\"); \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 08|\u00A0} \n 09|\u00A0class\u00A0Child\u00A0extends\u00A0Parent\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Child\u00A0methodA()\"); \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0methodB()\u00A0{ \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Child#methodB()\"); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0} \n 17|\u00A0public\u00A0class\u00A0Main\u00A0{ \n 18|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n 19|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Parent\u00A0obj\u00A0=\u00A0new\u00A0Child(); \n 20|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child.methodA(); \n 21|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0obj.methodB(); \n 22|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 23|\u00A0}",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "class\u00A0Parent\u00A0{ \n \u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Parent\u00A0methodA()\"); \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public \u00A0void\u00A0methodB()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Parent#methodB()\"); \n \u00A0\u00A0\u00A0\u00A0} \n } \n class\u00A0Child\u00A0extends\u00A0Parent\u00A0{ \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Child\u00A0methodA()\"); \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0methodB()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Child#methodB()\"); \n \u00A0\u00A0\u00A0\u00A0} \n } \n public\u00A0class\u00A0Main\u00A0{ \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Parent\u00A0obj\u00A0=\u00A0new\u00A0Child(); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child.methodA(); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0obj.methodB(); \n \u00A0\u00A0\u00A0\u00A0} \n }",
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :true,
@@ -260,8 +260,8 @@
 },{
     "examId":"00007",
     "setItem" : "問題7",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。\n 01|\u00A0 class\u00A0Parent\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Parent\u00A0methodA()\"); \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0private \u00A0void\u00A0methodB()\u00A0{ \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Parent#methodB()\"); \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 08|\u00A0} \n 09|\u00A0class\u00A0Child\u00A0extends\u00A0Parent\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Child\u00A0methodA()\"); \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0methodB()\u00A0{ \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Child#methodB()\"); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0} \n 17|\u00A0public\u00A0class\u00A0Main\u00A0{ \n 18|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n 19|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child\u00A0obj\u00A0=\u00A0new\u00A0Child(); \n 20|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child.methodA(); \n 21|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0obj.methodB(); \n 22|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 23|\u00A0}",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "class\u00A0Parent\u00A0{ \n \u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Parent\u00A0methodA()\"); \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0private \u00A0void\u00A0methodB()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Parent#methodB()\"); \n \u00A0\u00A0\u00A0\u00A0} \n } \n class\u00A0Child\u00A0extends\u00A0Parent\u00A0{ \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0methodA()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"static\u00A0Child\u00A0methodA()\"); \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0methodB()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Child#methodB()\"); \n \u00A0\u00A0\u00A0\u00A0} \n } \n public\u00A0class\u00A0Main\u00A0{ \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child\u00A0obj\u00A0=\u00A0new\u00A0Child(); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Child.methodA(); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0obj.methodB(); \n \u00A0\u00A0\u00A0\u00A0} \n }",
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :true,
@@ -300,8 +300,8 @@
 },{
     "examId":"00008",
     "setItem" : "問題8",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n1|\u00A0public\u00A0class\u00A0Sample\u00A0{ \n2|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{ \n3|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(0x00\u00A0|\u00A00x00); \n4|\u00A0\u00A0\u00A0\u00A0\u00A0} \n5|\u00A0} \n",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Sample\u00A0{ \n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{ \n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(0x00\u00A0|\u00A00x00); \n\u00A0\u00A0\u00A0\u00A0} \n}",
     "multipleAnswers" : true,
     "tip":"2行目は可変長の文字列引数なのでコンパイルすると配列文字引数となるのでコンパイルできる \n 3行目は16進数をビット論理演算しており、両方とも0なので0となる \n ※ビット論理演算の参考URL：https://www.javadrive.jp/start/ope/index8.html",
     "ansLock" :true,
@@ -340,8 +340,8 @@
 },{
     "examId":"00009",
     "setItem" : "問題09",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n1|\u00A0public\u00A0class\u00A0Sample\u00A0{ \n2|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{ \n3|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(0x00\u00A0|\u00A00x1); \n4|\u00A0\u00A0\u00A0\u00A0\u00A0} \n5|\u00A0} \n",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Sample\u00A0{ \n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{ \n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(0x00\u00A0|\u00A00x1); \n\u00A0\u00A0\u00A0\u00A0} \n}",
     "multipleAnswers" : true,
     "tip":"2行目は可変長の文字列引数なのでコンパイルすると配列文字引数となるのでコンパイルできる \n3行目は16進数をビット論理演算しており、左辺は0、右辺は16進数の1なので論理和は1となる \n※ビット論理演算の参考URL：https://www.javadrive.jp/start/ope/index8.html \n※16進数の参考URL：https://www.rtpro.yamaha.co.jp/RT/docs/misc/number-table.html",
     "ansLock" :true,
@@ -381,8 +381,8 @@
 },{
     "examId":"00010",
     "setItem" : "問題10",
-    "question" : "AA次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|\u00A0public\u00A0class\u00A0Menu\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0void\u00A0Menu()\u00A0{ \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0name; \n 08|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 09|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu()); \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0}",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Menu\u00A0{ \n \u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n \u00A0\u00A0\u00A0\u00A0void\u00A0Menu()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0name; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu()); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n \u00A0\u00A0\u00A0\u00A0} \n }",
     "multipleAnswers" : true,
     "tip":"3～5行目はvoidがついているのでコンストラクタではなくメソッドである \n 6～8行目は引数なしのコンストラクタである \n 13行目でnew Menu()のオブジェクトを生成しているが、引数なしのコンストラクタは存在しないのでコンパイルエラーになる \n ",
     "ansLock" :true,
@@ -427,8 +427,8 @@
 },{
     "examId":"00011",
     "setItem" : "問題11",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|\u00A0public\u00A0class\u00A0Menu\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0Menu()\u00A0{ \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0name; \n 08|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 09|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu(\"Coffee\")); \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0}",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 ",
+    "code" : "public\u00A0class\u00A0Menu\u00A0{ \n \u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n \u00A0\u00A0\u00A0\u00A0Menu()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0name; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu(\"Coffee\")); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n \u00A0\u00A0\u00A0\u00A0} \n }",
     "multipleAnswers" : true,
     "tip":"6～8行目はStringを引数としたコンストラクタである \n ただしthis.nameではなくnameなので引数nameを代入しているのは2行目メンバ変数nameではなく引数nameである \n またStringのリターンもしていないため、13行目、14行目で呼ばれるのは9行目から10行目のToStringメソッドである \n 9行目から10行目のToStringメソッドでリターンしているのは2行目メンバ変数である",
     "ansLock" :true,
@@ -473,8 +473,8 @@
 },{
     "examId":"00012",
     "setItem" : "問題12",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|\u00A0public\u00A0class\u00A0Menu\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0void\u00A0Menu()\u00A0{ \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0this.name\u00A0=\u00A0name; \n 08|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 09|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n 11|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 12|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n 13|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu(\"Coffee\")); \n 14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n 15|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 16|\u00A0}",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Menu\u00A0{ \n \u00A0\u00A0\u00A0\u00A0private\u00A0String\u00A0name; \n \u00A0\u00A0\u00A0\u00A0void\u00A0Menu()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0name\u00A0=\u00A0\"Something\"; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0Menu(String\u00A0name)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0this.name\u00A0=\u00A0name; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0return\u00A0\"\u00A0Menu:\"\u00A0+\u00A0name; \n \u00A0\u00A0\u00A0\u00A0} \n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...args)\u00A0{ \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(new\u00A0Menu(\"Coffee\")); \n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(new\u00A0Menu(\"Coffee\")); \n \u00A0\u00A0\u00A0\u00A0} \n }", 
     "multipleAnswers" : true,
     "tip":"6～8行目はStringを引数としたコンストラクタである \n 引数nameをthis.nameでメンバ変数nameに代入している \n 13行目、14行目で呼ばれるのは9行目から10行目のToStringメソッドである \n 9行目から10行目のメソッドはToStringがオーバーライドされており、リターンしているのは2行目メンバ変数である \n 13行目、14行目の出力はメンバ変数なのでCoffeeとなる",
     "ansLock" :true,
@@ -519,8 +519,8 @@
 },{
     "examId":"00013",
     "setItem" : "問題13",
-    "question" : "次の4行目、//\u00A0INSERT\u00A0CODE部分に記述し、\nコンパイルが成功する記述を3つ選んでください\u00A0\n\u00A0\u00A0\n\u00A001|\u00A0public\u00A0class\u00A0Sample\u00A0{\u00A0\n\u00A002|\u00A0\u00A0\n\u00A003|\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\u00A0\n\u00A004|\u00A0\u00A0\u00A0\u00A0//\u00A0INSERT\u00A0CODE\n\u00A005|\u00A0\u00A0}\n\u00A006|\u00A0\u00A0\n\u00A007|\u00A0}\u00A0\n\u00A0",
-    "code" : "",
+    "question" : "コードの4行目、//\u00A0INSERT\u00A0CODE部分に記述し、\nコンパイルが成功する記述を3つ選んでください。",
+    "code" : "public\u00A0class\u00A0Sample\u00A0{\u00A0\n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0INSERT\u00A0CODE\n \u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"int[][] A：char型リテラルがint型に暗黙の型変換で代入される\nboolean B：boolean型（配列なし）にBoolean（配列）の代入は不可\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.roundはlong型に丸めた値が戻りなので、Double型への代入は変換できないため不可\nchar E[][]：配列の指定は識別子の前後どちらでもよい、int型が(char)でchar型に変換される※(char)はなくてもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
     "ansLock" :false,
@@ -565,8 +565,8 @@
 },{
     "examId":"00014",
     "setItem" : "問題14",
-    "question" : "次の4行目、//\u00A0INSERT\u00A0CODE部分に記述し、\nコンパイルが成功する記述を3つ選んでください\u00A0\n\u00A0\u00A0\n\u00A001|\u00A0public\u00A0class\u00A0Sample\u00A0{\u00A0\n\u00A002|\u00A0\u00A0\n\u00A003|\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\u00A0\n\u00A004|\u00A0\u00A0\u00A0\u00A0//\u00A0INSERT\u00A0CODE\n\u00A005|\u00A0\u00A0}\n\u00A006|\u00A0\u00A0\n\u00A007|\u00A0}\u00A0\n\u00A0",
-    "code" : "",
+    "question" : "コードの4行目、//\u00A0INSERT\u00A0CODE部分に記述し、\nコンパイルが成功する記述を3つ選んでください。",
+    "code" : "public\u00A0class\u00A0Sample\u00A0{\u00A0\n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0INSERT\u00A0CODE\n \u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"int[][] A：char型に文字列が記述されているた代入め不可\nboolean B：boolean型の配列にBoolean型の配列代入は変換されないため不可\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.floorはdouble型が戻り値なので代入できる\nchar E[][]：配列の指定は識別子の前後どちらでもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
     "ansLock" :true,
@@ -611,8 +611,8 @@
 },{
     "examId":"00015",
     "setItem" : "問題15",
-    "question" : "次の4行目、//\u00A0INSERT\u00A0CODE部分に記述し、\nコンパイルが成功する記述を3つ選んでください\u00A0\n\u00A0\u00A0\n\u00A001|\u00A0public\u00A0class\u00A0Sample\u00A0{\u00A0\n\u00A002|\u00A0\u00A0\n\u00A003|\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\u00A0\n\u00A004|\u00A0\u00A0\u00A0\u00A0//\u00A0INSERT\u00A0CODE\n\u00A005|\u00A0\u00A0}\n\u00A006|\u00A0\u00A0\n\u00A007|\u00A0}\u00A0\n\u00A0",
-    "code" : "",
+    "question" : "コードの4行目、//\u00A0INSERT\u00A0CODE部分に記述し、\nコンパイルが成功する記述を3つ選んでください。",
+    "code" : "public\u00A0class\u00A0Sample\u00A0{\u00A0\n \u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0INSERT\u00A0CODE\n \u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"boolean B：boolean型配列にboolean配列の代入はできる\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.floorはdouble型が戻り値なので代入できる\nObject[][] F：Object型の配列は型が異なる値を代入できる",
     "ansLock" :false,
@@ -657,69 +657,69 @@
 },{
     "examId":"00016",
     "setItem" : "問題16",
-    "question" : "次からコンパイルが成功する記述を3つ選んでください \n 01|\u00A0public\u00A0class\u00A0Snippet\u00A0{ \n 03|\u00A0\u00A0// (INSERT CODE)\n  04|\u00A0 \u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n  05|\u00A0}",
-    "code" : "",
+    "question" : "コードの2行目、// INSERT CODE部分に記述し、コンパイルが成功する記述を3つ選んでください。",
+    "code" : "public\u00A0class\u00A0Snippet\u00A0{\n\u00A0\u00A0\u00A0\u00A0// (INSERT CODE)\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n}",
     "multipleAnswers" : true,
-    "tip":"2行目：クラス名にRecordは使用できる \n 4行目：recordクラスはrecord クラス名(引数)なので問題ない \n 5行目：recordクラスはRecordクラスを継承するが、明示的にextendsで継承する記述はできない \n 6行目：recordクラスはfinalが付与されるが、明示的に記述しても問題ない",
+    "tip":"",
     "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "2行目：public record Record() {}",
+          "content" : "public record Record() {}",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"クラス名にRecordは使用できるので問題ない"
       },
       {
           "item" :"B",
-          "content" : "3行目：record Product(double price) {}",
+          "content" : "record Product(double price) {}",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"recordクラスはrecord クラス名(引数)とするので問題ない"
       },
       {
           "item" :"C",
-          "content" : "4行目：record Product2(double price) {} extends Record{}",
+          "content" : "record Product2(double price) {} \nextends Record{}",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"recordクラスはRecordクラスを継承するが、明示的にextendsで継承する記述はできない"
       },
       {
           "item" :"D",
-          "content" : "5行目：final record Product3(int... x) {}",
+          "content" : "final record Product3(int... x) {}",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"recordクラスはfinalが付与されるが、明示的に記述しても問題ない"
       }
   ]
 },{
     "examId":"00017",
     "setItem" : "問題17",
-    "question" : "次からコンパイルが成功する記述を3つ選んでください \n 01|\u00A0public\u00A0class\u00A0Snippet\u00A0{ \n 03|\u00A0\u00A0// (INSERT CODE)\n  04|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n  05|\u00A0}",
-    "code" : "",
+    "question" : "コードの2行目、// INSERT CODE部分に記述し、コンパイルが成功する記述を3つ選んでください。",
+    "code" : "public\u00A0class\u00A0Snippet\u00A0{\n\u00A0\u00A0\u00A0\u00A0// (INSERT CODE)\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{} \n}",
     "multipleAnswers" : true,
-    "tip":"2行目：レコードクラスを先頭大文字のRecordでは指定できない \n 3行目：クラス名にRecordは使用できる \n 4行目：明示的にextendsで継承はできないが、インターフェースの実装は可能（7行目を実装） \n 6行目：recordクラスはfinalが付与されるが、明示的に記述しても問題ない \n ",
+    "tip":"",
     "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "2行目：public Record record () {}",
+          "content" : "public Record record () {}",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"レコードクラスの識別子は、先頭大文字のRecordという文字列にはできない"
       },
       {
           "item" :"B",
-          "content" : "3行目：public record Record(Object record) {}",
+          "content" : "public record Record(Object record) {}",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"クラス名にRecordは使用できるので問題ない"
       },
       {
           "item" :"C",
-          "content" : "4行目：record product2(double price) implements InterFaceClass{}; \n public interface InterFaceClass{}",
+          "content" : "record product2(double price) implements InterFaceClass{}; \n public interface InterFaceClass{}",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"明示的にextendsでRecordクラスを継承できないが、インターフェースの実装とすることは可能"
       },
       {
           "item" :"D",
-          "content" : "5行目：final record Product3(int... x) {}",
+          "content" : "final record Product3(int... x) {}",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"recordクラスは必ずfinalが付与されるが、明示的に記述しても問題ない"
       }
   ]
 },{
