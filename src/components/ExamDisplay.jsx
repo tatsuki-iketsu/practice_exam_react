@@ -249,7 +249,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       // 正誤確認済みをセット 
       c_ansCheck[index] = true;
       console.log(c_ansCheck);
-      setTipDisplay(tipDisplay.map((tip, i) => (i == index ? MultiLineBody(setExam.tip) : tip)));
+      setTipDisplay(tipDisplay.map((tip, i) => (i == index ? LineHtmlConversion(setExam.tip) : tip)));
       // Modalオープン
       openModal()
     };
@@ -272,7 +272,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   }
 
   // 改行変換
-  const MultiLineBody = ( body ) => {
+  const LineHtmlConversion = ( body ) => {
   const texts = body.split('\n').map((item, index) => {
       return (
         <React.Fragment key={index}>
@@ -284,17 +284,30 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     return <>{texts}</>;
   };
 
-  // 改行+コードブロック変換
-  const MultiLineCode = ( body ) => {
-  const texts = body.split('\n').map((item, index) => {
+  // コードブロック変換
+  const codeConversion = ( body ) => {
+    if(body == ""){
+      // 空文字の場合は空のdivを返却
       return (
-        <React.Fragment key={index}>
-          <span className="numberLow">{item}</span>
-        </React.Fragment>        
-      );
-    });
-    console.log({texts});
-    return <>{texts}</>;
+        <></>
+      );    
+    } else{
+      // codeがあればcodehtmlとして返却
+      const texts = body.split('\n').map((item, index) => {
+        return (
+          <React.Fragment key={index}>
+            <span className="numberLow">{item}</span>
+          </React.Fragment>        
+        );
+      });  
+      return (
+        <pre>
+          <code>
+            <p white-space="nowrap" className="fontlarge">{texts}</p>
+          </code>
+        </pre>
+      );  
+    }
   };
 
       
@@ -306,9 +319,10 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   <>
   <div style={examStyle}>
   <form name= {setExam.setItem}>
-  <h2>練習問題{index+1}</h2>
-  <p white-space="nowrap">問題内容：{MultiLineBody(setExam.question)}</p>
-  <pre><code><p white-space="nowrap" className="fontlarge">{MultiLineCode(setExam.code)}</p></code></pre>
+  <h2>練習問題{index+1}<span> 問題ID：{setExam.examId}</span></h2>
+  {/* <h2>練習問題{index+1}</h2> */}
+  <p white-space="nowrap">問題内容：{LineHtmlConversion(setExam.question)}</p>
+  {codeConversion(setExam.code)}
     {setExam.selectAnswers.map((Answer) => (
       <>
         <div className="marginTopBottom"><nobr>
@@ -318,7 +332,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
             id = {setExam.setItem + Answer.item}
             value ={Answer.item}
           />
-          <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label></nobr>
+          <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{LineHtmlConversion(Answer.content)}</label></nobr>
           {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
           </div>
       </>

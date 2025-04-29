@@ -12,7 +12,7 @@ const Fotter =() =>{
             <div>▼JavaSilver17試験対策問題　解説ページ</div>
             <Link to='/'>Top</Link> / 
             {explanationData.map((page) => {
-                const urlPass = `${process.env.REACT_APP_BASELINK}${ page.url }`
+                const urlPass = `${process.env.REACT_APP_BASENAME}${ page.url }`
             return (
                 <>
                     <Link to ={page.url}>{ page.pageName }</Link> / 
