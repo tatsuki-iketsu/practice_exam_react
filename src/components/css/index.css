@@ -46,6 +46,9 @@ Modal{
 個別レイアウト変更
 *****************
 */
+.fontlarge{
+  font-size: x-large;
+}
 /*上側マージン*/
 .marginTop15{
   margin-top: 15px;
@@ -147,7 +150,7 @@ code {
     display: list-item;
     padding-left: 10px;
     padding-bottom: 8px;
-    margin-left: 10px;
+    margin-left: 30px;
   }
   
   code span::marker {

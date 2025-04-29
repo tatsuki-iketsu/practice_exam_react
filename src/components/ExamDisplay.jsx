@@ -39,10 +39,10 @@ const ExamDisplay = (props) =>{
   }
 
   function closeModal() {
-      // Modalを閉じている部分をfalseにする
-      setExamDisabled(examDisabled.map((disabled) => (disabled = false)));
-      // TODO ↑をセットする
-      // setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
+    // Modalを閉じている部分をfalseにする
+    setExamDisabled(examDisabled.map((disabled) => (disabled = false)));
+    // TODO ↑をセットする
+    // setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
       
     setIsOpen(false);
   }
@@ -64,11 +64,11 @@ const ExamDisplay = (props) =>{
     }
   };
 
-    // Modal内TipのCSS
-    const tipStyle = {
-      backgroundColor:'blue',
-      overflow: "scroll"
-    };
+  // Modal内TipのCSS
+  const tipStyle = {
+    backgroundColor:'blue',
+    overflow: "scroll"
+  };
     
   //////////////////
   //////////////////
@@ -261,8 +261,6 @@ const shuffleExam1=(examData,InitialDisplay)=> {
           );
           selectedAnserGet(checks,setExam,index,examId,tipURI);
     };
-    console.log(examData);
-    console.log(examData.setExams[0].setitem);
 
    // 選択肢ごとの解説表示　TODO:色
   const selectTipsDisplay = (AnswerSelecttips,examDisabledIndex) =>{
@@ -273,83 +271,95 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     }
   }
 
+  // 改行変換
+  const MultiLineBody = ( body ) => {
+  const texts = body.split('\n').map((item, index) => {
+      return (
+        <React.Fragment key={index}>
+          {item}
+        </React.Fragment>        
+      );
+    });
+    console.log({texts});
+    return <>{texts}</>;
+  };
 
-    // 改行変換
-    const MultiLineBody = ( body ) => {
-      const texts = body.split('\n').map((item, index) => {
-        return (
-          <React.Fragment key={index}>
-            {item}
-            <br />
-          </React.Fragment>        
-        );
-      });
-      console.log({texts});
+  // 改行+コードブロック変換
+  const MultiLineCode = ( body ) => {
+  const texts = body.split('\n').map((item, index) => {
+      return (
+        <React.Fragment key={index}>
+          <span className="numberLow">{item}</span>
+        </React.Fragment>        
+      );
+    });
+    console.log({texts});
+    return <>{texts}</>;
+  };
 
-      return <>{texts}</>;
-    };
-
-    // 問題を表示する部分
-    return (
-    <>
-    <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
+      
+  // 問題を表示する部分
+  return (
+  <>
+  <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
   {examData.setExams.map((setExam,index) => (
-    <>
+  <>
   <div style={examStyle}>
   <form name= {setExam.setItem}>
-    <h2>練習問題{index+1}</h2>
-    <p white-space="nowrap">問題内容：{MultiLineBody(setExam.question)}</p>
-      {setExam.selectAnswers.map((Answer) => (
-        <>
-          <div className="marginTopBottom"><nobr>
-           <input
-              type="checkbox"
-              name = {setExam.setItem}
-              id = {setExam.setItem + Answer.item}
-              value ={Answer.item}
-            />
-            <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label></nobr>
-            {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
-            </div>
-        </>
-      ))}
-        
-        </form>
-        <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index,setExam.examId,setExam.TipURI)}  class="selectedCheck">回答を確認</button>
-      </div>
-      <div><a href="#h1">一番上に戻る</a> / <a href="#bottom">一番下に行く</a></div>
-      {/* 削除する
-      <div>{ansDisplay[index]}</div>
-      <div>{trueOrFalseDisplay[index]}</div>
-      <div>{tipDisplay[index]}</div>
-       */}
+  <h2>練習問題{index+1}</h2>
+  <p white-space="nowrap">問題内容：{MultiLineBody(setExam.question)}</p>
+  <pre><code><p white-space="nowrap" className="fontlarge">{MultiLineCode(setExam.code)}</p></code></pre>
+    {setExam.selectAnswers.map((Answer) => (
+      <>
+        <div className="marginTopBottom"><nobr>
+          <input
+            type="checkbox"
+            name = {setExam.setItem}
+            id = {setExam.setItem + Answer.item}
+            value ={Answer.item}
+          />
+          <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{MultiLineBody(Answer.content)}</label></nobr>
+          {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
+          </div>
       </>
     ))}
-      <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
-
-          {/* Modal内容 */}
-          <Modal
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={modalStyle}
-            contentLabel="Example Modal"
-          >
-            <div>
-              <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}><div>問題{SelectTipsNumber}の結果 ：{trueOrFalseDisplay[SelectTipsNumber]}</div></h2>
-              <div ref={(_modalTitle) => (modalTitle = _modalTitle)}>
-                  <div dangerouslySetInnerHTML={{ __html: ansDisplay[SelectTipsNumber] }}></div>
-              </div>            
-              <div class={tipStyle}><nobr>{tipDisplay[SelectTipsNumber]}</nobr></div>
-              {TipURI}
-              <button onClick={closeModal} className="marginTop15">閉じる</button>
-              <div className="paddingTop15">問題ID.{SelectExamId}</div>
-            </div>
-          </Modal>
-          {/* Modal内容 */}
-
-          </>
       
-);
+      </form>
+      <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index,setExam.examId,setExam.TipURI)}  class="selectedCheck">回答を確認</button>
+    </div>
+    <div><a href="#h1">一番上に戻る</a> / <a href="#bottom">一番下に行く</a></div>
+    {/* TODO:ヘッダーの正誤が問題ないなら削除する
+    <div>{ansDisplay[index]}</div>
+    <div>{trueOrFalseDisplay[index]}</div>
+    <div>{tipDisplay[index]}</div>
+      */}
+    </>
+  ))}
+    <input type="button" onClick={() => shuffleExam1(examData,false)} value="リセット" />
+
+        {/* Modal内容 */}
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={modalStyle}
+          contentLabel="Example Modal"
+        >
+          <div>
+            <h2 ref={(_modalTitle) => (modalTitle = _modalTitle)}><div>問題{SelectTipsNumber}の結果 ：{trueOrFalseDisplay[SelectTipsNumber]}</div></h2>
+            <div ref={(_modalTitle) => (modalTitle = _modalTitle)}>
+                <div dangerouslySetInnerHTML={{ __html: ansDisplay[SelectTipsNumber] }}></div>
+            </div>            
+            <div class={tipStyle}><nobr>{tipDisplay[SelectTipsNumber]}</nobr></div>
+            {TipURI}
+            <button onClick={closeModal} className="marginTop15">閉じる</button>
+            <div className="paddingTop15">問題ID.{SelectExamId}</div>
+          </div>
+        </Modal>
+        {/* Modal内容 */}
+
+        </>
+    
+  );
 };
 export default ExamDisplay;
