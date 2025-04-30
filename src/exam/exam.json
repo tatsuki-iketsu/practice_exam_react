@@ -725,105 +725,105 @@
 },{
     "examId":"00018",
     "setItem" : "問題18",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|\u00A0public\u00A0class\u00A0Main\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0protected\u00A0void\u00A0main(int...\u00A0a)\u00A0{\u00A0\u00A0//\u00A0(A) \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0var\u00A0FLAG\u00A0=\u00A0true; \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0int\u00A0VALUE;\u00A0\u00A0//\u00A0(B) \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0if\u00A0(!FLAG)\u00A0VALUE\u00A0=\u00A0100;\u00A0\u00A0//\u00A0(C) \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(VALUE);\u00A0\u00A0//\u00A0(D) \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 08|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n 09|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().main(100); \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 11|\u00A0} \n ",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0protected\u00A0void\u00A0main(int...\u00A0a)\u00A0{\u00A0//\u00A0(A)\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0var\u00A0FLAG\u00A0=\u00A0true;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0int\u00A0VALUE;\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(B)\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0if\u00A0(!FLAG)\u00A0VALUE\u00A0=\u00A0100;\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(C)\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(VALUE);\u00A0\u00A0//\u00A0(D)\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().main(100);\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
-    "tip":"Aはint型の可変長引数で問題ない \n Bはfinalで定数化しているが、初期化は同時でなくても問題ない \n Cは{}を省略したIF文で、条件がtrueにならない場合にVALUEを初期化していないが、記述は問題ない \n DはCの条件文がfalseのときに、初期化されていないVALUEにアクセスしているのでコンパイルエラーとなる \n コンパイルエラーになるので、EFGは誤り \n ",
+    "tip":"",
     "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "A（02行目）でコンパイルエラーが発生する",
+          "content" : "（02行目）でコンパイルエラーが発生する",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"Aはint型の可変長引数で問題ない"
       },
       {
           "item" :"B",
           "content" : "B（04行目）でコンパイルエラーが発生する",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"Bはfinalで定数化しているが、初期化は同時でなくても問題ない"
       },
       {
           "item" :"C",
           "content" : "C（05行目）でコンパイルエラーが発生する",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"Cは{}を省略したIF文で、条件がtrueにならない場合にVALUEを初期化していないが、記述は問題ない "
       },
       {
           "item" :"D",
           "content" : "D（06行目）でコンパイルエラーが発生する",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"DはCの条件文がfalseのときに、初期化されていないVALUEにアクセスしているのでコンパイルエラーとなる"
       },
       {
           "item" :"E",
           "content" : "何も出力されない",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"コンパイルエラーになるので、Eは誤り"
       },
       {
           "item" :"F",
           "content" : "100が出力される",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"コンパイルエラーになるので、Fは誤り"
       },
       {
           "item" :"G",
           "content" : "0が出力される",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"コンパイルエラーになるので、Gは誤り"
       }
   ]
 },{
     "examId":"00019",
     "setItem" : "問題19",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n 01|\u00A0public\u00A0class\u00A0Main\u00A0{ \n 02|\u00A0\u00A0\u00A0\u00A0\u00A0protected\u00A0void\u00A0main(int...\u00A0a)\u00A0{\u00A0\u00A0//\u00A0(A) \n 03|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0var\u00A0FLAG\u00A0=\u00A0true; \n 04|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0int\u00A0VALUE;\u00A0\u00A0//\u00A0(B) \n 05|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0VALUE = (!FLAG) ? 100: 0;\u00A0\u00A0// (C) \n 06|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(VALUE);\u00A0\u00A0//\u00A0(D) \n 07|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 08|\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{ \n 09|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().main(100); \n 10|\u00A0\u00A0\u00A0\u00A0\u00A0} \n 11|\u00A0} \n ",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0protected\u00A0void\u00A0main(int...\u00A0a)\u00A0{\u00A0//\u00A0(A)\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0var\u00A0FLAG\u00A0=\u00A0true;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0final\u00A0int\u00A0VALUE;\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(B)\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0VALUE=(!FLAG)?100:0;\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0(C)\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(VALUE);\u00A0\u00A0//\u00A0(D)\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().main(100);\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
-    "tip":"Aはint型の可変長引数で問題ない \n Bはfinalで定数化しているが、初期化は同時でなくても問題ない FLAGを反転しているのでfalseで0が代入される \n Cは{}を省略したIF文で、trueとfalseどちらも初期化している \n DはCで初期化したVALUEを出力するのでコンパイルエラーは起きない \n E、FはDで出力したのが初期化値の0なので間違い \n GはDで出力したのが初期化値の0なので正しい",
+    "tip":"",
     "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
           "content" : "A（02行目）でコンパイルエラーが発生する",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"Aはint型の可変長引数で問題ないので間違い」"
       },
       {
           "item" :"B",
           "content" : "B（04行目）でコンパイルエラーが発生する",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"Bはfinalで定数化しているが、初期化は同時でなくても問題ないので間違い\nFLAGを反転しているのでfalseで0が代入される"
       },
       {
           "item" :"C",
           "content" : "C（05行目）でコンパイルエラーが発生する",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"Cは{}を省略したIF文で、trueとfalseどちらも初期化しており正しい記述なので間違い"
       },
       {
           "item" :"D",
           "content" : "D（06行目）でコンパイルエラーが発生する",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"DはCで初期化したVALUEを出力するのでコンパイルエラーは起きないので間違い"
       },
       {
           "item" :"E",
           "content" : "何も出力されない",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"EはDで出力したのが初期化値の0なので間違い"
       },
       {
           "item" :"F",
           "content" : "100が出力される",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"FはDで出力したのが初期化値の0なので間違い"
       },
       {
           "item" :"G",
           "content" : "0が出力される",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"GはDで出力したのが初期化値の0なので正しい"
       }
   ]
 },{
