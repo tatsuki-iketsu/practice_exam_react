@@ -829,10 +829,10 @@
 },{
     "examId":"00020",
     "setItem" : "問題20",
-    "question" : "次の記述のうち例外処理が必須のものはどれですか。2つ選択してください。",
+    "question" : "次の中から例外処理が必須の例外を2つ選択してください。",
     "code" : "",
     "multipleAnswers" : true,
-    "tip":"作成中 \n aaaa",
+    "tip":"作成中",
     "ansLock" :false,
     "selectAnswers" : [
       {
@@ -881,53 +881,53 @@
 },{
     "examId":"00021",
     "setItem" : "問題21",
-    "question" : "次のローカル変数の宣言のうち、コンパイルエラーが発生するものを3つ選択してください。",
+    "question" : "ローカル変数の宣言のうち、コンパイルエラーが発生する記述を3つ選択してください。",
     "code" : "",
     "multipleAnswers" : true,
-    "tip":"ローカル変数の宣言についての問題です。\n下記2つはpublicやstaticはクラスのメンバに指定する修飾子であり、ローカル変数には使用できません。\npublic\u00A0var\u00A0x\u00A0=\u00A0\"1_000_000\".length();\ntatic\u00A0final\u00A0Integer\u00A0INTVALUE\u00A0=\u00A01_000;\nboolean\u00A0true\u00A0=\u00A0true;はboolean型のリテラルであり、変数名には使用できません\nfinal\u00A0var\u00A0y\u00A0=\u00A0Math.random();のfinal、型推論のvarはローカル変数に使用可能です。\nMath.random()の戻り値からdouble型と推論可能であり適切です。\nint\u00A0var\u00A0=\u00A0Integer.parseInt(\"100\");は型推論ではなく変数名としてのvarですが、利用可能です。\nString\u00A0$_1\u00A0=\u00A0\"100\";の「$」や「_」は識別子に利用できます。",
+    "tip":"下記2つは\npublic\u00A0var\u00A0x\u00A0=\u00A0\"1_000_000\".length();\ntatic\u00A0final\u00A0Integer\u00A0INTVALUE\u00A0=\u00A01_000;\nboolean\u00A0true\u00A0=\u00A0true;はboolean型のリテラルであり、変数名には使用できません\nfinal\u00A0var\u00A0y\u00A0=\u00A0Math.random();のfinal、型推論のvarはローカル変数に使用可能です。\nMath.random()の戻り値からdouble型と推論可能であり適切です。\nint\u00A0var\u00A0=\u00A0Integer.parseInt(\"100\");は型推論ではなく変数名としてのvarですが、利用可能です。\nString\u00A0$_1\u00A0=\u00A0\"100\";の「$」や「_」は識別子に利用できます。",
     "ansLock" :false,
     "selectAnswers" : [
       {
           "item" :"A",
           "content" : "String\u00A0$_1\u00A0=\u00A0\"100\";",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"「$」や「_」は識別子に利用できるので問題ない。"
       },
       {
           "item" :"B",
           "content" : "public\u00A0var\u00A0x\u00A0=\u00A0\"1_000_000\".length();",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"publicはクラスのメンバ変数の修飾子でローカル変数には使用できないためコンパイルエラー"
       },
       {
           "item" :"C",
           "content" : "final\u00A0var\u00A0y\u00A0=\u00A0Math.random();",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"型推論のvarはローカル変数に使用でき、\nMath.random()の戻り値からdouble型と推論できるので問題ない"
       },
       {
           "item" :"D",
           "content" : "int\u00A0var\u00A0=\u00A0Integer.parseInt(\"100\");",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"varを型推論ではなく識別子として使用している。予約語ではないので識別子として利用できるので問題ない。"
       },
       {
           "item" :"E",
           "content" : "static\u00A0final\u00A0Integer\u00A0INTVALUE\u00A0=\u00A01_000;",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"staticはクラスのメンバ変数の修飾子でローカル変数には使用できずコンパイルエラーとなる。"
       },
       {
           "item" :"F",
           "content" : "char\u00A0VALUE\u00A0=\u00A0(char)100.0F;",
           "correctAnswer":false,
-          "selecttips":""
+          "selecttips":"数値データはchar型にキャストできるため問題ない。"
       },
       {
           "item" :"G",
           "content" : "boolean\u00A0true\u00A0=\u00A0true;",
           "correctAnswer":true,
-          "selecttips":""
+          "selecttips":"trueはboolean型のリテラルであり、予約語で識別子として使用できずコンパイルエラーとなる。"
       }
   ]
 },{
