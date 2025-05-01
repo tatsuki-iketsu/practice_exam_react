@@ -933,7 +933,7 @@
 },{
     "examId":"00022",
     "setItem" : "問題22",
-    "question" : "次の記述に関して、コンパイルが成功するものを4つ選択してください。",
+    "question" : "コンパイルが成功する記述を4つ選択してください。",
     "code" : "",
     "multipleAnswers" : true,
     "tip":"多次元配列でも、構文は1次元配列と基本的に同じです。\n・配列の生成\nデータ型[][]\u00A0配列名\u00A0または\u00A0データ型\u00A0配列名[][]\u00A0=\u00A0new\u00A0データ型[要素数][要素数]\n・初期化まで行う場合\nデータ型[][]\u00A0配列名\u00A0または\u00A0データ型\u00A0配列名[][]\u00A0=\u00A0{{値,\u00A0値,\u00A0...},\u00A0{値,\u00A0値,\u00A0...}}\u00A0またはデータ型[][]\u00A0配列名\u00A0または\u00A0データ型\u00A0配列名[][]\u00A0=\u00A0new\u00A0データ型[]{{値,\u00A0値,\u00A0...},\u00A0{値,\u00A0値,\u00A0...}}\n選択肢Aは要素数[2][2]の2次元配列が初期化された状態で生成される正しい記述です。\n選択肢Bでは、1次元目の要素数3のみが確定し、2次元目の参照はこの時点ではnullとなります。1次元目の要素数の指定は必須のため、選択肢Cはコンパイルエラーとなります。選択肢Bの2次元目を後から生成するには次のようにします。\ns2[0]\u00A0=\u00A0new\u00A0String[2];\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0配列の生成のみ行う\ns2[1]\u00A0=\u00A0new\u00A0String[]{\"1\",\u00A0\"2\"};\u00A0\u00A0//\u00A0初期値を設定する\n//\u00A0s2[2]\u00A0=\u00A0{\"1\",\u00A0\"2\"};\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0データ型の指定がないためコンパイルエラー\n選択肢D、Eについて、「{}」内に要素を指定しない場合は、要素数0の配列が生成されます。これは1次元配列でも同じです。\n選択肢Dは、1次元目の要素数0のString型の配列が生成されます。また選択肢Eは、1次元目の要素数は2、2次元目の要素数は0の配列が生成されます。\nよって、選択肢C以外はコンパイルが成功します。\n\n",
@@ -973,13 +973,10 @@
 },{
     "examId":"00023",
     "setItem" : "問題23",
-    "question" : "01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0void\u00A0method()\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0x\u00A0=\u00A0\"Java\u00A0SE\u00A017\";\n04|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0y\u00A0=\u00A0new\u00A0StringBuilder(\"Java\").append(\"17\");\n05|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0v\u00A0=\u00A0x.substring(8);\n06|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0z\u00A0=\u00A0y.substring(4,6);\n07|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0x.equals(y)\u00A0?\u00A01\u00A0:\u00A0v.equals(z)\u00A0?\u00A02\u00A0:\u00A00;\n08|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(i);\n09|\u00A0\u00A0\u00A0}\n10|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n11|\u00A0\u00A0\u00A0\u00A0\u00A0this.method();\n12|\u00A0\u00A0\u00A0}\n13|\u00A0}\n",
-    "code" : "",
-    "multipleAnswers" : true,
-    "tip":"作成中 \n aaaa",
-    "ansLock" :false,
-    "selectAnswers" : [
-      {
+    "question" : "正しい選択肢を1つ選んでください。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0void\u00A0method()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0x\u00A0=\u00A0\"Java\u00A0SE\u00A017\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0y\u00A0=\u00A0new\u00A0StringBuilder(\"Java\").append(\"17\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0v\u00A0=\u00A0x.substring(8);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0z\u00A0=\u00A0y.substring(4,6);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0x.equals(y)\u00A0?\u00A01\u00A0:\u00A0v.equals(z)\u00A0?\u00A02\u00A0:\u00A00;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(i);\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0this.method();\n\u00A0\u00A0\u00A0\u00A0}\n}",
+        "selectAnswers" : [
+        {
           "item" :"A",
           "content" : "0が出力される",
           "correctAnswer":false,
@@ -1025,8 +1022,8 @@
 },{
     "examId":"00024",
     "setItem" : "問題24",
-    "question" : "01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0void\u00A0method()\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0x\u00A0=\u00A0\"Java\u00A0SE\u00A017\";\n04|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0y\u00A0=\u00A0new\u00A0StringBuilder(\"Java\").append(\"17\");\n05|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0v\u00A0=\u00A0x.substring(8);\n06|\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0z\u00A0=\u00A0y.substring(4,6);\n07|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0x.equals(y)\u00A0?\u00A01\u00A0:\u00A0v.equals(z)\u00A0?\u00A02\u00A0:\u00A00;\n08|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(i);\n09|\u00A0\u00A0\u00A0}\n10|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n11|\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method();\n12|\u00A0\u00A0\u00A0}\n13|\u00A0}\n",
-    "code" : "",
+    "question" : "正しい選択肢を1つ選んでください。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0void\u00A0method()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0x\u00A0=\u00A0\"Java\u00A0SE\u00A017\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0y\u00A0=\u00A0new\u00A0StringBuilder(\"Java\").append(\"17\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0v\u00A0=\u00A0x.substring(8);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0z\u00A0=\u00A0y.substring(4,6);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0x.equals(y)\u00A0?\u00A01\u00A0:\u00A0v.equals(z)\u00A0?\u00A02\u00A0:\u00A00;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(i);\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method();\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"作成中 \n aaaa",
     "ansLock" :false,
