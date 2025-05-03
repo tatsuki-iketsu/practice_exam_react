@@ -1490,31 +1490,31 @@
     "selectAnswers" : [
       {
           "item" :"A",
-          "content" : "\n\u00A0String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0case\u00A097,\u00A0case\u00A098:\u00A0yield\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A099,\u00A0case\u00A0100:\u00A0yield\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A0101:\u00A0yield\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0default:\u00A0yield\u00A0\"the\u00A0others\";\n\u00A0}\u00A0\n",
+          "content" : "String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0case\u00A097,\u00A0case\u00A098:\u00A0\u00A0yield\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A099,\u00A0case\u00A0100:\u00A0yield\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A0101:\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0yield\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0default:\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0yield\u00A0\"the\u00A0others\";\n}\u00A0",
           "correctAnswer":false,
           "selecttips":""
       },
       {
           "item" :"B",
-          "content" : "\n\u00A0String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0case\u00A097,\u00A098\u00A0->\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A099,\u00A0100\u00A0->\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A0101\u00A0->\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0default\u00A0->\u00A0\"the\u00A0others\";\n\u00A0};\n\u00A0\n",
+          "content" : "String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0case\u00A097,\u00A098\u00A0\u00A0->\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A099,\u00A0100\u00A0->\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A0101\u00A0\u00A0\u00A0\u00A0\u00A0->\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0default\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0->\u00A0\"the\u00A0others\";\n};",
           "correctAnswer":true,
           "selecttips":""
       },
       {
           "item" :"C",
-          "content" : "\n\u00A0String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0case\u00A097,\u00A098\u00A0->\u00A0{\u00A0yield\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\u00A0}\n\u00A0\u00A0\u00A0case\u00A099,\u00A0100\u00A0->\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A0101\u00A0->\u00A0\"e\u00A0|\u00A0\";\n\u00A0};\u00A0\n",
+          "content" : "String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0case\u00A097,\u00A098\u00A0\u00A0->\u00A0{\u00A0yield\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\u00A0}\n\u00A0\u00A0\u00A0\u00A0case\u00A099,\u00A0100\u00A0->\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A0101\u00A0\u00A0\u00A0\u00A0\u00A0->\u00A0\"e\u00A0|\u00A0\";\n};",
           "correctAnswer":false,
           "selecttips":""
       },
       {
           "item" :"D",
-          "content" : "\n\u00A0String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0case\u00A097,\u00A098:\u00A0yield\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A099,\u00A0100:\u00A0yield\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A0101:\u00A0yield\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0default:\u00A0yield\u00A0\"the\u00A0others\";\n\u00A0};\u00A0\n",
+          "content" : "String\u00A0text\u00A0=\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0case\u00A097,\u00A098:\u00A0\u00A0yield\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A099,\u00A0100:\u00A0yield\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A0101:\u00A0\u00A0\u00A0\u00A0\u00A0yield\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0default:\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0yield\u00A0\"the\u00A0others\";\n};",
           "correctAnswer":true,
           "selecttips":""
       },
       {
           "item" :"E",
-          "content" : "\n\u00A0String\u00A0text\u00A0=\u00A0\"\";\n\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0case\u00A097,\u00A098\u00A0->\u00A0text\u00A0=\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A099,\u00A0100\u00A0->\u00A0text\u00A0=\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0case\u00A0101\u00A0->\u00A0text\u00A0=\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0default\u00A0:\u00A0{\u00A0text\u00A0=\u00A0\"the\u00A0others\";}\n\u00A0}",
+          "content" : "String\u00A0text\u00A0=\u00A0\"\";\nswitch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0case\u00A097,\u00A098\u00A0\u00A0->\u00A0text\u00A0=\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A099,\u00A0100\u00A0->\u00A0text\u00A0=\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0case\u00A0101\u00A0\u00A0\u00A0\u00A0\u00A0->\u00A0text\u00A0=\u00A0\"e\u00A0|\u00A0\";\n\u00A0\u00A0\u00A0\u00A0default\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0:\u00A0\u00A0{\u00A0text\u00A0=\u00A0\"the\u00A0others\";}\n}",
           "correctAnswer":false,
           "selecttips":""
       }
@@ -1522,8 +1522,8 @@
 },{
     "examId":"00034",
     "setItem" : "問題34",
-    "question" : "次プログラムをコンパイル、\n「java Main 1 1」で実行するとどのような結果になりますか。\n01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0double\u00A0d\u00A0=\u00A0Double.parseDouble(args[0]);\n04|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0Integer.parseInt(args[1]);\n05|\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method(d,\u00A0i);\n06|\u00A0\u00A0\u00A0}\n07|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(double\u00A0x,\u00A0double\u00A0y)\u00A0{\n08|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n09|\u00A0\u00A0}\n10|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double\u00A0x,\u00A0float\u00A0y)\u00A0{\n11|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n12|\u00A0\u00A0\u00A0}\n13|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(int...\u00A0x)\u00A0{\n14|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n15|\u00A0\u00A0\u00A0}\n16|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double...\u00A0d)\u00A0{\n17|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n18|\u00A0\u00A0\u00A0}\n19|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(long\u00A0x,\u00A0int\u00A0y)\u00A0{\n20|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n21|\u00A0\u00A0\u00A0}\n22|\u00A0}\n",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、\n「java Main 1 1」で実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0double\u00A0d\u00A0=\u00A0Double.parseDouble(args[0]);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0Integer.parseInt(args[1]);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method(d,\u00A0i);\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(double\u00A0x,\u00A0double\u00A0y)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double\u00A0x,\u00A0float\u00A0y)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(int...\u00A0x)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double...\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(long\u00A0x,\u00A0int\u00A0y)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"呼び出しメソッドの引数が一致しない場合、\n以下の優先順位で引数が一致するメソッドが呼び出されます。\n1.基本データ型の暗黙の型変換/n2.オートボクシング/アンボクシング\n3.可変長引数",
     "ansLock" :true,
@@ -1569,8 +1569,8 @@
 },{
     "examId":"00035",
     "setItem" : "問題35",
-    "question" : "次プログラムをコンパイル、\n「java Main 1 1」で実行するとどのような結果になりますか。\n01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int1\u00A0=\u00A0Integer.parseInt(args[0]);\n04|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int2\u00A0=\u00A0Integer.parseInt(args[1]);\n05|\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method(int1,\u00A0int2);\n06|\u00A0\u00A0\u00A0}\n07|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(double\u00A0x,\u00A0double\u00A0y)\u00A0{\n08|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n09|\u00A0\u00A0}\n10|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double\u00A0x,\u00A0float\u00A0y)\u00A0{\n11|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n12|\u00A0\u00A0\u00A0}\n13|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(int...\u00A0x)\u00A0{\n14|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n15|\u00A0\u00A0\u00A0}\n16|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double...\u00A0d)\u00A0{\n17|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n18|\u00A0\u00A0\u00A0}\n19|\u00A0\u00A0\u00A0public\u00A0void\u00A0method(long\u00A0x,\u00A0int\u00A0y)\u00A0{\n20|\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n21|\u00A0\u00A0\u00A0}\n22|\u00A0}\n",
-    "code" : "",
+    "question" : "次プログラムをコンパイル、\n「java Main 1 1」で実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int1\u00A0=\u00A0Integer.parseInt(args[0]);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0int2\u00A0=\u00A0Integer.parseInt(args[1]);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0Main().method(int1,\u00A0int2);\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(double\u00A0x,\u00A0double\u00A0y)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double\u00A0x,\u00A0float\u00A0y)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(int...\u00A0x)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(Double...\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0method(long\u00A0x,\u00A0int\u00A0y)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"呼び出しメソッドの引数が一致しない場合、\n以下の優先順位で引数が一致するメソッドが呼び出されます。\n1.基本データ型の暗黙の型変換\n2.オートボクシング/アンボクシング\n3.可変長引数",
     "ansLock" :true,
