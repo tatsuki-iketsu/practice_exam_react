@@ -5,6 +5,7 @@
         "question" : "問題内容",
         "multipleAnswers" : true,
         "tip":"作成中 \n aaaa",
+        "answersCode":false,
         "selectAnswers" : [
           {
               "item" :"A",

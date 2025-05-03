@@ -6,6 +6,7 @@
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -52,6 +53,7 @@
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -92,6 +94,7 @@
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -138,6 +141,7 @@
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -184,6 +188,7 @@
     "multipleAnswers" : true,
     "tip" :"コンパイル時点ではobjがParent型のため、privateのmethodB()を確認できません",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -224,6 +229,7 @@
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -265,6 +271,7 @@
     "multipleAnswers" : true,
     "tip" :"作成中",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -305,6 +312,7 @@
     "multipleAnswers" : true,
     "tip":"2行目は可変長の文字列引数なのでコンパイルすると配列文字引数となるのでコンパイルできる \n 3行目は16進数をビット論理演算しており、両方とも0なので0となる \n ※ビット論理演算の参考URL：https://www.javadrive.jp/start/ope/index8.html",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -345,6 +353,7 @@
     "multipleAnswers" : true,
     "tip":"2行目は可変長の文字列引数なのでコンパイルすると配列文字引数となるのでコンパイルできる \n3行目は16進数をビット論理演算しており、左辺は0、右辺は16進数の1なので論理和は1となる \n※ビット論理演算の参考URL：https://www.javadrive.jp/start/ope/index8.html \n※16進数の参考URL：https://www.rtpro.yamaha.co.jp/RT/docs/misc/number-table.html",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -386,6 +395,7 @@
     "multipleAnswers" : true,
     "tip":"3～5行目はvoidがついているのでコンストラクタではなくメソッドである \n 6～8行目は引数なしのコンストラクタである \n 13行目でnew Menu()のオブジェクトを生成しているが、引数なしのコンストラクタは存在しないのでコンパイルエラーになる \n ",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -432,6 +442,7 @@
     "multipleAnswers" : true,
     "tip":"6～8行目はStringを引数としたコンストラクタである \n ただしthis.nameではなくnameなので引数nameを代入しているのは2行目メンバ変数nameではなく引数nameである \n またStringのリターンもしていないため、13行目、14行目で呼ばれるのは9行目から10行目のToStringメソッドである \n 9行目から10行目のToStringメソッドでリターンしているのは2行目メンバ変数である",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -478,6 +489,7 @@
     "multipleAnswers" : true,
     "tip":"6～8行目はStringを引数としたコンストラクタである \n 引数nameをthis.nameでメンバ変数nameに代入している \n 13行目、14行目で呼ばれるのは9行目から10行目のToStringメソッドである \n 9行目から10行目のメソッドはToStringがオーバーライドされており、リターンしているのは2行目メンバ変数である \n 13行目、14行目の出力はメンバ変数なのでCoffeeとなる",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -524,6 +536,7 @@
     "multipleAnswers" : true,
     "tip":"int[][] A：char型リテラルがint型に暗黙の型変換で代入される\nboolean B：boolean型（配列なし）にBoolean（配列）の代入は不可\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.roundはlong型に丸めた値が戻りなので、Double型への代入は変換できないため不可\nchar E[][]：配列の指定は識別子の前後どちらでもよい、int型が(char)でchar型に変換される※(char)はなくてもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
     "ansLock" :false,
+    "answersCode":true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -570,6 +583,7 @@
     "multipleAnswers" : true,
     "tip":"int[][] A：char型に文字列が記述されているた代入め不可\nboolean B：boolean型の配列にBoolean型の配列代入は変換されないため不可\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.floorはdouble型が戻り値なので代入できる\nchar E[][]：配列の指定は識別子の前後どちらでもよい\nObject[][] F：Object型の配列は型が異なる値を代入できる",
     "ansLock" :true,
+    "answersCode":true,
     "selectAnswers" : [
         {
             "item" :"A",
@@ -616,6 +630,7 @@
     "multipleAnswers" : true,
     "tip":"boolean B：boolean型配列にboolean配列の代入はできる\nchar[][] C：[3][3]の配列初期化子と{{}}のディメンション式を定義することはできない\nDouble[][] D：Math.floorはdouble型が戻り値なので代入できる\nObject[][] F：Object型の配列は型が異なる値を代入できる",
     "ansLock" :false,
+    "answersCode":true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -662,6 +677,7 @@
     "multipleAnswers" : true,
     "tip":"",
     "ansLock" :false,
+    "answersCode":true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -696,6 +712,7 @@
     "multipleAnswers" : true,
     "tip":"",
     "ansLock" :false,
+    "answersCode":true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -730,6 +747,7 @@
     "multipleAnswers" : true,
     "tip":"",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -782,6 +800,7 @@
     "multipleAnswers" : true,
     "tip":"",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -834,6 +853,7 @@
     "multipleAnswers" : true,
     "tip":"作成中",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -885,7 +905,7 @@
     "code" : "",
     "multipleAnswers" : true,
     "tip":"下記2つは\npublic\u00A0var\u00A0x\u00A0=\u00A0\"1_000_000\".length();\ntatic\u00A0final\u00A0Integer\u00A0INTVALUE\u00A0=\u00A01_000;\nboolean\u00A0true\u00A0=\u00A0true;はboolean型のリテラルであり、変数名には使用できません\nfinal\u00A0var\u00A0y\u00A0=\u00A0Math.random();のfinal、型推論のvarはローカル変数に使用可能です。\nMath.random()の戻り値からdouble型と推論可能であり適切です。\nint\u00A0var\u00A0=\u00A0Integer.parseInt(\"100\");は型推論ではなく変数名としてのvarですが、利用可能です。\nString\u00A0$_1\u00A0=\u00A0\"100\";の「$」や「_」は識別子に利用できます。",
-    "ansLock" :false,
+    "ansLock" :true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -938,6 +958,7 @@
     "multipleAnswers" : true,
     "tip":"多次元配列でも、構文は1次元配列と基本的に同じです。\n・配列の生成\nデータ型[][]\u00A0配列名\u00A0または\u00A0データ型\u00A0配列名[][]\u00A0=\u00A0new\u00A0データ型[要素数][要素数]\n・初期化まで行う場合\nデータ型[][]\u00A0配列名\u00A0または\u00A0データ型\u00A0配列名[][]\u00A0=\u00A0{{値,\u00A0値,\u00A0...},\u00A0{値,\u00A0値,\u00A0...}}\u00A0またはデータ型[][]\u00A0配列名\u00A0または\u00A0データ型\u00A0配列名[][]\u00A0=\u00A0new\u00A0データ型[]{{値,\u00A0値,\u00A0...},\u00A0{値,\u00A0値,\u00A0...}}\n選択肢Aは要素数[2][2]の2次元配列が初期化された状態で生成される正しい記述です。\n選択肢Bでは、1次元目の要素数3のみが確定し、2次元目の参照はこの時点ではnullとなります。1次元目の要素数の指定は必須のため、選択肢Cはコンパイルエラーとなります。選択肢Bの2次元目を後から生成するには次のようにします。\ns2[0]\u00A0=\u00A0new\u00A0String[2];\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0配列の生成のみ行う\ns2[1]\u00A0=\u00A0new\u00A0String[]{\"1\",\u00A0\"2\"};\u00A0\u00A0//\u00A0初期値を設定する\n//\u00A0s2[2]\u00A0=\u00A0{\"1\",\u00A0\"2\"};\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0//\u00A0データ型の指定がないためコンパイルエラー\n選択肢D、Eについて、「{}」内に要素を指定しない場合は、要素数0の配列が生成されます。これは1次元配列でも同じです。\n選択肢Dは、1次元目の要素数0のString型の配列が生成されます。また選択肢Eは、1次元目の要素数は2、2次元目の要素数は0の配列が生成されます。\nよって、選択肢C以外はコンパイルが成功します。\n\n",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -974,6 +995,10 @@
     "examId":"00023",
     "setItem" : "問題23",
     "question" : "正しい選択肢を1つ選んでください。",
+    "multipleAnswers" : false,
+    "tip":"作成中 \n aaaa",
+    "ansLock" :false,
+    "answersCode":false,
     "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0void\u00A0method()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0x\u00A0=\u00A0\"Java\u00A0SE\u00A017\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0y\u00A0=\u00A0new\u00A0StringBuilder(\"Java\").append(\"17\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0v\u00A0=\u00A0x.substring(8);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0var\u00A0z\u00A0=\u00A0y.substring(4,6);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0i\u00A0=\u00A0x.equals(y)\u00A0?\u00A01\u00A0:\u00A0v.equals(z)\u00A0?\u00A02\u00A0:\u00A00;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(i);\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0this.method();\n\u00A0\u00A0\u00A0\u00A0}\n}",
         "selectAnswers" : [
         {
@@ -1027,6 +1052,7 @@
     "multipleAnswers" : true,
     "tip":"作成中 \n aaaa",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1074,11 +1100,10 @@
 },{
     "examId":"00025",
     "setItem" : "問題25",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0Top[]\u00A0array\u00A0=\u00A0{\u00A0new\u00A0Top(),\u00A0new\u00A0Bottom()};\n\u00A0\u00A0\u00A0\u00A0for\u00A0(Top\u00A0t:\u00A0array)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.showInfo();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.print();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(t.value\u00A0+\u00A0\":\u00A0\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0}\n}\nclass\u00A0Top\u00A0{\n\u00A0\u00A0int\u00A0value\u00A0=\u00A010;\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0top\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"T\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\nclass\u00A0Bottom\u00A0extends\u00A0Top\u00A0{\n\u00A0\u00A0int\u00A0value\u00A0=\u00A090;\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0bottom\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"B\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\n",
-    "code" : "",
-    "multipleAnswers" : true,
-    "tip":"staticメソッド、インスタンスメソッドはオーバーライドされたオブジェクトメソッドにアクセスするが、\nメンバ変数のアクセスは型であるTOPのメンバ変数にアクセスする",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Top[]\u00A0array\u00A0=\u00A0{\u00A0new\u00A0Top(),\u00A0new\u00A0Bottom()};\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0for\u00A0(Top\u00A0t:\u00A0array)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.showInfo();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.print();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(t.value\u00A0+\u00A0\":\u00A0\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0}\n}\nclass\u00A0Top\u00A0{\n\u00A0\u00A0\u00A0\u00A0int\u00A0value\u00A0=\u00A010;\n\u00A0\u00A0\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0top\u00A0\";\n\u00A0\u00A0\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"T\");\u00A0}\n\u00A0\u00A0\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\nclass\u00A0Bottom\u00A0extends\u00A0Top\u00A0{\n\u00A0\u00A0\u00A0\u00A0int\u00A0value\u00A0=\u00A090;\n\u00A0\u00A0\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0bottom\u00A0\";\n\u00A0\u00A0\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"B\");\u00A0}\n\u00A0\u00A0\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1126,11 +1151,12 @@
 },{
     "examId":"00026",
     "setItem" : "問題26",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0Bottom[]\u00A0array\u00A0=\u00A0{\u00A0(Bottom)new\u00A0Top(),\u00A0new\u00A0Bottom()};\n\u00A0\u00A0\u00A0\u00A0for\u00A0(Top\u00A0t:\u00A0array)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.showInfo();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.print();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(t.value\u00A0+\u00A0\":\u00A0\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0}\n}\nclass\u00A0Top\u00A0{\n\u00A0\u00A0int\u00A0value\u00A0=\u00A010;\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0top\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"T\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\nclass\u00A0Bottom\u00A0extends\u00A0Top\u00A0{\n\u00A0\u00A0int\u00A0value\u00A0=\u00A090;\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0bottom\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"B\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\n",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Bottom[]\u00A0array\u00A0=\u00A0{\u00A0(Bottom)new\u00A0Top(),\u00A0new\u00A0Bottom()};\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0for\u00A0(Top\u00A0t:\u00A0array)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.showInfo();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.print();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(t.value\u00A0+\u00A0\":\u00A0\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0}\n}\nclass\u00A0Top\u00A0{\n\u00A0\u00A0\u00A0\u00A0int\u00A0value\u00A0=\u00A010;\n\u00A0\u00A0\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0top\u00A0\";\n\u00A0\u00A0\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"T\");\u00A0}\n\u00A0\u00A0\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\nclass\u00A0Bottom\u00A0extends\u00A0Top\u00A0{\n\u00A0\u00A0\u00A0\u00A0int\u00A0value\u00A0=\u00A090;\n\u00A0\u00A0\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0bottom\u00A0\";\n\u00A0\u00A0\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"B\");\u00A0}\n\u00A0\u00A0\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"Bottom型はTOP型に変換できない",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
         {
             "item" :"A",
@@ -1178,11 +1204,12 @@
 },{
     "examId":"00027",
     "setItem" : "問題27",
-    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。 \n public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0Top[]\u00A0array\u00A0=\u00A0{\u00A0new\u00A0Top(),\u00A0new\u00A0Bottom()};\n\u00A0\u00A0\u00A0\u00A0for\u00A0(Top\u00A0t:\u00A0array)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.showInfo();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.print();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(t.value\u00A0+\u00A0\":\u00A0\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0}\n}\nclass\u00A0Top\u00A0{\n\u00A0\u00A0int\u00A0value\u00A0=\u00A010;\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0top\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"T\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\nclass\u00A0Bottom\u00A0extends\u00A0Top\u00A0{\n\u00A0\u00A0Bottom(){\u00A0super.value\u00A0=\u00A090;\u00A0};\n\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0bottom\u00A0\";\n\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"B\");\u00A0}\n\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\n",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行するとどのような結果になりますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Top[]\u00A0array\u00A0=\u00A0{\u00A0new\u00A0Top(),\u00A0new\u00A0Bottom()};\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0for\u00A0(Top\u00A0t:\u00A0array)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.showInfo();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0t.print();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(t.value\u00A0+\u00A0\":\u00A0\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0}\n}\nclass\u00A0Top\u00A0{\n\u00A0\u00A0\u00A0\u00A0int\u00A0value\u00A0=\u00A010;\n\u00A0\u00A0\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0top\u00A0\";\n\u00A0\u00A0\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"T\");\u00A0}\n\u00A0\u00A0\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}\nclass\u00A0Bottom\u00A0extends\u00A0Top\u00A0{\n\u00A0\u00A0\u00A0\u00A0Bottom(){\u00A0super.value\u00A0=\u00A090;\u00A0};\n\u00A0\u00A0\u00A0\u00A0String\u00A0name\u00A0=\u00A0\"\u00A0bottom\u00A0\";\n\u00A0\u00A0\u00A0\u00A0static\u00A0void\u00A0showInfo()\u00A0{\u00A0System.out.print(\"B\");\u00A0}\n\u00A0\u00A0\u00A0\u00A0void\u00A0print()\u00A0{\u00A0System.out.print(name);\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"メンバ変数へのアクセスは型のメンバ変数だが、Bottomはコンストラクタで上書きされている",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
         {
             "item" :"A",
@@ -1231,11 +1258,12 @@
 },{
     "examId":"00028",
     "setItem" : "問題28",
-    "question" : "次のプログラムで、9行目が終了した時点で\nガベージコレクタの対象となるオブジェクトはいくつありますか。\n01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i1\u00A0=\u00A0new\u00A0Item();\n04|\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i2\u00A0=\u00A0new\u00A0Item();\n05|\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i3\u00A0=\u00A0new\u00A0Item();\n06|\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i4\u00A0=\u00A0i1;\n07|\u00A0\u00A0\u00A0\u00A0\u00A0i1\u00A0=\u00A0null;\n08|\u00A0\u00A0\u00A0\u00A0\u00A0i2\u00A0=\u00A0new\u00A0Item();\n09|\u00A0\u00A0\u00A0\u00A0\u00A0i4\u00A0=\u00A0i3;\n10|\u00A0\u00A0\u00A0}\n11|\u00A0}\n12|\u00A0record\u00A0Item()\u00A0{}",
-    "code" : "",
+    "question" : "次のプログラムで、9行目が終了した時点で\nガベージコレクタの対象となるオブジェクトはいくつありますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i1\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i2\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i3\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i4\u00A0=\u00A0i1;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0i1\u00A0=\u00A0null;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0i2\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0i4\u00A0=\u00A0i3;\n\u00A0\u00A0\u00A0\u00A0}\n}\nrecord\u00A0Item()\u00A0{}",
     "multipleAnswers" : true,
     "tip":"03行目から06行目まで3個、\n06行目は既にあるi1が見ているオブジェクトをi4も参照する\n07行目のnull代入でi1からは見れないがi4は参照している\n★08行目で新しいオブジェクトが1個追加、\ni1が見ていたオブジェクトがガベージコレクタの対象に1個追加\n★09行目i4が見ていたオブジェクトはどこからも参照されなくなる",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1271,11 +1299,12 @@
 },{
     "examId":"00029",
     "setItem" : "問題29",
-    "question" : "次のプログラムで、9行目が終了した時点で\nガベージコレクタの対象となるオブジェクトはいくつありますか。\n01| public class Main {\n02|  public static void main(String[] args) {\n03|   Item i1 = new Item();\n04|   Item i2 = new Item();\n05|   Item i3 = new Item();\n06|   Item i4 = i1;\n07|   i1 = null;\n08|   i2 = new Item();\n09|  }\n10| }\n11| record Item() {}",
-    "code" : "",
+    "question" : "次のプログラムで、9行目が終了した時点で\nガベージコレクタの対象となるオブジェクトはいくつありますか。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i1\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i2\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i3\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Item\u00A0i4\u00A0=\u00A0i1;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0i1\u00A0=\u00A0null;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0i2\u00A0=\u00A0new\u00A0Item();\n\u00A0\u00A0\u00A0\u00A0}\n}\nrecord\u00A0Item()\u00A0{}",
     "multipleAnswers" : true,
     "tip":"03行目から06行目まで3個、\n06行目は既にあるi1が見ているオブジェクトをi4も参照する\n07行目のnull代入でi1からは見れないがi4は参照している\n★08行目で新しいオブジェクトが1個追加、\ni1が見ていたオブジェクトがガベージコレクタの対象に1個追加",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1311,11 +1340,12 @@
 },{
     "examId":"00030",
     "setItem" : "問題30",
-    "question" : "100.0:0と出力するために(\u00A0INSERT\u00A0CODE\u00A0)に記入できるコードを2つ選んでください。\npublic\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0System.out.println(\u00A0[\u00A0\u00A0(\u00A0INSERT\u00A0CODE\u00A0)\u00A0\u00A0]\u00A0);\n\u00A0\u00A0}\n}\nclass\u00A0MyClass\u00A0{\n\u00A0\u00A0static\u00A0double\u00A0a;\n\u00A0\u00A0private\u00A0int\u00A0b;\n\u00A0\u00A0static\u00A0{\u00A0a\u00A0=\u00A0100.0;\u00A0}\n\u00A0\u00A0private\u00A0static\u00A0double\u00A0getA()\u00A0{\u00A0return\u00A0a;\u00A0}\n\u00A0\u00A0int\u00A0getB()\u00A0{\u00A0return\u00A0b;\u00A0}\n\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{\u00A0return\u00A0\"MyClass:\"\u00A0+\u00A0a\u00A0+\u00A0\",\"\u00A0+\u00A0b;\u00A0}\n}\n",
-    "code" : "",
+    "question" : "100.0:0と出力するために(\u00A0INSERT\u00A0CODE\u00A0)に記入できるコードを2つ選んでください。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\u00A0[\u00A0\u00A0(\u00A0INSERT\u00A0CODE\u00A0)\u00A0\u00A0]\u00A0);\n\u00A0\u00A0\u00A0\u00A0}\n}\nclass\u00A0MyClass\u00A0{\n\u00A0\u00A0\u00A0\u00A0static\u00A0double\u00A0a;\n\u00A0\u00A0\u00A0\u00A0private\u00A0int\u00A0b;\n\u00A0\u00A0\u00A0\u00A0static\u00A0{\u00A0a\u00A0=\u00A0100.0;\u00A0}\n\u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0double\u00A0getA()\u00A0{\u00A0return\u00A0a;\u00A0}\n\u00A0\u00A0\u00A0\u00A0int\u00A0getB()\u00A0{\u00A0return\u00A0b;\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0String\u00A0toString()\u00A0{\u00A0return\u00A0\"MyClass:\"\u00A0+\u00A0a\u00A0+\u00A0\",\"\u00A0+\u00A0b;\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"作成中",
     "ansLock" :false,
+    "answersCode":true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1357,11 +1387,12 @@
 },{
     "examId":"00031",
     "setItem" : "問題31",
-    "question" : "次のプログラムをコンパイル、実行した結果を1つ選択してください。\npublic\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0String\u00A0s1\u00A0=\u00A0null;\n\u00A0\u00A0\u00A0\u00A0String\u00A0s2\u00A0=\u00A0\"\";\n\u00A0\u00A0\u00A0\u00A0String\u00A0text\u00A0=\u00A0\"\"\"\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\"\"\";\n\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0!=\u00A0s1);\n\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0==\u00A0s2);\n\u00A0\u00A0\u00A0\u00A0System.out.print(!(s1\u00A0==\u00A0s2));\n\u00A0\u00A0}\n}\n",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行した結果を1つ選択してください。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0s1\u00A0=\u00A0null;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0s2\u00A0=\u00A0\"\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0text\u00A0=\u00A0\"\"\"\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\"\"\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0!=\u00A0s1);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0==\u00A0s2);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(!(s1\u00A0==\u00A0s2));\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"テキストブロックは空白が取り除かれるため空文字になる\ntext\u00A0!=\u00A0s1は空文字とnullの比較反転なのでtrue\ntext\u00A0==\u00A0s2は空文字と空文字の比較なのでtrue\n!(s1\u00A0==\u00A0s2)はnullと空文字の反転比較なのでtrue",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1403,11 +1434,12 @@
 },{
     "examId":"00032",
     "setItem" : "問題32",
-    "question" : "次のプログラムをコンパイル、実行した結果を1つ選択してください。\npublic\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0String\u00A0s1\u00A0=\u00A0null;\n\u00A0\u00A0\u00A0\u00A0String\u00A0s2\u00A0=\u00A0\"\";\n\u00A0\u00A0\u00A0\u00A0String\u00A0text\u00A0=\u00A0\"\"\"\n\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\"\"\";\n\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0!=\u00A0s1);\n\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0==\u00A0s2);\n\u00A0\u00A0\u00A0\u00A0System.out.print(!(s1\u00A0==\u00A0s2));\n\u00A0\u00A0}\n}\n",
-    "code" : "",
+    "question" : "次のプログラムをコンパイル、実行した結果を1つ選択してください。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0s1\u00A0=\u00A0null;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0s2\u00A0=\u00A0\"\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0text\u00A0=\u00A0\"\"\"\n\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\"\"\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0!=\u00A0s1);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(text\u00A0==\u00A0s2);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.print(!(s1\u00A0==\u00A0s2));\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"テキストブロックは空白が取り除かれるため改行になる\ntext\u00A0!=\u00A0s1は改行とnullの比較反転なのでtrue\ntext\u00A0==\u00A0s2は改行と空文字の比較なのでtrue\n!(s1\u00A0==\u00A0s2)はnullと改行の反転比較なのでtrue",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1449,11 +1481,12 @@
 },{
     "examId":"00033",
     "setItem" : "問題33",
-    "question" : "次のプログラムで4行目から15行目と同じ結果になるプログラムを2つ選択してください。\n01|\u00A0public\u00A0class\u00A0Main\u00A0{\n02|\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n03|\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0c\u00A0=\u00A0'c';\n04|\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0text\u00A0=\u00A0\"\";\n05|\u00A0\u00A0\u00A0\u00A0\u00A0switch\u00A0(c)\u00A0{\n06|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A097:\n07|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A098:\n08|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\u00A0break;\n09|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A099:\n10|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A0100:\n11|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\u00A0break;\n12|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A0101:\n13|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"e\u00A0|\u00A0\";\u00A0\u00A0\u00A0break;\n14|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0default:\n15|\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"the\u00A0others\";\n16|\u00A0\u00A0\u00A0\u00A0\u00A0}\n17|\u00A0\u00A0\u00A0}\n18|\u00A0}\n",
-    "code" : "",
+    "question" : "次のプログラムで4行目から15行目と同じ結果になるプログラムを2つ選択してください。",
+    "code" : "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0c\u00A0=\u00A0'c';\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0text\u00A0=\u00A0\"\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0switch\u00A0(c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A097:\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A098:\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"a\u00A0|\u00A0b\u00A0|\u00A0\";\u00A0break;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A099:\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A0100:\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"c\u00A0|\u00A0d\u00A0|\u00A0\";\u00A0break;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0case\u00A0101:\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"e\u00A0|\u00A0\";\u00A0\u00A0\u00A0break;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0default:\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0text\u00A0=\u00A0\"the\u00A0others\";\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0}\n}",
     "multipleAnswers" : true,
     "tip":"switch式は:とyieldの組み合わせ、または->で値を返し、defaultは省略不可\n:と->は組み合わせ不可",
     "ansLock" :false,
+    "answersCode":true,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1494,6 +1527,7 @@
     "multipleAnswers" : true,
     "tip":"呼び出しメソッドの引数が一致しない場合、\n以下の優先順位で引数が一致するメソッドが呼び出されます。\n1.基本データ型の暗黙の型変換/n2.オートボクシング/アンボクシング\n3.可変長引数",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1540,6 +1574,7 @@
     "multipleAnswers" : true,
     "tip":"呼び出しメソッドの引数が一致しない場合、\n以下の優先順位で引数が一致するメソッドが呼び出されます。\n1.基本データ型の暗黙の型変換\n2.オートボクシング/アンボクシング\n3.可変長引数",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1586,6 +1621,7 @@
     "multipleAnswers" : true,
     "tip":"型推論(var)は以下の場合コンパイルエラーが発生します。\nメンバ変数へ使用した場合\nnullを代入した場合\nカンマ区切りで複数の変数宣言をした場合\nまた、finalの付与、配列の宣言、拡張for文での使用は問題ありません。",
     "ansLock" :true,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1638,6 +1674,7 @@
     "multipleAnswers" : true,
     "tip":"throws指定されたメソッドのオーバーライドで可能な記述は以下のとおりです。\nthrowsの省略\nスーパークラスと同じ例外\nスーパークラスの例外のサブクラス例外\nなお、例外自体のスーパークラスにあたる例外は指定不可です。",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1684,6 +1721,7 @@
     "multipleAnswers" : true,
     "tip":"x=yは基本データ型なので、値がコピーされるためxとyは異なる値になりますが、\nanother\u00A0=\u00A0oneは参照情報のコピーのため、\none.valueの値はanother.valueと同じです",
     "ansLock" :false,
+    "answersCode":false,
     "selectAnswers" : [
       {
           "item" :"A",
@@ -1730,6 +1768,7 @@
     "multipleAnswers" : true,
     "tip":"作成中 \n aaaa",
     "ansLock" :false,
+    "answersCode":false,
     "TipURI" :"compileandrun",
     "selectAnswers" : [
       {

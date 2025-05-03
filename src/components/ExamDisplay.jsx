@@ -324,6 +324,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   <p white-space="nowrap">問題内容：{LineHtmlConversion(setExam.question)}</p>
   {codeConversion(setExam.code)}
     {setExam.selectAnswers.map((Answer) => (
+      
       <>
         <div className="marginTopBottom"><nobr>
           <input
@@ -332,9 +333,12 @@ const shuffleExam1=(examData,InitialDisplay)=> {
             id = {setExam.setItem + Answer.item}
             value ={Answer.item}
           />
-          <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：{LineHtmlConversion(Answer.content)}</label></nobr>
+          <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：
+            {setExam.answersCode ? codeConversion(Answer.content) : LineHtmlConversion(Answer.content)}
+          </label></nobr>
           {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
           </div>
+
       </>
     ))}
       
