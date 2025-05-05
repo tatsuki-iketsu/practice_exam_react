@@ -322,7 +322,14 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   <h2>練習問題{index+1}<span> 問題ID：{setExam.examId}</span></h2>
   {/* <h2>練習問題{index+1}</h2> */}
   <p white-space="nowrap">問題内容：{LineHtmlConversion(setExam.question)}</p>
-  {codeConversion(setExam.code)}
+  {setExam.code.map((code,index) => (
+    <>
+    <div>問題コード 
+    {index == 0 ? <></> : <>{index}</>}
+    {codeConversion(code)}
+    </div>
+    </>
+  ))}
     {setExam.selectAnswers.map((Answer) => (
       
       <>
