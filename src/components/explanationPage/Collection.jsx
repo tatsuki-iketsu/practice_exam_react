@@ -28,19 +28,25 @@ const Collection = () =>{
                 型宣言、インスタンス可時のどちらも型指定した例
                     <pre>
                       <code>
-                        <span>ArrayList{`<`}Integer{`>`} listIntger = new ArrayList{`<`}Integer{`>`}();</span>
+                        <div className="otherCode">
+                          <span>ArrayList{`<`}Integer{`>`} listIntger = new ArrayList{`<`}Integer{`>`}();</span>
+                        </div>
                       </code>
                     </pre>              
                   インスタンス時の型指定を省略した例
                     <pre>
                       <code>
-                        <span>ArrayList{`<`}String{`>`} listString = new ArrayList{`<`}{`>`}();</span>
+                        <div className="otherCode">
+                          <span>ArrayList{`<`}String{`>`} listString = new ArrayList{`<`}{`>`}();</span>
+                        </div>
                       </code>
                     </pre>              
                     宣言時に型指定しない例例
                     <pre>
                       <code>
-                        <span>ArrayList listObj = new ArrayList;</span>
+                        <div className="otherCode">
+                          <span>ArrayList listObj = new ArrayList;</span>
+                        </div>
                       </code>
                     </pre>              
                   </div>

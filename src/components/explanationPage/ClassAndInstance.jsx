@@ -3,7 +3,7 @@ import React from "react";
 import explanationPagestyles from '../css/explanationPage.module.css'
 // import practiceExamReactStyles from '../css/practiceExamReact.module.css'
 
-const overrideOfMethod = () =>{
+const Collection = () =>{
 
   return (
     <>
@@ -12,11 +12,11 @@ const overrideOfMethod = () =>{
         <h2>JavaSilver17試験対策問題　解説ページ</h2>
       </div>
 
-      <h3 className={explanationPagestyles.sectionTitle}>メソッドのオーバーライド</h3>
-      <h4 className={explanationPagestyles.paragraphTitle}>メンバ変数（フィールド）</h4>
+      <h3 className={explanationPagestyles.sectionTitle}>クラスの定義とインスタンス</h3>
+      <h4 className={explanationPagestyles.paragraphTitle}>クラス宣言</h4>
       <div className={explanationPagestyles.paragrapContents}>
-        メンバ変数（フィールド）はオーバーライドできず、サブクラスとスーパークラスで同じ名前の変数が作られる。<br />
-        <h5 className={explanationPagestyles.itemTitle}>インスタンス化</h5>
+        クラス呼び出しの引数
+        <h5 className={explanationPagestyles.itemTitle}>可変長引数</h5>
         <div className={explanationPagestyles.itemContents}>
           型宣言でジェネリクスの型指定をしていれば、インスタンスの型指定は省略可能。<br />
         </div>
@@ -28,25 +28,19 @@ const overrideOfMethod = () =>{
                 型宣言、インスタンス可時のどちらも型指定した例
                     <pre>
                       <code>
-                        <div className="otherCode">
-                          <span>ArrayList{`<`}Integer{`>`} listIntger = new ArrayList{`<`}Integer{`>`}();</span>
-                        </div>
+                        <span>ArrayList{`<`}Integer{`>`} listIntger = new ArrayList{`<`}Integer{`>`}();</span>
                       </code>
                     </pre>              
                   インスタンス時の型指定を省略した例
                     <pre>
                       <code>
-                        <div className="otherCode">
-                          <span>ArrayList{`<`}String{`>`} listString = new ArrayList{`<`}{`>`}();</span>
-                        </div>
+                        <span>ArrayList{`<`}String{`>`} listString = new ArrayList{`<`}{`>`}();</span>
                       </code>
                     </pre>              
                     宣言時に型指定しない例例
                     <pre>
                       <code>
-                        <div className="otherCode">
-                          <span>ArrayList listObj = new ArrayList;</span>
-                        </div>
+                        <span>ArrayList listObj = new ArrayList;</span>
                       </code>
                     </pre>              
                   </div>
@@ -58,5 +52,5 @@ const overrideOfMethod = () =>{
     
   );
 };
-export default overrideOfMethod
+export default Collection
 ;

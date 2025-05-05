@@ -384,7 +384,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       </form>
       <button disabled={examDisabled[index]} onClick={()=>selectedCheck(setExam,setExam.setItem,index,setExam.examId,setExam.TipURI)}  class="selectedCheck">回答を確認</button>
     </div>
-    <div><a href="#h1">一番上に戻る</a> / <a href="#bottom">一番下に行く</a></div>
+    <div><a href="#h1">一番上に戻る</a> / <a href="#fotter">一番下に行く</a></div>
     {/* TODO:ヘッダーの正誤が問題ないなら削除する
     <div>{ansDisplay[index]}</div>
     <div>{trueOrFalseDisplay[index]}</div>

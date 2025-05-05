@@ -31,20 +31,24 @@ const compileAnrRun = () =>{
                   パス
                     <pre>
                       <code>
-                        <span>samplefolder\Main.java</span>
+                        <div className="otherCode">
+                          <span>samplefolder\Main.java</span>
+                        </div>
                       </code>
                     </pre>              
                     Main.javaファイルのコード
                     <pre>
                       <code>
-                        <span class="numberLow">package com.trigger</span>
-                        <span class="numberLow">import com.action.Display</span>
-                        <span class="numberLow"></span>
-                        <span class="numberLow">public class Main {'{'}</span>
-                        <span class="numberLow">    public static void main(String[] args) {'{'}</span>
-                        <span class="numberLow">        Test.print()</span>
-                        <span class="numberLow">    {'}'}</span>
-                        <span class="numberLow">{'}'}</span>
+                        <div className="otherCode">
+                          <span class="numberLow">package com.trigger</span>
+                          <span class="numberLow">import com.action.Display</span>
+                          <span class="numberLow"></span>
+                          <span class="numberLow">public class Main {'{'}</span>
+                          <span class="numberLow">    public static void main(String[] args) {'{'}</span>
+                          <span class="numberLow">        Test.print()</span>
+                          <span class="numberLow">    {'}'}</span>
+                          <span class="numberLow">{'}'}</span>
+                        </div>
                       </code>
                     </pre>              
                   </div>
@@ -55,19 +59,23 @@ const compileAnrRun = () =>{
                     パス                  
                     <pre>
                       <code>
-                        <span class="numberLow">samplefolder\Display.java</span>
+                        <div className="otherCode">
+                          <span class="numberLow">samplefolder\Display.java</span>
+                        </div>
                       </code>
                     </pre>              
                     Display.javaの中身
                 <pre>
                   <code>
-                    <span class="numberLow">package com.action</span>
-                    <span class="numberLow"></span>
-                    <span class="numberLow">public class Test {'{'}</span>
-                    <span class="numberLow">    public static void Display() {'{'}</span>
-                    <span class="numberLow">        System.out.println("Display")</span>
-                    <span class="numberLow">    {'}'}</span>
-                    <span class="numberLow">{'}'}</span>
+                    <div className="otherCode">
+                      <span class="numberLow">package com.action</span>
+                        <span class="numberLow"></span>
+                        <span class="numberLow">public class Test {'{'}</span>
+                        <span class="numberLow">    public static void Display() {'{'}</span>
+                        <span class="numberLow">        System.out.println("Display")</span>
+                        <span class="numberLow">    {'}'}</span>
+                        <span class="numberLow">{'}'}</span>
+                    </div>
                   </code>
                 </pre>
                 </div>                    
@@ -78,16 +86,22 @@ const compileAnrRun = () =>{
                 現在のディレクトリにあるすべてのjavaファイルをコンパイルしたクラスファイル保存する<br />
                 <pre>
                     <code>
-                      <span>javac <span class="pointBarRed">-d .</span> <span class="pointBarBlue">*.java</span></span>
+                      <div className="otherCode">
+                        <span>javac <span class="pointBarRed">-d .</span> <span class="pointBarBlue">*.java</span></span>
+                      </div>
                     </code>
                   </pre>
                   ↓<br />
                   <code>
-                    <span class="pointBarRed">-d .</span>
+                    <div className="otherCode">
+                      <span class="pointBarRed">-d .</span>
+                    </div>
                   </code>
                   →現在のディレクトリ（.）をコンパイルしたクラスファイルの保存先とする<br />
                   <code>
+                    <div className="otherCode">
                       <span class="pointBarBlue">*.java</span>
+                    </div>
                   </code>
                   →曖昧検索(*)で.java形式のファイルすべてコンパイルする
               </div>
@@ -95,36 +109,52 @@ const compileAnrRun = () =>{
               <div class="block">
                 現在のディレクトリにふたつのファイルをコンパイルしたクラスファイルを保存する<br />
                 <pre>
-                    <code>
+                  <code>
+                    <div className="otherCode">
                       <span>javac <span class="pointBarRed">-d bin</span> <span class="pointBarBlue">Main.java Display.java</span></span>
-                    </code>
-                  </pre>
-                  ↓<br />
-                  <code>
-                    <span class="pointBarRed">-d bin</span>
+                    </div>
                   </code>
-                  →binフォルダをコンパイルしたクラスファイルの保存先とする<br />
-                  　※binフォルダがなければ作成する<br />
+                </pre>
+                ↓<br />
+                <pre>
                   <code>
+                    <div className="otherCode">
+                      <span class="pointBarRed">-d bin</span>
+                    </div>
+                  </code>
+                </pre>
+                →binフォルダをコンパイルしたクラスファイルの保存先とする<br />
+                　※binフォルダがなければ作成する<br />
+                <pre>
+                  <code>
+                    <div className="otherCode">
                       <span class="pointBarBlue">Main.java Display.java</span>
+                    </div>
                   </code>
-                  →コンパイルするファイルをスペースで区切ったファイル名で指定
+                </pre>
+                →コンパイルするファイルをスペースで区切ったファイル名で指定
               </div>
               <div class="filename">コマンド例3</div>
               <div class="block">
                 現在のディレクトリにDisplay.javaをコンパイルしたクラスファイルのみを保存する<br />
                 <pre>
-                    <code>
+                  <code>
+                    <div className="otherCode">
                       <span>javac <span class="pointBarBlue">Display.java</span></span>
-                    </code>
-                  </pre>
+                    </div>
+                  </code>
+                </pre>
+                <pre>
                   ↓<br />
                   省略できる-dオプションを指定していないので、実行したディレクトリをクラスファイルの保存先とする<br />
                   packageを指定していても、反映されない<br />
-                  <code>
-                      <span class="pointBarBlue">Display.java</span>
-                  </code>
+                    <code>
+                      <div className="otherCode">
+                        <span class="pointBarBlue">Display.java</span>
+                      </div>
+                    </code>
                   →コンパイルするファイルをファイル名でひとつだけ指定
+                </pre>
               </div>
         </div> 
       </div>

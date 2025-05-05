@@ -8,7 +8,7 @@ const explanationData = urlList();
 const Fotter =() =>{
     return (
         <>   
-        <div className="fotter">`{explanationData[0].url}``{process.env.REACT_APP_BASENAME}`
+        <div className="fotter" id="fotter">
             <div>▼JavaSilver17試験対策問題　解説ページ</div>
             <Link to='/'>Top</Link> / 
             {explanationData.map((page) => {
