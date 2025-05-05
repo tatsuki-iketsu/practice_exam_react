@@ -189,7 +189,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       // 回答表示場所に問題IDをセット(開発用)
       SelectExamId = examId;
       // リンク用にURIをセット
-      if(tipURI == undefined) {
+      if(tipURI === undefined) {
         TipURI = (
           <div className="paddingTop15">学習ページは準備中です…</div>
         )
@@ -209,7 +209,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       const firstClick = false;
 
       // querySelectorAllから選択した回答の文字列連結し配列に格納
-      if(selectedChecks.length == 0 ){
+      if(selectedChecks.length === 0 ){
         // 回答なし
         alert('回答が選択されていません');
         return NO_SELECTED;   
@@ -220,6 +220,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
         ))
       }
 
+      // 正しい解答をセット
       setExam.selectAnswers.map((selectAnswer) => { 
         if(selectAnswer.correctAnswer){
           answers.push(selectAnswer.item);
@@ -227,16 +228,16 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       } );
       
       // Modal内に表示するdisplayにセット
-      setAnsDisplay(ansDisplay.map((ans, i) => (i == index ? `正しい回答：${answers}<br>回答選択肢：${selectedAns}` : ans)));
-      if(answers.toString() == selectedAns.toString()){
-          settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "正解！！" : trueOrFalse)));
+      setAnsDisplay(ansDisplay.map((ans, i) => (i === index ? `正しい回答：${answers}<br>回答選択肢：${selectedAns}` : ans)));
+      if(answers.toString() === selectedAns.toString()){
+          settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i === index ? "正解！！" : trueOrFalse)));
           if(!(c_ansCheck[index])){
             setallTrue(allTrue+1);
           // 最初のクリック時は正解数をカウント
           props.countUpdate(allExam,allTrue+1,allFalse);
           }
         }else{
-          settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i == index ? "残念…" : trueOrFalse)));
+          settrueOrFalseDisplay(trueOrFalseDisplay.map((trueOrFalse, i) => (i === index ? "残念…" : trueOrFalse)));
           if(!(c_ansCheck[index])){
             setallFalse(allFalse+1);
           // 最初のクリック時は誤数をカウント
@@ -245,11 +246,11 @@ const shuffleExam1=(examData,InitialDisplay)=> {
         }
       // ボタン非活性化と解説セット
       // Modalを閉じるまでボタンを無効化
-      setExamDisabled(examDisabled.map((disabled, i) => (i == index ? true : disabled)));
+      setExamDisabled(examDisabled.map((disabled, i) => (i === index ? true : disabled)));
       // 正誤確認済みをセット 
       c_ansCheck[index] = true;
       console.log(c_ansCheck);
-      setTipDisplay(tipDisplay.map((tip, i) => (i == index ? LineHtmlConversion(setExam.tip) : tip)));
+      setTipDisplay(tipDisplay.map((tip, i) => (i === index ? LineHtmlConversion(setExam.tip) : tip)));
       // Modalオープン
       openModal()
     };
@@ -286,7 +287,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
 
   // コードブロック変換
   const codeConversion = ( body ) => {
-    if(body == ""){
+    if(body === ""){
       // 空文字の場合は空のdivを返却
       return (
         <></>
@@ -310,7 +311,8 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     }
   };
 
-      
+
+  
   // 問題を表示する部分
   return (
   <>
@@ -325,7 +327,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   {setExam.code.map((code,index) => (
     <>
     <div>問題コード 
-    {index == 0 ? <></> : <>{index}</>}
+    {index === 0 ? <></> : <>{index}</>}
     {codeConversion(code)}
     </div>
     </>
