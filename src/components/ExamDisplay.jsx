@@ -285,7 +285,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
     return <>{texts}</>;
   };
 
-  // コードブロック変換
+  // コードブロック全般変換
   const codeConversion = ( body ) => {
     if(body === ""){
       // 空文字の場合は空のdivを返却
@@ -304,7 +304,9 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       return (
         <pre>
           <code>
-            <p white-space="nowrap" className="fontlarge">{texts}</p>
+            <div className="otherCode">
+              <p white-space="nowrap" className="medium">{texts}</p>
+            </div>
           </code>
         </pre>
       );  
@@ -312,7 +314,35 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   };
 
 
-  
+    // 解答用コードブロック変換
+    const answerCodeConversion = ( body ) => {
+      if(body === ""){
+        // 空文字の場合は空のdivを返却
+        return (
+          <></>
+        );    
+      } else{
+        // codeがあればcodehtmlとして返却
+        const texts = body.split('\n').map((item, index) => {
+          return (
+            <React.Fragment key={index}>
+              <span className="numberLow">{item}</span>
+            </React.Fragment>        
+          );
+        });  
+        return (
+          <pre className="topBottomMargin2">
+            <code>
+              <div className="Code">
+                <p white-space="nowrap" className="medium">{texts}</p>
+              </div>
+            </code>
+          </pre>
+        );  
+      }
+    };
+
+    
   // 問題を表示する部分
   return (
   <>
@@ -343,7 +373,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
             value ={Answer.item}
           />
           <label htmlFor={setExam.setItem + Answer.item}>{Answer.item}：
-            {setExam.answersCode ? codeConversion(Answer.content) : LineHtmlConversion(Answer.content)}
+            {setExam.answersCode ? answerCodeConversion(Answer.content) : LineHtmlConversion(Answer.content)}
           </label></nobr>
           {selectTipsDisplay(Answer.selecttips,examDisabled[index])}
           </div>

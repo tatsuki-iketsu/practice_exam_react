@@ -71,6 +71,23 @@ Modal{
 .paddingTop15{
   padding-top: 15px;
 }
+
+/* 上下パディング2px*/
+.topBottomPadding2{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+/* 上下マージン2px*/
+.topBottomMargin2{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* 上下左右パディング5px*/
+.allPadding5{
+  padding: 5px;
+}
 /*サンプルエリア*/
 .sampleFile{
   padding:10px;
@@ -138,17 +155,36 @@ pre{
  */
 code {
     display: inline-block;
-    padding: 5px; /* 文字周りの余白 */
+  }
+  code .otherCode{
     color: #444; /* 文字色 */
     background-color: #e7edf3; /* 背景色 */
     border-radius: 3px; /* 角丸 */
     border: solid 2px #d6dde4; /* 枠線 */
+
   }
+
+  code .answerCode{
+    color: black; /* 文字色 */
+    border-radius: 3px; /* 角丸 */
+    border: dotted 2px #d6dde4; /* 枠線 */
+
+  }
+
+   /* TODO解答部分のコードブラックオプション 
+   code .answerCodeB{
+    color: #e7edf3;
+    background-color: #444 ;
+    border-radius: 3px;
+    border: solid 2px #d6dde4;
+  }
+  */
 
   code .numberLow {
     counter-increment: line-number;
     display: list-item;
     padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 8px;
     margin-left: 30px;
   }
@@ -156,4 +192,8 @@ code {
   code span::marker {
     content: counter(line-number);
     color: #aaa;
+  }
+
+  .answer {
+    font-size: medium;
   }
