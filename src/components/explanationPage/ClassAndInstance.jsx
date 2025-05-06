@@ -83,10 +83,12 @@ const Collection = () =>{
           <p>main以外のメソッドでは、引数は以下が設定できる。</p>
           <list>
           <li>型</li> 
-          <li>クラス</li> 
+          <li>クラス型</li> 
           <li>型の配列</li> 
           <li>型やクラスの可変長引数</li> 
           </list>
+          ただし、可変長引数は最後のみ1つだけ指定できる。<br />
+          また、可変長引数はコンパイルされると配列として扱われる。<br />
 
         </div>
         <div class="sampleFile">
@@ -112,7 +114,7 @@ const Collection = () =>{
                         <span class="numberLow">{'}'}</span>
                       </div>
                     </code>
-                  </pre>              
+                  </pre>
                   main以外のメソッドの引数例（int型の可変長引数）
                   <pre>
                     <code>
@@ -131,7 +133,26 @@ const Collection = () =>{
                         <span class="numberLow">{'}'}</span>
                       </div>
                     </code>
-                  </pre>              
+                  </pre>
+                  main以外のメソッドの引数例（クラス型の引数）
+                  <pre>
+                    <code>
+                      <div className="otherCode">
+                        <span class="numberLow">public class Main {'{'}</span>
+                        <span class="numberLow">    String str = "Hello World";</span>
+                        <span class="numberLow">    int i = 10;</span>
+                        <span class="numberLow">    public static void main(String[] args) {'{'}</span>
+                        <span class="numberLow">        new Main().print(new Main());</span>
+                        <span class="numberLow">    {'}'}</span>
+                        <span class="numberLow">    </span>
+                        <span class="numberLow">    void print(Main mainArgs) {'{'}</span>
+                        <span class="numberLow">        System.out.println("str:" + mainArgs.str);</span>
+                        <span class="numberLow">        System.out.println("i:" + mainArgs.i);</span>
+                        <span class="numberLow">    {'}'}</span>
+                        <span class="numberLow">{'}'}</span>
+                      </div>
+                    </code>
+                  </pre>
                   </div>
             </div>
         </div> 
