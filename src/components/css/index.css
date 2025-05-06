@@ -45,6 +45,16 @@ Modal{
 *****************
 個別レイアウト変更
 *****************
+/* バックグランドカラー赤 */
+.bgred{
+  background-color: red;  
+}
+
+.fontred{
+  color: red;  
+}
+
+
 */
 .fontlarge{
   font-size: x-large;
