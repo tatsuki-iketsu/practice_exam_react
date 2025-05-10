@@ -1813,5 +1813,41 @@
           "selecttips":"選択肢Fはコンパイルオプションが指定されずにclassesと指定されているため、javacコマンドの使用方法が間違っています。\nまた、-pは、モジュールを検索するパスを指定するオプションです。"
       }
   ]
+},{
+    "examId":"00040",
+    "setItem" : "問題40",
+    "question" : "次のプログラムをコンパイル、実行したときの正しい結果を1つ選んでください。",
+    "code" : ["public\u00A0class\u00A0Sample\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0a\u00A0=\u00A0new\u00A0String(\"sample\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0b\u00A0=\u00A0a;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0c\u00A0=\u00A0a.intern();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0d\u00A0=\u00A0\"sample\";\n\n\u00A0\u00A0\u00A0\u00A0if\u00A0(a\u00A0==\u00A0b)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n\u00A0\u00A0\u00A0\u00A0}\n\n\u00A0\u00A0\u00A0\u00A0if\u00A0(a\u00A0==\u00A0c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(a\u00A0==\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(b\u00A0==\u00A0c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(b\u00A0==\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(c\u00A0==\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"F\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0}\n}"],
+    "multipleAnswers" : false,
+    "tip":"デフォルトメソッドに関する問題です。\n\n設問には、AとBの2つのインタフェースと、Bを実装したクラス、そしてmainメソッドを持つSampleクラスの4つのコードが出てきます。AとBの間にはインタフェースの継承関係があります。Bインタフェースでは、Aインタフェースで定義されたsearchメソッドのデフォルト実装を定義している点に注意してください。\n\nこのデフォルト実装では、第1引数の配列data内に第2引数targetが存在する回数をカウントし、1回以上存在する場合はtrueを戻します。もし、1つも存在しなければfalseを戻します。",
+    "ansLock" :false,
+    "answersCode":false,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "「A」「F」と表示される",
+          "correctAnswer":false,
+          "selecttips":"実行時に例外がスローされるケースとしては、起動パラメータとして数字ではなくアルファベットなどの文字列を渡すと、Integer.parseIntメソッドが引数を数値に変換できずにNumberFormatExceptionをスローすることが考えられます。しかし、設問のコマンドでは数字を渡しているため、この例外がスローされることはありません。"
+      },
+      {
+        "item" :"B",
+        "content" : "「A」と表示される",
+        "correctAnswer":true,
+        "selecttips":""
+    },
+    {
+        "item" :"C",
+        "content" : "「A」「B」「C」「D」「E」「F」と表示される",
+        "correctAnswer":false,
+        "selecttips":"設問のコードは、インタフェースAとBの継承関係やデフォルト実装、そのデフォルト実装を引継いだクラスの実装にも問題がないため、コンパイルエラーは発生しません。"
+    },
+    {
+        "item" :"D",
+        "content" : "「A」「D」と表示される",
+        "correctAnswer":false,
+        "selecttips":"java.commandに渡している起動パラメータはargs[0]とargs[1]の2つですが、Sampleクラスのmainメソッドではargs[0]としているため、最初の引数であるししか使用されません。5は、searchメソッドの引数に渡した配列内に存在しないため、searchメソッドはfalseを戻します。この結果、コンソールにはBが出力されることになります。"
+    }
+  ]
 }]
 }
