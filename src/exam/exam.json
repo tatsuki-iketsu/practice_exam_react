@@ -1849,5 +1849,204 @@
         "selecttips":"java.commandに渡している起動パラメータはargs[0]とargs[1]の2つですが、Sampleクラスのmainメソッドではargs[0]としているため、最初の引数であるししか使用されません。5は、searchメソッドの引数に渡した配列内に存在しないため、searchメソッドはfalseを戻します。この結果、コンソールにはBが出力されることになります。"
     }
   ]
+},{
+    "examId":"00041",
+    "setItem" : "問題41",
+    "question" : "次のクラスのサブクラスとして、正しいものを2つ選んでください。",
+    "code" : ["public\u00A0sealed\u00A0class\u00A0A\u00A0permits\u00A0B,\u00A0C\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\n}"],
+    "multipleAnswers" : true,
+    "tip":"シールクラスは、permits で許可したクラスに継承を許可するクラスです。設問のコードでは、シールクラスとして宣言されたAクラスは、BとCのみに継承を許可しています。",
+    "ansLock" :false,
+    "answersCode":true,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "public\u00A0non-sealed\u00A0class\u00A0D\u00A0extends\u00A0A\u00A0{}",
+          "correctAnswer":false,
+          "selecttips":"許可されていないDクラスがAクラスを継承することはできません。"
+      },{
+          "item" :"B",
+          "content" : "public\u00A0class\u00A0C\u00A0extends\u00A0A\u00A0{}",
+          "correctAnswer":false,
+          "selecttips":"シールクラスを継承したサブクラスは、finalかsealed、もしくはnon-sealedで修飾しなければいけません。"
+      },{
+          "item" :"C",
+          "content" : "public\u00A0class\u00A0B\u00A0extends\u00A0A\u00A0{}",
+          "correctAnswer":false,
+          "selecttips":"シールクラスを継承したサブクラスは、finalかsealed、もしくはnon-sealedで修飾しなければいけません。"
+      },{
+          "item" :"D",
+          "content" : "public\u00A0abstract\u00A0class\u00A0C\u00A0extends\u00A0A\u00A0{}",
+          "correctAnswer":false,
+          "selecttips":"シールクラスを継承したサブクラスは、finalかsealed、もしくはnon-sealedで修飾しなければいけません。"
+      },{
+          "item" :"E",
+          "content" : "public\u00A0non-sealed\u00A0class\u00A0C\u00A0extends\u00A0A\u00A0{}",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"F",
+          "content" : "public\u00A0final\u00A0class\u00A0B\u00A0extends\u00A0A\u00A0{}",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"G",
+          "content" : "public\u00A0final\u00A0class\u00A0D\u00A0extends\u00A0A\u00A0{}",
+          "correctAnswer":false,
+          "selecttips":"許可されていないDクラスがAクラスを継承することはできません。"
+      }
+  ]
+},{
+    "examId":"00042",
+    "setItem" : "問題42",
+    "question" : "次のクラスのサブクラスとして、正しいものを2つ選んでください。",
+    "code" : ["public\u00A0class\u00A0A\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0execute()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n\u00A0\u00A0\u00A0\u00A0}\n}",
+              "public\u00A0class\u00A0B\u00A0extends\u00A0A\u00A0{\n\u00A0\u00A0\u00A0\u00A0private\u00A0void\u00A0test()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0execute()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0test();\n\u00A0\u00A0\u00A0\u00A0}\n}",
+            "public\u00A0class\u00A0Main\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Object[]\u00A0objects\u00A0=\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0new\u00A0A(),\u00A0new\u00A0B(),\u00A0\"C\"\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0};\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0for\u00A0(Object\u00A0obj\u00A0:\u00A0objects)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0test(obj);\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0}\n\n\u00A0\u00A0\u00A0\u00A0private\u00A0static\u00A0void\u00A0test(Object\u00A0obj)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0if\u00A0(obj\u00A0instanceof\u00A0B)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0((B)\u00A0obj).execute();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0}\n}"],
+    "multipleAnswers" : false,
+    "tip":"instanceof演算子に関する問題です。\n\n設問のコードでは、AクラスとそのサブクラスであるBクラスが定義されています。mainメソッドでは、AとB、そしてStringの3つのインスタンスへの参照を要素に持つ配列を作り、拡張for文で順番に取り出しながら、testメソッドに引数として渡しています。そのため、testメソッドは3回呼ばれ、A,B,Stringの順に引数が渡されます。\n\ntestメソッドでは、引数の型がA型と互換性があるかどうかをinstanceof演算子を使って調べています。引数の型がA型またはそのサブクラスのときはtrueを表示しますが、String型の場合はfalseを表示します。そのため、testメソッドがA型とB型のときのみ、executeメソッドが呼ばれることになります。以上のことから、コンソールにはA、Bの順に表示されます。",
+    "ansLock" :false,
+    "answersCode":false,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "何も出力されない",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"B",
+          "content" : "A, Bの順に表示される",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"C",
+          "content" : "A, B, Cの順に表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"D",
+          "content" : "Bが表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"E",
+          "content" : "Cが表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"F",
+          "content" : "コンパイルエラーが発生する",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"G",
+          "content" : "実行時に例外がスローされる",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
+},{
+    "examId":"00043",
+    "setItem" : "問題43",
+    "question" : "次のプログラムをコンパイル、実行したときの結果として正しいものを1つ選んでください。",
+    "code" : ["public\u00A0class\u00A0Sample\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0static\u00A0int\u00A0num\u00A0=\u00A023;\n\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0num\u00A0=\u00A0num;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(num);\n\u00A0\u00A0\u00A0\u00A0\u00A0}\n}"],
+    "multipleAnswers" : false,
+    "tip":"インスタンス変数やクラス変数は、非staticなフィールドとstaticなフィールドであり、クラス定義の直下、メソッドの外に定義する変数です。\n一方、ローカル変数はメソッド内で宣言する変数です。\nインスタンス変数やクラス変数はクラス内すべてが有効範囲ですが、ローカル変数はその変数を宣言したメソッド内だけが有効範囲となります。\n\nインスタンス変数やクラス変数は、同じクラス内に同名のものを複数定義することはできません。\n同様に、ローカル変数も同じメソッド内に同名のものを複数定義することはできません。\nただし、インスタンス変数やクラス変数とローカル変数は定義できます。\n\nインスタンス変数やクラス変数と同名のローカル変数がある場合、変数名だけを記述するとコンパイラはローカル変数だと解釈します。\nインスタンス変数であることを明示したい場合には「this.フィールド名」、クラス変数の場合には「クラス名.フィールド名」の書式で記述します。\n設問のコードでは、2行目でクラス変数numが宣言されていますが、4行目でローカル変数numも宣言されています。\nそのため、設問のコードではint型のローカル変数numを宣言し、numの値を代入するというコードとしてコンパイラに解釈されます。\n4行目で宣言したローカル変数numは初期化されていないため、5行目でこの変数を参照するとコンパイラエラーが発生します。\n設問のコードでクラス名を記述してクラス変数を使うことを明示すれば、コンパイラエラーは発生することなく、23が表示されます。",
+    "ansLock" :false,
+    "answersCode":false,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "23が表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"B",
+          "content" : "nullが表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"C",
+          "content" : "コンパイルエラーが発生する",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"D",
+          "content" : "実行時に例外がスローされる",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
+},{
+    "examId":"00044",
+    "setItem" : "問題44",
+    "question" : "次のプログラムをコンパイル、実行したときの結果として正しいものを1つ選んでください。",
+    "code" : ["public\u00A0class\u00A0Sample\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0static\u00A0int\u00A0num\u00A0=\u00A023;\n\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0int\u00A0num\u00A0=\u00A0Sample.num;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(num);\n\u00A0\u00A0\u00A0\u00A0\u00A0}\n}"],
+    "multipleAnswers" : false,
+    "tip":"インスタンス変数やクラス変数は、非staticなフィールドとstaticなフィールドであり、クラス定義の直下、メソッドの外に定義する変数です。\n一方、ローカル変数はメソッド内で宣言する変数です。\nインスタンス変数やクラス変数はクラス内すべてが有効範囲ですが、ローカル変数はその変数を宣言したメソッド内だけが有効範囲となります。\n\nインスタンス変数やクラス変数は、同じクラス内に同名のものを複数定義することはできません。\n同様に、ローカル変数も同じメソッド内に同名のものを複数定義することはできません。\nただし、インスタンス変数やクラス変数とローカル変数は定義できます。",
+    "ansLock" :false,
+    "answersCode":false,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "23が表示される",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"B",
+          "content" : "nullが表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"C",
+          "content" : "コンパイルエラーが発生する",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"D",
+          "content" : "実行時に例外がスローされる",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
+},{
+    "examId":"00045",
+    "setItem" : "問題45",
+    "question" : "次のプログラムのコンパイルを成功させるための方法として、正しいものを1つ選んでください。",
+    "code" : ["public\u00A0interface\u00A0A\u00A0{\n\u00A0\u00A0\u00A0\u00A0abstract\u00A0void\u00A0x();\n}",
+              "public\u00A0abstract\u00A0class\u00A0B\u00A0/*\u00A0position\u00A01\u00A0*/\u00A0{\n\u00A0\u00A0\u00A0\u00A0/*\u00A0position\u00A02\u00A0*/\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0y()\u00A0{}\n\u00A0\u00A0\u00A0\u00A0public\u00A0abstract\u00A0void\u00A0z();\n}",
+            "public\u00A0class\u00A0C\u00A0extends\u00A0B\u00A0implements\u00A0A\u00A0{\n\u00A0\u00A0\u00A0\u00A0/*\u00A0position\u00A03\u00A0*/\n}"],
+    "multipleAnswers" : false,
+    "tip":"インタフェースAに抽象メソッドx()が、抽象クラスBに通常メソッドy()と抽象メソッドz()が定義されています。\n具象クラスであるCはインタフェースAを実装すると同時に、抽象クラスBを継承しています。\nまた、インタフェースAと抽象クラスBの間には継承関係はありません。\n\nA, B, Cの三者の関係で考えると、抽象メソッドを実装するのは具象クラスであるCクラスです。\n抽象クラスBを継承しているので、Bで定義されている抽象メソッドz()を実装しなければいけません（選択肢B）。\nまた、インタフェースAを実装しているので、Aで定義されている抽象メソッドx()を実装しなければいけません。\nしかし、選択肢Cのように抽象クラスBの中にx()を定義しても意味がありません。\nなぜなら、抽象クラスBはインタフェースAを実装しているわけではないからです。\nよって、Cクラスはx()の実装を持つ必要があるので、Cクラスの中にx()の実装を記述する必要があります。",
+    "ansLock" :false,
+    "answersCode":true,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "//\u00A0以下を\u00A0position\u00A03\u00A0に記述する\n@Override\npublic\u00A0void\u00A0x()\u00A0{}",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"B",
+          "content" : "//\u00A0以下を\u00A0position\u00A03\u00A0に記述する\npublic\u00A0void\u00A0z()\u00A0{}",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"C",
+          "content" : "//\u00A0以下を\u00A0position\u00A02\u00A0に記述する\nvoid\u00A0x()\u00A0{}",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"D",
+          "content" : "//\u00A0以下を\u00A0position\u00A01\u00A0に記述する\nimplements\u00A0A",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
 }]
 }

@@ -250,7 +250,10 @@ const shuffleExam1=(examData,InitialDisplay)=> {
       // 正誤確認済みをセット 
       c_ansCheck[index] = true;
       console.log(c_ansCheck);
-      setTipDisplay(tipDisplay.map((tip, i) => (i === index ? LineHtmlConversion(setExam.tip) : tip)));
+      // 選択肢ごとの解説があればセット
+      let selectTipsDisplay = ""
+      setExam.selectAnswers.map((selectAnswers) => (selectAnswers.selecttips === "" ?  selectTipsDisplay = selectTipsDisplay : selectTipsDisplay = `${selectTipsDisplay}\n${selectAnswers.item}:${selectAnswers.selecttips}`))
+      setTipDisplay(tipDisplay.map((tip, i) => (i === index ? LineHtmlConversion(setExam.tip + selectTipsDisplay) : tip)));
       // Modalオープン
       openModal()
     };
@@ -277,7 +280,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   const texts = body.split('\n').map((item, index) => {
       return (
         <React.Fragment key={index}>
-          {item}
+          {item}<br />
         </React.Fragment>        
       );
     });
@@ -357,7 +360,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
   {setExam.code.map((code,index) => (
     <>
     <div>問題コード 
-    {index === 0 ? <></> : <>{index}</>}
+    {index === 0 ? setExam.code.length === 1 ? <></> : <>{index + 1}</> : <>{index + 1}</>}
     {codeConversion(code)}
     </div>
     </>
