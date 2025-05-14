@@ -23,8 +23,8 @@ const Header =(props) =>{
             setAnswerRate(`-`);
         } else{
             console.log( `Header問題数更新:`);
-            console.log( {props});
-            const sum = (Math.round(props.trueCount / (props.trueCount + props.falseCount)*10000)) / 100;
+            console.log( {props} );
+            const sum = (Math.round(props.trueCount / (props.trueCount + props.falseCount) * 10000)) / 100;
             setAnswerRate(`${sum}%`);
             const rest = (props.totalCount - (props.trueCount + props.falseCount));
             console.log( {rest});
@@ -42,7 +42,7 @@ const Header =(props) =>{
             <div id="count">
                 <span className="paddingRight15">残問題数：{restCount}/{totalCount}</span><span className="paddingRight15">正解率：{answerRate}</span><br className="br-sp" />
                 <span className="paddingRight15">正解数：{trueCount}</span><span className="paddingRight15">不正解数：{falseCount}</span>
-                <div><input type="button" onClick={() => countReset(totalCount)} value="正答率リセット" /></div>
+                {/* <div><input type="button" onClick={() => countReset(totalCount)} value="正答率リセット" /></div> TODO削除予定*/}
             </div>
         </div>
         );

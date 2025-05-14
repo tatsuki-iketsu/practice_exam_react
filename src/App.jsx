@@ -6,7 +6,7 @@ import Header from "./Header";
 
 const App =() =>{
 
-    const [totalCount,setTotalCount] = useState(39);    // 合計数
+    const [totalCount,setTotalCount] = useState(0);    // 合計数
     const [trueCount,setTrueCount] = useState(0);           // 正解数
     const [falseCount,setFalseCount] = useState(0);         // 不正解数
 
@@ -26,11 +26,11 @@ const App =() =>{
 
     return (
         <>   
-            {/* <input type="button" onClick={() => countUpdate(1)} value="テスト関数" />  */}
+            {/* <input type="button" onClick={() => countUpdate(1)} value="テスト関数" />  TODO削除予定*/}
             <header><Header totalCount={totalCount} trueCount={trueCount} falseCount={falseCount} countUpdate={countUpdate} countReset={countReset}/></header>
-            <input type="button" onClick={() => countUpdate(totalCount,trueCount + 1,falseCount)} value="正解追加" />
-            <input type="button" onClick={() => countUpdate(totalCount,trueCount,falseCount + 1)} value="誤り追加" />
-            <input type="button" onClick={() => countReset(totalCount)} value="リセット" />
+            {/* <input type="button" onClick={() => countUpdate(totalCount,trueCount + 1,falseCount)} value="正解追加" TODO削除予定/>
+            <input type="button" onClick={() => countUpdate(totalCount,trueCount,falseCount + 1)} value="誤り追加" TODO削除予定/>
+            <input type="button" onClick={() => countReset(totalCount)} value="リセット" /> TODO削除予定*/}
             <main><ExamDisplay countUpdate={countUpdate} countReset={countReset} /></main>
             <Fotter />
         </>

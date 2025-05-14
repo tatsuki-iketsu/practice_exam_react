@@ -1819,7 +1819,7 @@
     "question" : "次のプログラムをコンパイル、実行したときの正しい結果を1つ選んでください。",
     "code" : ["public\u00A0class\u00A0Sample\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String[]\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0a\u00A0=\u00A0new\u00A0String(\"sample\");\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0b\u00A0=\u00A0a;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0c\u00A0=\u00A0a.intern();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0String\u00A0d\u00A0=\u00A0\"sample\";\n\n\u00A0\u00A0\u00A0\u00A0if\u00A0(a\u00A0==\u00A0b)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"A\");\n\u00A0\u00A0\u00A0\u00A0}\n\n\u00A0\u00A0\u00A0\u00A0if\u00A0(a\u00A0==\u00A0c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"B\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(a\u00A0==\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"C\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(b\u00A0==\u00A0c)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"D\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(b\u00A0==\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"E\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0if\u00A0(c\u00A0==\u00A0d)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"F\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0}\n}"],
     "multipleAnswers" : false,
-    "tip":"デフォルトメソッドに関する問題です。\n\n設問には、AとBの2つのインタフェースと、Bを実装したクラス、そしてmainメソッドを持つSampleクラスの4つのコードが出てきます。AとBの間にはインタフェースの継承関係があります。Bインタフェースでは、Aインタフェースで定義されたsearchメソッドのデフォルト実装を定義している点に注意してください。\n\nこのデフォルト実装では、第1引数の配列data内に第2引数targetが存在する回数をカウントし、1回以上存在する場合はtrueを戻します。もし、1つも存在しなければfalseを戻します。",
+    "tip":"",
     "ansLock" :false,
     "answersCode":false,
     "TipURI" :"",
@@ -1828,7 +1828,7 @@
           "item" :"A",
           "content" : "「A」「F」と表示される",
           "correctAnswer":false,
-          "selecttips":"実行時に例外がスローされるケースとしては、起動パラメータとして数字ではなくアルファベットなどの文字列を渡すと、Integer.parseIntメソッドが引数を数値に変換できずにNumberFormatExceptionをスローすることが考えられます。しかし、設問のコマンドでは数字を渡しているため、この例外がスローされることはありません。"
+          "selecttips":""
       },
       {
         "item" :"B",
@@ -1840,13 +1840,13 @@
         "item" :"C",
         "content" : "「A」「B」「C」「D」「E」「F」と表示される",
         "correctAnswer":false,
-        "selecttips":"設問のコードは、インタフェースAとBの継承関係やデフォルト実装、そのデフォルト実装を引継いだクラスの実装にも問題がないため、コンパイルエラーは発生しません。"
+        "selecttips":""
     },
     {
         "item" :"D",
         "content" : "「A」「D」と表示される",
         "correctAnswer":false,
-        "selecttips":"java.commandに渡している起動パラメータはargs[0]とargs[1]の2つですが、Sampleクラスのmainメソッドではargs[0]としているため、最初の引数であるししか使用されません。5は、searchメソッドの引数に渡した配列内に存在しないため、searchメソッドはfalseを戻します。この結果、コンソールにはBが出力されることになります。"
+        "selecttips":""
     }
   ]
 },{
@@ -2044,6 +2044,108 @@
       },{
           "item" :"D",
           "content" : "//\u00A0以下を\u00A0position\u00A01\u00A0に記述する\nimplements\u00A0A",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
+},{
+    "examId":"00046",
+    "setItem" : "問題46",
+    "question" : "次のプログラムをコンパイル、実行したときの結果として、正しい1つ選択してください。\nなお、どちらもファイル名はクラス名.javaとします。",
+    "code" : ["public\u00A0class\u00A0Main\u00A0extends\u00A0Super\u00A0{\n\u00A0\u00A0\u00A0\u00A0private\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"sub\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0subPrint()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0print();\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Main\u00A0main\u00A0=\u00A0new\u00A0Main();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0main.superPrint();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0main.subPrint();\n\u00A0\u00A0\u00A0\u00A0}\n}",
+"public\u00A0class\u00A0Super\u00A0{\n\u00A0\u00A0\u00A0\u00A0private\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Super\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0superPrint()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0print();\n\u00A0\u00A0\u00A0\u00A0}\n}"],
+    "multipleAnswers" : false,
+    "tip":"privateなメンバは、あくまでもそのメンバを定義したクラス内でのみ利用可能であるため、サブクラスではオーバーライドできません。\n\n設問のコードでは、Mainのインスタンスを作り、Main型の変数でその参照を扱っています。その後、スーパークラスであるSuperに定義されたsuperPrintメソッドを呼び出しています。superPrintメソッドではprint()メソッドを呼び出していますが、ここでAのprint()メソッドが呼び出されるのか、それともBのprint()メソッドが呼び出されるのかが、この問題で問われているポイントです。\n\n前述のとおり、privateメソッドはオーバーライドできません。そのため、Aに定義されたaメソッドから呼び出すのはAに定義したprint()メソッドです。よって、コンソールにはSuperが表示されます。次に、MainクラスのsubPrintメソッドからprint()メソッドを呼び出しているのでSubが表示されるので、コンソールには「Super」「Sub」の順に表示されます。以上のことから、選択肢Aが正解です。",
+    "ansLock" :false,
+    "answersCode":false,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "「Super」「Sub」と表示される",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"B",
+          "content" : "「Sub」「Sub」と表示される",
+          "correctAnswer":false,
+          "selecttips":"printメソッドのアクセス修飾子はどちらもprivateなので、オーバーライドされません。"
+      },{
+          "item" :"C",
+          "content" : "コンパイルエラーが発生する",
+          "correctAnswer":false,
+          "selecttips":"@Overrideが記載されていないため、コンパイルエラーは発生しません。"
+      },{
+          "item" :"D",
+          "content" : "実行時に例外がスローされる",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
+},{
+    "examId":"00047",
+    "setItem" : "問題47",
+    "question" : "次のプログラムをコンパイル、実行したときの結果として、正しい1つ選択してください。\nなお、どちらもファイル名はクラス名.javaとします。",
+    "code" : ["public\u00A0class\u00A0Main\u00A0extends\u00A0Super\u00A0{\n\u00A0\u00A0\u00A0\u00A0@Override\n\u00A0\u00A0\u00A0\u00A0private\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"sub\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0subPrint()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0print();\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Main\u00A0main\u00A0=\u00A0new\u00A0Main();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0main.superPrint();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0main.subPrint();\n\u00A0\u00A0\u00A0\u00A0}\n}",
+"public\u00A0class\u00A0Super\u00A0{\n\u00A0\u00A0\u00A0\u00A0private\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Super\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0superPrint()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0print();\n\u00A0\u00A0\u00A0\u00A0}\n}"],
+    "multipleAnswers" : false,
+    "tip":"privateなメンバは、あくまでもそのメンバを定義したクラス内でのみ利用可能であるため、サブクラスではオーバーライドできません。そのため@Overrideアノテーションを付けるとコンパイルエラーとなります。",
+    "ansLock" :false,
+    "answersCode":false,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "「Super」「Sub」と表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"B",
+          "content" : "「Sub」「Sub」と表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"C",
+          "content" : "コンパイルエラーが発生する",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"D",
+          "content" : "実行時に例外がスローされる",
+          "correctAnswer":false,
+          "selecttips":""
+      }
+  ]
+},{
+    "examId":"00048",
+    "setItem" : "問題48",
+    "question" : "次のプログラムをコンパイル、実行したときの結果として、正しい1つ選択してください。\nなお、どちらもファイル名はクラス名.javaとします。",
+    "code" : ["public\u00A0class\u00A0Main\u00A0extends\u00A0Super\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"sub\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0subPrint()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0print();\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0static\u00A0void\u00A0main(String...\u00A0args)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Main\u00A0main\u00A0=\u00A0new\u00A0Main();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0main.superPrint();\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0main.subPrint();\n\u00A0\u00A0\u00A0\u00A0}\n}",
+"public\u00A0class\u00A0Super\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0print()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0System.out.println(\"Super\");\n\u00A0\u00A0\u00A0\u00A0}\n\u00A0\u00A0\u00A0\u00A0public\u00A0void\u00A0superPrint()\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0print();\n\u00A0\u00A0\u00A0\u00A0}\n}"],
+    "multipleAnswers" : false,
+    "tip":"設問のコードでは、Mainのインスタンスを作り、Main型の変数でその参照を扱っています。その後、スーパークラスであるSuperに定義された superPrintメソッドを呼び出しています。superPrintメソッドではprint()メソッドを呼び出していますが、ここでSuperの print()メソッドが呼び出されるのか、それともSubのprint()メソッドが呼び出されるのかが、この問題で問われているポイントです。\n\nSubクラスとMainクラスのprintメソッドのアクセス修飾子をprivate以外に変更するとオーバーライドが成り立つので、コンソールには「Sub」「Sub」と表示されます。",
+    "ansLock" :false,
+    "answersCode":false,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "「Super」「Sub」と表示される",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"B",
+          "content" : "「Sub」「Sub」と表示される",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"C",
+          "content" : "コンパイルエラーが発生する",
+          "correctAnswer":false,
+          "selecttips":""
+      },{
+          "item" :"D",
+          "content" : "実行時に例外がスローされる",
           "correctAnswer":false,
           "selecttips":""
       }

@@ -86,6 +86,7 @@ const ExamDisplay = (props) =>{
   // 初回シャッフル、シャッフルしたことは表示しない
   useEffect(() => {
     shuffleExam1(examData,true);
+    props.countReset(examData.setExams.length);
   }, []);
 
 
@@ -157,6 +158,7 @@ const shuffleExam1=(examData,InitialDisplay)=> {
 
     // 初回以外はシャッフルしたことを表示
     if(!(InitialDisplay)){
+      props.countReset(examData.setExams.length);
       alert(`問題をシャッフルします。問題数${examData.setExams.length}`);
     }
   
