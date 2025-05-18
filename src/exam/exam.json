@@ -2150,5 +2150,50 @@
           "selecttips":""
       }
   ]
+},{
+    "examId":"00049",
+    "setItem" : "問題49",
+    "question" : "Sampleインターフェースを実装したクラスに記述できるメソッドの定義として、正しいものを2つ選んでください。",
+    "code" : ["public\u00A0class\u00A0A\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0int\u00A0num;\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0public\u00A0A(int\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0this.num\u00A0=\u00A0num;\n\u00A0\u00A0\u00A0\u00A0}\n}",
+              "public\u00A0class\u00A0B\u00A0extends\u00A0A\u00A0{\n\u00A0\u00A0\u00A0\u00A0public\u00A0B(int\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0super(num);\n\u00A0\u00A0\u00A0\u00A0}\n}\n",
+              "public\u00A0interface\u00A0Sample\u00A0{\n\u00A0\u00A0\u00A0\u00A0A\u00A0execute(int\u00A0num);\n}"],
+    "multipleAnswers" : true,
+    "tip":"メソッドのオーバーライドに関する問題です。\nサブクラスで再定義するメソッドが、オーバーライドするためには次の要件を満たす必要があります。\n\n・メソッドのシグネチャが同じ\n・戻り値が同じかもしくはサブクラス型\n・アクセス修飾子が同じか緩い\n",
+    "ansLock" :false,
+    "answersCode":true,
+    "TipURI" :"",
+    "selectAnswers" : [
+      {
+          "item" :"A",
+          "content" : "public\u00A0B\u00A0execute(Integer\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0return\u00A0new\u00A0B(num);\n}",
+          "correctAnswer":false,
+          "selecttips":"引数の型が異なりますので誤りです。"
+      },{
+          "item" :"B",
+          "content" : "public\u00A0Object\u00A0execute(int\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0return\u00A0new\u00A0A();\n}",
+          "correctAnswer":false,
+          "selecttips":"戻り値型がAクラスのスーパータイプであるObject型になっているため、誤りです。"
+      },{
+          "item" :"C",
+          "content" : "public\u00A0A\u00A0execute(int\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0return\u00A0new\u00A0B(num);\n}",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"D",
+          "content" : "public\u00A0B\u00A0execute(int\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0return\u00A0new\u00A0B(num);\n}",
+          "correctAnswer":true,
+          "selecttips":""
+      },{
+          "item" :"E",
+          "content" : "public\u00A0A\u00A0execute(Integer\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0return\u00A0new\u00A0A(num);\n}",
+          "correctAnswer":false,
+          "selecttips":"引数の型が異なりますので誤りです。"
+      },{
+          "item" :"D",
+          "content" : "public\u00A0B\u00A0execute(int\u00A0num)\u00A0{\n\u00A0\u00A0\u00A0\u00A0return\u00A0new\u00A0A(num);\n}",
+          "correctAnswer":false,
+          "selecttips":"スーパークラスであるAクラスのインスタンスへの参照を、サブクラスであるBクラス型として戻そうとしているので、誤りです。"
+      }
+  ]
 }]
 }
