@@ -1,27 +1,24 @@
-import React,{useState} from "react"
-import urlList from "./UrlList"; // URLリストのimport
-// router系のimport
-import { BrowserRouter, Route, Routes, Link ,element,Navigate} from 'react-router-dom';
+import urlList from "./UrlList";
+import { Link} from 'react-router-dom';
+
+/////////////////////////////////////////////////////////
+//////////// 学習用ページへのリンク集のフッター ////////////
+/////////////////////////////////////////////////////////
 
 // 解説用URLを格納する二次元Objcet
 const explanationData = urlList();
 const Fotter =() =>{
     return (
-        <>   
         <div className="fotter" id="fotter">
             <div>▼JavaSilver17試験対策問題　解説ページ</div>
             <Link to='/'>Top</Link> / 
             {explanationData.map((page) => {
-                const urlPass = `${process.env.REACT_APP_BASENAME}${ page.url }`
-            return (
-                <>
-                    <Link to ={page.url}>{ page.pageName }</Link> / 
-                </>
+                return (
+                    <Link to ={page.url}>{ page.pageName }</Link>
                 )
             })}
         </div>
-        </>
-        );
+    );
 };
 
 export default Fotter;

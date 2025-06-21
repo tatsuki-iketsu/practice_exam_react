@@ -1,6 +1,9 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+
+//////////////////////////////////////////
+//////////// index ///////////////////////
+//////////////////////////////////////////
 
 // サイト全体のcss
 import "./components/css/index.css";
