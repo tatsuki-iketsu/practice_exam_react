@@ -1,0 +1,38 @@
+.explanationBody
+{color:black;
+}
+
+.pageTitle{
+
+}
+
+/* ページ全体のジャンル */
+.sectionTitle{
+color:blueviolet;
+
+}
+
+
+/* ページ内の項目 */
+.paragraphTitle{
+    color: brown;
+    border-bottom: 1px solid #000; 
+    margin-left: 10px;
+}
+.paragrapContents{
+    padding-left: 2em;
+    color:black;
+}
+/* さらに細かい項目 */
+.itemTitle{
+    margin-left: 10px;
+    color:black;
+    border-bottom: 1px 	dashed #000; 
+}
+
+.itemContents{
+    margin-left: 10px;
+    margin-top: 2px;
+
+}
+

@@ -1,0 +1,208 @@
+/*
+*****************
+パーツごとの処理
+*****************
+*/
+Header{
+  /* ヘッダーを固定 */
+  position: sticky;
+  top: 6px;
+  z-index: 10;
+
+  background: rgba(77, 77, 247, 0.2);
+  padding: 8px;
+  margin: 0px 0px 0px 0px;
+}
+
+Modal{
+  background: blue; /* テスト用背景色 */
+  z-index: 20;
+}
+
+#h1{
+  font-size:large;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.6);
+}
+#count{
+  background: rgba(22, 22, 255, 0.8);
+  color: #bdedf0;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* スマホの時だけ改行させるクラス */
+.br-sp {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .br-sp {
+        display: block;
+    }
+}
+/*
+*****************
+個別レイアウト変更
+*****************
+/* バックグランドカラー赤 */
+.bgred{
+  background-color: red;  
+}
+
+.fontred{
+  color: red;  
+}
+
+
+.fontlarge{
+  font-size: x-large;
+}
+/*上側マージン*/
+.marginTop15{
+  margin-top: 15px;
+}
+/*左側マージン*/
+.marginLeft10{
+    margin-left: 10px;
+}
+/*上下マージン*/
+.marginTopBottom{
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+/*右側パディング*/
+.paddingRight15{
+  padding-right: 15px;
+}
+/*上側パディング*/
+.paddingTop15{
+  padding-top: 15px;
+}
+
+/* 上下パディング2px*/
+.topBottomPadding2{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+/* 上下マージン2px*/
+.topBottomMargin2{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* 上下左右パディング5px*/
+.allPadding5{
+  padding: 5px;
+}
+/*サンプルエリア*/
+.sampleFile{
+  padding:10px;
+  border-left-style: dotted;
+  border-left-width: 5px;
+  border-left-color: #bdedf0;
+  background-color: #edf5f7;
+}
+
+.sampleFile .filename{
+  color: #006c8c;
+  background-color: #edf5f7;
+}
+.sampleFile .block{
+  margin-left:10px;
+  padding:10px;
+  margin-bottom: 30px;;
+  border-left-style: double;
+  border-left-width:5px;
+  border-left-color: #bdedf0;
+  background-color: #edf5f7;
+}
+
+/*解説のポイントとなる部分*/
+.pointBarRed{
+  /* border-bottom: red dashed 2px; */
+  /* background-color: red; */
+  text-decoration:underline;
+  text-underline-offset: 3px;
+      text-decoration-color: red;
+}
+.pointBarBlue{
+  /* border-bottom: blue dashed 2px; */
+  text-decoration:underline;
+  text-underline-offset: 3px;
+      text-decoration-color: blue;
+}
+
+
+pre{
+  padding: 0px; /* 文字周りの余白 */
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+
+/*
+**********************
+**********************
+ ボタン
+**********************
+**********************
+ */
+ button.selectedCheck{
+  margin-top: 20px;
+}
+
+
+ /*
+**********************
+**********************
+ コードブロック
+**********************
+**********************
+ */
+code {
+    display: inline-block;
+  }
+  code .otherCode{
+    color: #444; /* 文字色 */
+    background-color: #e7edf3; /* 背景色 */
+    border-radius: 3px; /* 角丸 */
+    border: solid 2px #d6dde4; /* 枠線 */
+
+  }
+
+  code .answerCode{
+    color: black; /* 文字色 */
+    border-radius: 3px; /* 角丸 */
+    border: dotted 2px #d6dde4; /* 枠線 */
+
+  }
+
+   /* TODO解答部分のコードブラックオプション 
+   code .answerCodeB{
+    color: #e7edf3;
+    background-color: #444 ;
+    border-radius: 3px;
+    border: solid 2px #d6dde4;
+  }
+  */
+
+  code .numberLow {
+    counter-increment: line-number;
+    display: list-item;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    margin-left: 30px;
+  }
+  
+  code span::marker {
+    content: counter(line-number);
+    color: #aaa;
+  }
+
+  .answer {
+    font-size: medium;
+  }

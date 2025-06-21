@@ -1,31 +1,39 @@
-import React,{useState} from "react"
-import ExamDisplay from "./components/ExamSet";
+import React, { useState, useEffect } from "react";
+import ExamDisplay from "./components/ExamDisplay";
+import Fotter from "./Fotter";
+import Header from "./Header";
+
+//////////////////////////////////////////
+//////////// アプリの全体的な枠 ////////////
+//////////////////////////////////////////
 
 const App =() =>{
-    const [num,setNum] = useState(0);
-    const [textShowFlug,setTextShowFlag] = useState(true); 
-    const [showModal, setShowModal] = useState(false); // ResultsModal
 
-    const onClickButten1 = ()=> alert('正解です');
-    const onClickButten2 = ()=> alert('残念！不正解です');
-    const onClickButten3 = ()=> alert('残念！不正解です');
-    const onClickCountUp = ()=> setNum(num + 10) ;
-    const onClickshowFlugCjange = ()=> setTextShowFlag(!textShowFlug) ;
+    const [totalCount,setTotalCount] = useState(0);    // 合計数
+    const [trueCount,setTrueCount] = useState(0);      // 正解数
+    const [falseCount,setFalseCount] = useState(0);    // 不正解数
+
+    console.log(`App描画/問題数:${totalCount}-/正解数::${trueCount}-/不正解数::${falseCount}`);
+
+    // コールバック関数
+    // 正答率更新
+    const countUpdate =(inTotal,inTrue,inFalse) =>{
+        console.log(`正答率リセット:${totalCount}`);
+        setTotalCount(inTotal);
+        setTrueCount(inTrue);
+        setFalseCount(inFalse);
+    }
+    // 正答率リセット
+    const countReset =(inTotal) =>{
+        countUpdate(inTotal,0,0)
+    }
+
     return (
-        <>
-                {/* <h1 style={{color:'pink' }}>問題</h1>
-                <ColorfulMessage color='green' message='世界！'/>
-                <PropsMessage color='green'>PROPS渡し</PropsMessage>
-                <button onClick={onClickButten1}>回答1</button>
-                <button onClick={onClickButten2}>回答2</button>
-                <button onClick={onClickButten3}>回答3</button>
-                <button onClick={onClickCountUp}>加算</button>
-                <button onClick={onClickshowFlugCjange}>表示非表示</button>
-                <p>{num}</p> */}
-                <ExamDisplay />
-                {/* {textShowFlug && <p>TRUEなので表示されています</p>} */}
-                
-               </>
+        <>   
+            <header><Header totalCount={totalCount} trueCount={trueCount} falseCount={falseCount} countUpdate={countUpdate} countReset={countReset}/></header>
+            <main><ExamDisplay countUpdate={countUpdate} countReset={countReset} /></main>
+            <Fotter />
+        </>
         );
 };
 

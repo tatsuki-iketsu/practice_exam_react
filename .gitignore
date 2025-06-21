@@ -1,1 +1,10 @@
-node_modules
+/node_modules
+/build
+/build/robots.txt
+/build/static
+/build/asset-manifest.json
+/build/index.html
+/.env
+/.env.development
+/.env.production
+/.vscode
